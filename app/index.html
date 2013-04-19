@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="utf-8">
+  <title>Cantina To-do List</title>
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  <script src="lib/prefixfree.min.js"></script>
+</head>
+<body>
+  <div class='content' ng-controller="TodoCtrl">
+    <div class='header'>
+      <form class='add-group'>
+        <input class='new-entry' placeholder='What do you need to get done?' ng-model="newEntry" />
+        <button type="submit" class='add-item' ng-click="addItem()">
+            <span class='fulltext'>Add To-do</span>
+        </button>
+      </form>
+    </div>
+    <ol class="todo list">
+      <li class="ng-cloak" ng-repeat="todo in listItems | orderBy:orderProp:true" ng-class="{'todo-completed': todo.complete}">
+        <label for='li{{todo.order}}'>  
+          <input id='li{{todo.order}}' name='li{{todo.order}}' type='checkbox' ng-model='todo.complete' />
+          <span class='note'>{{todo.snippet}}</span>
+        </label>
+        <!--<button ng-click="deleteItem($index)" class="delete">&times;</button>-->
+      </li>
+      <!--
+      <li ng-show="enableClear(data)" class="action">
+        <button ng-click="clearCompleted()">Clear Completed</button>
+      </li>
+      -->
+    </ol>
+  </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
