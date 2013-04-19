@@ -18,25 +18,19 @@
       </form>
     </div>
     <ol class="todo list">
-      <li class="ng-cloak" ng-repeat="todo in listItems | orderBy:orderProp:true" ng-class="{'todo-completed': todo.complete}">
+      <li class="ng-cloak" ng-repeat="todo in listItems | orderBy:orderProp:true track by $id(todo.order)" ng-class="{'todo-completed': todo.complete}">
         <label for='li{{todo.order}}'>  
           <input id='li{{todo.order}}' name='li{{todo.order}}' type='checkbox' ng-model='todo.complete' />
           <span class='note'>{{todo.snippet}}</span>
         </label>
-        <!--<button ng-click="deleteItem($index)" class="delete">&times;</button>-->
       </li>
-      <!--
-      <li ng-show="enableClear(data)" class="action">
-        <button ng-click="clearCompleted()">Clear Completed</button>
-      </li>
-      -->
     </ol>
   </div>
 
   <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-  -->
   <script src="lib/angular/angular.js"></script>
+  -->
+  <script src="http://code.angularjs.org/1.1.4/angular.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>

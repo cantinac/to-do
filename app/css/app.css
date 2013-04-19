@@ -22,12 +22,14 @@ and (min-width:769px) {
 .ng-cloak {
   display: none!important;
 }
+html,body{
+  min-height:100%; 
+}
 body {
   top: 0;
   background: #eee;
   position: absolute;
   width: 100%;
-  height: 100%;
 }
 .content {
   border-radius: 1px;
@@ -112,6 +114,7 @@ body {
 }
 .list li {
   display: block;
+  transition: color .4s ease-out;
 }
 .list label {
   display: block;
@@ -131,37 +134,34 @@ body {
 .list .todo-completed {
   color: #bbb;
 }
-.custom-enter-setup,
-.custom-leave-setup,
-.custom-move-setup {
-  -webkit-transition: 1s linear all;
-  -moz-transition: 1s linear all;
-  -o-transition: 1s linear all;
-  transition: 1s linear all;
-  position:relative;
+/* Animations specific to AngularJS */
+.list-item-repeat-enter-setup,
+.list-item-repeat-leave-setup,
+.list-item-repeat-move-setup {
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -ms-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
 }
-
-.custom-enter-setup {
-  left:-10px;
+ 
+.list-item-repeat-enter-setup {
+  line-height:0;
   opacity:0;
 }
-.custom-enter-setup.custom-enter-start {
-  left:0;
+.list-item-repeat-enter-setup.list-item-repeat-enter-start {
+  line-height:20px;
   opacity:1;
 }
-
-.custom-leave-setup {
-  left:0;
+ 
+.list-item-repeat-leave-setup {
   opacity:1;
+  line-height:20px;
 }
-.custom-leave-setup.custom-leave-start {
-  left:-10px;
+.list-item-repeat-leave-setup.list-item-repeat-leave-start {
   opacity:0;
+  line-height:0;
 }
-
-.custom-move-setup {
-  opacity:0.5;
-}
-.custom-move-setup.custom-move-start {
-  opacity:1;
-}
+ 
+.list-item-repeat-move-setup { }
+.list-item-repeat-move-setup.list-item-repeat-move-start { }
