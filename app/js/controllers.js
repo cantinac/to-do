@@ -18,7 +18,7 @@ function TodoCtrl($scope, userList) {
     if($scope.newEntry) {
       var newSnippet = trim1($scope.newEntry);
 
-      if(newSnippet != "") {
+      if(newSnippet !== "") {
         /* Add list item, incrementing value of order */
         $scope.listItems.push({"order": $scope.getNextOrder(), "snippet": newSnippet, "complete": false});
         /* Reset newEntry for fresh input */
@@ -30,8 +30,10 @@ function TodoCtrl($scope, userList) {
   $scope.deleteItem = function (order) {
     /* Remove item of passed value order */
     for(var i = 0; i < $scope.listItems.length; i++) {
-      if ($scope.listItems[i].order == order) 
+      if ($scope.listItems[i].order === order) 
+      {
         $scope.listItems.pop(i);
+      }
     }
   };
 
@@ -40,7 +42,9 @@ function TodoCtrl($scope, userList) {
     var maxOrder = -1;
     for(var i = 0; i < $scope.listItems.length; i++) {
       if ($scope.listItems[i].order > maxOrder) 
+      {
         maxOrder = $scope.listItems[i].order;
+      }
     }
     return ++maxOrder;
   };
@@ -49,7 +53,9 @@ function TodoCtrl($scope, userList) {
     /* Remove completed items from list */
     for(var i = 0; i < $scope.listItems.length; i++) {
       if ($scope.listItems[i].complete) 
+      {
         $scope.listItems.pop(i);
+      }
     }
   };
 
@@ -59,7 +65,9 @@ function TodoCtrl($scope, userList) {
 
     for(var i = 0; i < $scope.listItems.length; i++) {
       if ($scope.listItems[i].complete) 
+      {
         completeItems++;
+      }
     }
     return completeItems;
   }; 

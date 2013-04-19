@@ -134,34 +134,3 @@ body {
 .list .todo-completed {
   color: #bbb;
 }
-/* Animations specific to AngularJS */
-.list-item-repeat-enter-setup,
-.list-item-repeat-leave-setup,
-.list-item-repeat-move-setup {
-  -webkit-transition:all linear 0.5s;
-  -moz-transition:all linear 0.5s;
-  -ms-transition:all linear 0.5s;
-  -o-transition:all linear 0.5s;
-  transition:all linear 0.5s;
-}
- 
-.list-item-repeat-enter-setup {
-  line-height:0;
-  opacity:0;
-}
-.list-item-repeat-enter-setup.list-item-repeat-enter-start {
-  line-height:20px;
-  opacity:1;
-}
- 
-.list-item-repeat-leave-setup {
-  opacity:1;
-  line-height:20px;
-}
-.list-item-repeat-leave-setup.list-item-repeat-leave-start {
-  opacity:0;
-  line-height:0;
-}
- 
-.list-item-repeat-move-setup { }
-.list-item-repeat-move-setup.list-item-repeat-move-start { }
