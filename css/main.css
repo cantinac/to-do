@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body
+{
+	background:#ecf0f1;
+}
+
+/* this is the main body */
+ul
+{
+list-style: none;
+/* adjusts the border to fit navbar edge */
+margin: 0 1px;
+/* adjusts the task to fit aganest navbar edge */
+position: relative;
+top: -20px;
+}
+
+li
+{
+background: #FFF;
+padding: 13px;
+/* no top border to prevent  doubling borders */
+border-bottom:1px solid #e8e8e8;
+border-left:1px solid #e8e8e8;
+border-right:1px solid #e8e8e8;
+font-size: 110%;
+color: #042844;
+}
+
+input[type="checkbox"] {
+margin-bottom: 6px;
+margin-right: 9px;
+}
+
+/* sets default text style*/
+.done
+{
+	color: #e8e8e8;
+	padding:4px;
+	display:inline;
+}
+
+/* sets finshed text style*/
+.notdone
+{
+	color: #042844;
+	padding:4px;
+	display:inline;
+}
+
+
+/* this fixs a major sytling error in bootstrap large amount of time spent on the app was working this out */
+.overlapfix
+{
+margin-right:100px!important;
+display: block!important;
+margin-top:10px;
+}
+
+.withfull
+{
+	width:100%!important;
+}
+
+
+/* this fixs a major sytling error in bootstrap large portion of time spent on the app was working this out */
+#btntxt
+{
+	text-shadow:1px 1px 0px #000;
+}
+
+#btnsymbol
+{
+	display:none;
+}
+
+#wrapper
+{
+	margin:20px auto;
+	width:80%;
+}	
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px)
+{
+/* creates space around main content area for desktop */
+#wrapper
+{
+	margin:20px auto;
+	width:90%;
+}		
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+/* removes space around main content area for portrait tablets and below */
+#wrapper
+{
+	margin:0px;
+	width:100%;
+}	
+
+/* Landscape phones and down */
+@media (max-width: 580px) {
+
+
+/* swaps the button text for the plus symbol using css only */
+ #btnsymbol
+{
+	display:inline-block;
+}
+
+#btntxt
+{
+	display:none;
+} 
+/* changes margin around task input to fit shorter plus button */
+.overlapfix
+{
+margin-right:54px!important
+}
+}
