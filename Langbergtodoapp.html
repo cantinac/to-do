@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>To-do Web App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+<div class="navbar">
+  <div class="navbar-inner">
+<div class="input-append overlapfix">
+  <input class="withfull" id="addtask" type="text" placeholder="What do you need to get done?">
+  <button class="btn btn-info" type="button" onClick="addtask();"><span id="btntxt">Add To-do</span><span id="btnsymbol"><i class="icon-plus icon-white"></i></span></button>
+</div>
+  </div><!--end of navinner-->
+</div><!--end of navbar-->
+    <ul id="tasks">
+    </ul>
+</div><!--end of wrapper-->
+</body>
+</html>
