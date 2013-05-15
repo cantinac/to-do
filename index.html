@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>To-do App</title>
+<style>
+
+* {
+	margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-size: 16px;
+	line-height: 1.3em;
+}
+
+#todo_create fieldset {
+	position: relative;
+	padding: 10px;
+	border: 0;
+	border-bottom: 1px solid #e8e8e8;
+	background: #f6f6f6;
+	background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+	background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);
+	background: linear-gradient(to bottom, #ffffff 0%, #efefef 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#efefef', GradientType=0);
+}
+
+#todo_create input[type="text"] {
+	padding: 8px 10px;
+	width: 100%;
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 1.3em;
+	border: 1px solid #d0d0d0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#todo_create button[type="submit"] {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 0 10px;
+	height: 38px;
+	font-family: inherit;
+	font-size: 25px;
+	line-height: 1.3em;
+	color: #fff;
+	border: 1px solid #299b85;
+	border-radius: 0 5px 5px 0;
+	background: #19ad90;
+	background: -moz-linear-gradient(top, #23bc9d 0%, #18a187 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23bc9d), color-stop(100%,#18a187));
+	background: -webkit-linear-gradient(top, #23bc9d 0%, #18a187 100%);
+	background: -o-linear-gradient(top, #23bc9d 0%, #18a187 100%);
+	background: -ms-linear-gradient(top, #23bc9d 0%, #18a187 100%);
+	background: linear-gradient(to bottom, #23bc9d 0%, #18a187 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#23bc9d', endColorstr='#18a187',GradientType=0);
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+#todo_create button[type="submit"] span.full {
+	display: none;
+}
+
+#todo_list li {
+	list-style: none;
+}
+
+#todo_list li label {
+	display: block;
+	padding: 15px 10px;
+	border-bottom: 1px solid #e8e8e8;
+	cursor: pointer;
+}
+
+#todo_list input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+#todo_list .completed {
+	color: #999;
+}
+
+@media screen and (min-width: 900px) {
+
+	body {
+		background: #ecf0f1;
+	}
+
+	#app {
+		margin: 50px auto;
+		width: 900px;
+		border: 1px solid #e8e8e8;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+		background: #fff;
+	}
+
+	#todo_create button[type="submit"] {
+		padding: 8px 20px;
+		font-size: 16px;
+	}
+
+	#todo_create button[type="submit"] span.full {
+		display: block;
+	}
+
+	#todo_create button[type="submit"] span.small {
+		display: none;
+	}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+	<form id="todo_create">
+
+		<fieldset>
+
+			<input type="text" name="todo_new" id="todo_new" value="" placeholder="What do you need to get done?" size="50" />
+			<button type="submit"><span class="full">Add To-do</span><span class="small">+</span></button>
+
+		</fieldset>
+
+	</form>
+
+	<ul id="todo_list"></ul>
+
+</div>
+
+<script>
+
+var todo_create = document.getElementById('todo_create'),
+	todo_new = document.getElementById('todo_new'),
+	todo_list = document.getElementById('todo_list');
+
+function create_todo_item (value, completed) {
+
+	var li = document.createElement('li'),
+		label = document.createElement('label'),
+		input = document.createElement('input');
+
+	input.setAttribute('type', 'checkbox');
+
+	if (completed) {
+		input.setAttribute('checked', 'checked');
+		li.setAttribute('class', 'completed');
+	}
+
+	label.appendChild(input);
+	label.appendChild(document.createTextNode(value));
+
+	li.appendChild(label);
+
+	return li;
+
+}
+
+todo_create.addEventListener('submit', function (e) {
+
+	e.preventDefault();
+
+	if (todo_new.value) {
+
+		todo_list.insertBefore(create_todo_item(todo_new.value), todo_list.childNodes[0]);
+
+		todo_new.value = '';
+
+	}
+
+	todo_new.focus();
+
+});
+
+todo_list.addEventListener('click', function (e) {
+
+	if (e.target.nodeName == 'INPUT') {
+
+		if (e.target.checked) {
+			e.target.parentNode.parentNode.setAttribute('class', 'completed');
+		} else {
+			e.target.parentNode.parentNode.setAttribute('class', '');
+		}
+
+	}
+
+});
+
+todo_list.appendChild(create_todo_item('An incomplete to-do item will look like this.'));
+todo_list.appendChild(create_todo_item('An incomplete to-do item will look like this.'));
+todo_list.appendChild(create_todo_item('An incomplete to-do item will look like this.'));
+todo_list.appendChild(create_todo_item('An incomplete to-do item will look like this.'));
+
+todo_list.appendChild(create_todo_item('A complete to-do item will look like this.', true));
+todo_list.appendChild(create_todo_item('A complete to-do item will look like this.', true));
+todo_list.appendChild(create_todo_item('A complete to-do item will look like this.', true));
+todo_list.appendChild(create_todo_item('A complete to-do item will look like this.', true));
+todo_list.appendChild(create_todo_item('A complete to-do item will look like this.', true));
+
+</script>
+
+</body>
+</html>
