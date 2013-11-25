@@ -1,0 +1,40 @@
+<html lan="eng">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>ToDO - James Hendy</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<div class="container" id="appContainer">
+			<div class="inputHeader">
+				<div class="row" id="todoInputArea">
+					<div class="col-xs-12">
+						<input type="text" id="newTodo" placeholder="What do you need to get done?"/>
+						<div id="btnAddNewTodo">Add To-do</div>
+					</div>
+				</div>
+			</div>
+			<div class="todoArea">
+				<div class="row">
+					<ul id="todoList">
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/html" id='template-item'>
+			<div class="itemView">
+				<input class="chkComplete" type="checkbox" <%= complete ? 'checked' : '' %>>
+				<label><%- text %></label>
+			</div>
+		</script>
+		<script type="text/javascript" src="js/lib/zepto.min.js"></script>
+		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+		<script type="text/javascript" src="js/lib/backbone-min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
