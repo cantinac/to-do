@@ -1,0 +1,76 @@
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-size: 16px;
+	min-width: 320px;
+}
+
+#todoApp form {	
+	height: 41px;
+	padding: 12px 12px 7px;
+	border: 1px solid rgb(219,223,223);
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+	position: relative;
+}
+
+input[type=text] {
+	width: 99%;
+	height: 36px;
+	padding-left: 5px;
+	border: 1px solid rgb(216,216,216);
+	box-shadow: 1px 1px 1px rgba(216,216,216,.6) inset;
+	border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
+	font-size: 16px;
+}
+
+input[type=submit] {
+	width: 114px;
+	height: 40px;
+	border: none;
+	text-indent: -9999px;
+	background: transparent url("images/add-desktop.jpg") no-repeat 0 0;
+	margin-left: -4px;
+	position: absolute;
+	right: 12px;
+	top: 12px;
+}
+
+article {
+	height: 15px;
+	padding: 18px 11px 21px;
+	border-bottom: 1px solid rgb(232,232,232);
+}
+
+label.finito-true {
+	color: rgb(219,219,219);
+	transition: color .25s linear;
+	-webkit-transition: color .25s linear;
+}
+
+label.finito-false {
+	color: rgb(0,0,0);
+	transition: color .25s linear;
+	-webkit-transition: color .25s linear;
+}
+
+@media only screen and (max-width: 768px) {
+
+	input[type=text] {
+		width: 95%;
+	}
+
+	input[type=submit] {
+		width: 45px;
+		height: 40px;
+		background: transparent url("images/add-mobile.jpg") no-repeat 0 0 !important;
+	}
+
+}
