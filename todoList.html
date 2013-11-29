@@ -1,0 +1,93 @@
+<script> 
+var count=0;
+function renderToDo()
+{
+	document.getElementById('do').innerHTML += "<input type=checkbox onchange=setCheck(" + count + ") id=" + count + "><label for=" + count + " id=text" + count +">" + document.getElementById("input").value + "</label><hr>";
+	localStorage["ToDoText" + count]=document.getElementById("input").value ;
+	localStorage["ToDoDone" + count]="0";
+	count++;
+	document.getElementById("input").value="";
+	checkOrient();
+}
+function setCheck(id)
+{
+	localStorage["ToDoDone" + id] = document.getElementById(id).checked
+	if (document.getElementById(id).checked==true)
+	{
+		document.getElementById("text" + id).style.color='grey';
+	}
+	else
+	{
+		document.getElementById("text" + id).style.color='black';
+	}
+	checkOrient();
+	
+}
+function readToDo()
+{
+	var insertToDo;
+	while (localStorage["ToDoText" + count])
+	{
+		insertToDo= "<input type=checkbox onchange=setCheck(" + count + ") id=" + count;
+		if (localStorage["ToDoDone" + count]=="true")
+		{
+			insertToDo += " checked";
+		}
+		insertToDo += "><label for=" + count + " id=text" + count;
+		if (localStorage["ToDoDone" + count]=="true")
+		{
+			insertToDo += " style='color: grey' ";
+		}
+		insertToDo += ">" + localStorage["ToDoText" + count] + "</label><hr>";
+		document.getElementById('do').innerHTML += insertToDo;
+		count++;
+	}
+	checkOrient();
+
+}
+function checkOrient()
+{
+	switch (window.orientation){
+		case 0:
+			document.getElementById('button').innerHTML="+";
+			break;
+		case 180:
+			document.getElementById('button').innerHTML="+";
+			break;
+		case 90:
+			document.getElementById('button').innerHTML="Add ToDo";
+			break;
+		case -90:
+			document.getElementById('button').innerHTML="Add ToDo";
+			break;
+	}
+}
+
+</script>
+
+<style>
+a.button {
+ 
+	background-color: #009999;
+	color: #FFFFFF;
+	text-decoration: none;
+	
+	height: 32px;
+	margin-left: 5px;
+	padding-left: 5px;
+	margin-right: 5px;
+	padding-right: 5px;
+	
+}
+
+</style>
+
+<input type='text' id='input'>
+ <a class="button" href="#" onclick='renderToDo()'><span id=button >Add ToDo</span></a>
+<div id="do"> </div>
+
+
+
+<script>
+window.onload=readToDo();
+</script>
