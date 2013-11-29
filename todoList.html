@@ -1,0 +1,56 @@
+<script> 
+var count=0;
+function renderToDo()
+{
+	document.getElementById('do').innerHTML += "<input type=checkbox onchange=setCheck(" + count + ") id=" + count + "><label for=" + count + " id=text" + count +">" + document.getElementById("input").value + "</label><hr>";
+	localStorage["ToDoText" + count]=document.getElementById("input").value ;
+	localStorage["ToDoDone" + count]="0";
+	count++;
+}
+function setCheck(id)
+{
+	localStorage["ToDoDone" + id] = document.getElementById(id).checked
+	if (document.getElementById(id).checked==true)
+	{
+		document.getElementById("text" + id).style.color='grey';
+	}
+	else
+	{
+		document.getElementById("text" + id).style.color='black';
+	}
+	
+}
+function readToDo()
+{
+	var insertToDo;
+	while (localStorage["ToDoText" + count])
+	{
+		insertToDo= "<input type=checkbox onchange=setCheck(" + count + ") id=" + count;
+		if (localStorage["ToDoDone" + count]=="true")
+		{
+			insertToDo += " checked";
+		}
+		insertToDo += "><label for=" + count + " id=text" + count;
+		if (localStorage["ToDoDone" + count]=="true")
+		{
+			insertToDo += " style='color: grey' ";
+		}
+		insertToDo += ">" + localStorage["ToDoText" + count] + "</label><hr>";
+		document.getElementById('do').innerHTML += insertToDo;
+		count++;
+	}	
+}
+</script>
+
+
+<input type='text' id='input'>
+<input type='button' onclick='renderToDo()' value='+'/>
+<div id="do"> </div>
+
+
+
+<script>
+
+window.onload=readToDo();
+
+</script>
