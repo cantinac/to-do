@@ -4,16 +4,23 @@
 		<title>Todos!</title>
 		<link href="/css/vendor/normalize.css" rel="stylesheet" type="text/css"/>
 		<link href="/css/styles.css" rel="stylesheet" type="text/css"/>
-		<meta name="viewport" content="width=device-width"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	</head>
 	<body>
 		<script src="/js/vendor/zepto.min.js"></script>
 		<script src="/js/vendor/underscore.min.js"></script>
+		<script src="/js/vendor/jRespond.js"></script>
+		<script src="/js/vendor/deferred.js"></script>
+		<script>
+			// this is a shim for zepto's lack of the jQuery `$.deferred()` method
+			$.deferred = Deferred;
+		</script>
 		<script src="/js/vendor/backbone.min.js"></script>
 		<script src="/js/vendor/backbone.marionette.min.js"></script>
 		<script src="/js/app/models.js"></script>
 		<script src="/js/app/views.js"></script>
 		<script src="/js/app/main.js"></script>
+		<script src="/js/responsive.js"></script>
 		<div id="todo-wrapper">
 
 		</div>
