@@ -7,23 +7,7 @@ body {
 	font-size: 100%;
 }
 
-#todo-entry-block {
-	background: rgba(200, 200, 200, 0.7);
-	padding: 0.5em;
-	box-sizing: border-box;
-	* {
-		@include transition(all 0.4s ease-in-out);
-	}
-}
-
-input[checked] {
-	//box-shadow: inset -3px -3px 3px -2px rgba(100,100,255,0.3);
-	@include linear-gradient(blue, shade(blue, 10%));
-}
-
-
-
-
+// holds todo items
 .unstyled-list {
 	list-style-type: none;
 	padding-left: 0;
@@ -45,6 +29,8 @@ input[checked] {
 }
 
 
+
+// responsive sizing for the main page wrapper
 
 @media only screen and (max-width: 481px) {
 	div#todo-wrapper, .todo-container {
@@ -73,9 +59,18 @@ input[checked] {
 }
 
 
+//wrapper around text input and button for adding
+//new todos
+#todo-entry-block {
+	background: rgba(200, 200, 200, 0.7);
+	padding: 0.5em;
+	box-sizing: border-box;
+	* {
+		@include transition(all 0.4s ease-in-out);
+	}
+}
 
-
-// below: base styles for todo-input and todo-entry btn,
+// below: base styles for todo text input and button,
 // as well as media queries for the ratio between them.
 
 #todo-input {
