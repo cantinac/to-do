@@ -16,5 +16,28 @@
 
 		</div>
 
+		<script type="text/x-template" id="todo-list-tmpl">
+			<div class="todo-container">
+				<div id="todo-entry-block">
+							<input type="text" id="todo-input" placeholder="What do you need to get done?"/>
+							<button type="button" id="todo-entry-btn">Add To-do</button>
+				</div>
+				<ul id="todo-list" class="unstyled-list">
+				</ul>
+			</div>
+		</script>
+
+		<script type="text/x-template" id="todo-item-tmpl">
+			<% if(completed) { %>
+					<input type="checkbox" value="completed" checked/>
+					<span class="todo-body todo-body-completed">
+			<% } else { %>
+					<input type="checkbox" value="completed"/>
+					<span class="todo-body">
+			<% } %>
+				<%= body %>
+			</span> 
+		</script>
+
 	</body>
 </html>
