@@ -1,0 +1,100 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+ .remove {
+  display: none;
+ }
+ body {
+  background: #ECF0F1;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+ }
+#container {
+  width: 690px;
+  margin: 75px auto 0px auto;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.1);
+}
+#bar {
+  position: relative;
+  height: 70px;
+  padding: 15px;
+  border: #C7C7C7;
+  background-image: -ms-linear-gradient(top, #FFFFFF 0%, #EFEFEF 100%);
+  background-image: -moz-linear-gradient(top, #FFFFFF 0%, #EFEFEF 100%);
+  background-image: -o-linear-gradient(top, #FFFFFF 0%, #EFEFEF 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #EFEFEF));
+  background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #EFEFEF 100%);
+  background-image: linear-gradient(to bottom, #FFFFFF 0%, #EFEFEF 100%);
+}
+#todo-items {
+  background: #FFFFFF;
+}
+.todo-item {
+  padding: 15px;
+  border-bottom: 1px solid #E8E8E8;
+}
+.todo-item p {
+  display: inline;
+  margin-left: 5px;
+}
+.todo-checked:checked + p {
+  color: #C1BCC9;
+}
+#new-item-input {
+  position: absolute;
+  left: 15px;
+  right: 133px;
+  height: 40px;
+  padding: 15px;
+  color: #D4D4D7;
+  font-size: 1em;
+  font-weight: 100;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid #C7C7C7;
+  box-shadow: inset 0px 1px 1px 1px rgba(0,0,0,0.05);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+.new-item-submit {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  border: #1C937C;
+  border-radius: 0px 5px 5px 0px;
+  background-image: -ms-linear-gradient(top, #23BC9D 0%, #1CA187 100%);
+  background-image: -moz-linear-gradient(top, #23BC9D 0%, #1CA187 100%);
+  background-image: -o-linear-gradient(top, #23BC9D 0%, #1CA187 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #23BC9D), color-stop(1, #1CA187));
+  background-image: -webkit-linear-gradient(top, #23BC9D 0%, #1CA187 100%);
+  background-image: linear-gradient(to bottom, #23BC9D 0%, #1CA187 100%);
+}
+#item-submit-responsive {
+  display: none;
+  font-size: 3em;
+}
+@media all and (max-width: 695px) and (min-width: 320px) {
+  #container {
+    width: 100%;
+  }
+  .new-item-submit {
+    width: 45px;
+  }
+  #new-item-input {
+    right: 57px;
+  }
+  #item-submit {
+    display: none;
+  }
+  #item-submit-responsive {
+    display: block;
+    line-height: 30px;
+  }
+}

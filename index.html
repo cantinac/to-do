@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Awesome To-Do List Webapp for Cantina</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+</head>
+<body>
+  <div id="container">
+    <div id="bar">
+        <input id="new-item-input" type="text" name="Task" placeholder="What do you need to get done?">
+        <div class="new-item-submit" onclick="addTodoItem()">
+          <p id="item-submit">Add To-do</p>
+          <p id="item-submit-responsive">+</p>
+        </div>
+    </div>
+    <div id="todo-items"></div>
+  </div>
+</body>
+</html>
