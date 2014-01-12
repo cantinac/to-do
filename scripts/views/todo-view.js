@@ -19,7 +19,7 @@ var app = app || {};
 		events: {
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
-			'click .destroy': 'clear',
+			//'click .destroy': 'clear',
 			// Not keypress since it doesn't work with escape.
 			'keyup .edit': 'handleKey',
 			// Not blur since it doesn't bubble up.

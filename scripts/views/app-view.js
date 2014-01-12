@@ -16,12 +16,9 @@ var app = app || {};
 
 		// Instead of generating a new element, bind to the existing skeleton of
 		// the App already present in the HTML.
-		el: '#mainContent',
+		el: '#todoApp',
 
-		// Our template for the line of statistics at the bottom of the app.
-		//statsTemplate: microtemplate(document.querySelector('#stats-template').innerHTML),
-
-		// Delegated events for creating new items, and clearing completed ones.
+		// Delegated events for creating new items.
 		events: {
 			'keypress #new-todo': 'createOnEnter',
 			'click #add-todo': 'createOnButtonClick'
@@ -33,9 +30,11 @@ var app = app || {};
 		// collection, when items are added or changed. Kick things off by
 		// loading any preexisting todos that might be saved in *localStorage*.
 		initialize: function () {
-			this.allCheckbox = this.find('#toggle-all');
+			//this.allCheckbox = this.find('#toggle-all');
+			
 			this.input = this.find('#new-todo');
 			//this.footer = this.find('#footer');
+		
 			this.main = this.find('#main');
 
 			this.listenTo(app.todos, 'add', this.addOne);
@@ -48,6 +47,7 @@ var app = app || {};
 			// from being re-rendered for every model. Only renders when the 'reset'
 			// event is triggered at the end of the fetch.
 			app.todos.fetch({reset: true});
+			console.log('Initialized')
 		},
 
 		// Re-rendering the App just means refreshing the statistics -- the rest
@@ -60,26 +60,13 @@ var app = app || {};
 			if (app.todos.length) {
 				// TODO
 				toggleEl(this.main, true);
-				toggleEl(this.footer, true);
-
-				//this.footer.innerHTML = this.statsTemplate({
-				//	completed: completed,
-				//	remaining: remaining
-				//});
-
-				//this.findAll('#filters li a').forEach(function (el) {
-				//	el.classList.remove('selected');
-				//	if (Backbone.utils.matchesSelector(el, selector)) {
-				//		el.classList.add('selected');
-				//	}
-				//});
 
 			} else {
 				toggleEl(this.main, false);
 			//	toggleEl(this.footer, false);
 			}
 
-			this.allCheckbox.checked = !remaining;
+			//this.allCheckbox.checked = !remaining;
 		},
 
 		// Add a single todo item to the list by creating a view for it, and
@@ -90,10 +77,10 @@ var app = app || {};
 		},
 
 		// Add all items in the **Todos** collection at once.
-		addAll: function () {
-			this.find('#todo-list').innerHTML = '';
-			app.todos.forEach(this.addOne, this);
-		},
+		//addAll: function () {
+		//	this.find('#todo-list').innerHTML = '';
+		//	app.todos.forEach(this.addOne, this);
+		//},
 
 		//filterOne: function (todo) {
 	//		todo.trigger('visible');
@@ -120,11 +107,13 @@ var app = app || {};
 			}
 
 			app.todos.create(this.newAttributes());
-			this.input.value = 'What do you need to get done?';
+			this.input.value = '';
+			this.input.placeholder = 'What do you need to get done?';
 		},
 		createOnButtonClick: function() {
 			app.todos.create(this.newAttributes());
-			this.input.value = 'What do you need to get done?';
+			this.input.value = '';
+			this.input.placeholder = 'What do you need to get done?';
 
 		}
 
@@ -145,5 +134,6 @@ var app = app || {};
 		//		});
 		//	});
 		//}
-	});
+	})
+
 })();

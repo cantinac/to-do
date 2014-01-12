@@ -8,12 +8,14 @@
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
 </head>
 <body>
-<div class=mainContent>
+<div class="mainContent" id="todoApp">
 <header id="to-do">
 	<input id="new-todo" type="text" placeholder="What do you need to get done?" autofocus />
 	<button type="button" id="add-todo" action="submit">Add To-Do</button>
 </header>
-<section id="main"></section>
+<section id="main" style="display: none">
+<ul id="todo-list"></ul>
+</section>
 
 </div>
 <script type="text/template" id = "item-template">
@@ -32,5 +34,6 @@
 <script type="text/javascript" src="scripts/collections/todos.js"></script>
 <script type="text/javascript" src="scripts/views/todo-view.js"></script>
 <script type="text/javascript" src="scripts/views/app-view.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>
