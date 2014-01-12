@@ -1,0 +1,259 @@
+@import "reset.css";
+
+body {
+    background-color: #E6E6E6;
+    font-family: Helvetica,Arial,'Lucida Sans Unicode';
+    font-size: 120%;
+    line-height: 1.5;
+    text-align: left;
+    clear: both;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+div.mainContent {
+    background-color: #FFFFFF;
+    line-height: 25px;
+    margin: 80px 20%;
+    width: 60%;
+}
+a {
+	text-decoration: none;
+}
+h2 {
+    font-size: 140%;
+}
+
+header#to-do {
+	float:left;
+    width:100%;
+	background:#D8D8D8;
+	background: -o-linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	background: -moz-linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	background: -webkit-linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	background: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	padding: 2%;
+	border:solid #A4A4A4 1px;
+	height:50px;
+}
+
+
+#new-todo {
+	width:75%;
+	height:44px;
+	float:left;
+	font-size:90%;
+	z-index: 2;
+	-webkit-border-top-left-radius: 5px 5px;
+	-webkit-border-bottom-left-radius: 5px 5px;
+	-moz-border-bottom-left-radius: 5px 5px;
+	-moz-border-bottom-left-radius: 5px 5px;
+	border-bottom-left-radius:5px 5px;
+	border-top-left-radius:5px 5px;
+}
+
+button.large.add-todo {
+	position:relative;
+	visibility:visible;
+	width:22.5%;
+	height:50px;
+	font-size: 90%;
+	cursor: pointer;
+	background:#00CC99;
+	background: -o-linear-gradient(to bottom, #00CC99, #088A4B);
+	background: -moz-linear-gradient(to bottom, #00CC99, #088A4B);
+	background: -webkit-linear-gradient(to bottom, #00CC99, #088A4B);
+	background: linear-gradient(to bottom, #00CC99, #088A4B);
+    color:#FFFFFF;
+    border-style:none;
+	-webkit-border-top-right-radius: 5px 5px;
+	-webkit-border-bottom-right-radius: 5px 5px;
+	-moz-border-bottom-right-radius: 5px 5px;
+	-moz-border-bottom-right-radius: 5px 5px;
+	border-bottom-right-radius:5px 5px;
+	border-top-right-radius:5px 5px;
+	
+}
+button.small.add-todo {
+	position:absolute;
+	visibility:hidden;
+}
+
+#todo-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#todo-list li {
+	position: relative;
+	/*font-size: 24px;*/
+	border-bottom: 1px dotted #ccc;
+	border:solid #A4A4A4 1px;
+    float:left;
+    width:100%;
+    padding:10px 2% 10px 2%;
+    min-height:50px;
+    background-color:#FFFFFF;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+
+#todo-list li.editing {
+	border-bottom: none;
+	padding: 0;
+}
+
+#todo-list li.editing .edit {
+	display: block;
+}
+
+#todo-list li.editing .view {
+	display: none;
+}
+
+#todo-list li .toggle {
+	text-align: center;
+	width:2em;
+	height:2em;
+	/* auto, since non-WebKit browsers doesn't support input styling */
+	position:relative;
+	top: 0;
+	bottom: 0;
+	float:left;
+	margin-top:12px;
+	/* Mobile Safari */
+	border: none;
+
+
+}
+
+#todo-list li .toggle:after {
+	
+	line-height: 50px;
+}
+
+#todo-list li .toggle:checked:after {
+	bottom: 1px;
+	position: relative;
+}
+
+#todo-list li label {
+	position:relative;
+	margin-top:12px;
+	margin-bottom:10px;
+	width:85%;
+	padding-left:2%;
+	line-height: 1.2;
+	float:left;
+	-webkit-transition: color 0.4s;
+	transition: color 0.4s;
+}
+
+#todo-list li.completed label {
+	color: #a9a9a9;
+	/*text-decoration: line-through;
+	font-style:italic;*/
+	font-size:90%;
+}
+
+#todo-list li .edit {
+	display: none;
+}
+
+#todo-list li.editing:last-child {
+	margin-bottom: -1px;
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body {
+    background-color: #E6E6E6;
+    font-family: Helvetica,Arial,'Lucida Sans Unicode';
+    font-size: 90%;
+    line-height: 1.5;
+    text-align: left;
+    clear: both;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+div.mainContent {
+    background-color: #FFFFFF;
+    line-height: 25px;
+    margin: 0;
+    
+    width: 100%;
+}
+
+
+
+header#to-do {
+	float:left;
+    width:100%;
+	background:#D8D8D8;
+	background: -o-linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	background: -moz-linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	background: -webkit-linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	background: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	padding: 2% 4%;
+	border:solid #A4A4A4 1px;
+	height:50px;
+}
+#new-todo {
+	width:75%;
+	float:left;
+	font-size:120%;
+	z-index: 2;
+
+}
+#main {
+    z-index: 2;
+}
+input {
+	width:75%;
+	height:50px;
+	float:left;
+}
+button.small.add-todo {
+	position:relative;
+	visibility:visible;
+	width:50px;
+	height:50px;
+	font-size: 220%;
+	cursor: pointer;
+	background:#00CC99;
+	background: -o-linear-gradient(to bottom, #00CC99, #088A4B);
+	background: -moz-linear-gradient(to bottom, #00CC99, #088A4B);
+	background: -webkit-linear-gradient(to bottom, #00CC99, #088A4B);
+	background: linear-gradient(to bottom, #00CC99, #088A4B);
+    color:#FFFFFF;
+    border-style:none;
+	-webkit-border-top-right-radius: 5px 5px;
+	-webkit-border-bottom-right-radius: 5px 5px;
+	-moz-border-bottom-right-radius: 5px 5px;
+	-moz-border-bottom-right-radius: 5px 5px;
+	border-bottom-right-radius:5px 5px;
+	border-top-right-radius:5px 5px;
+	
+
+}
+button.large.add-todo {
+	position:absolute;
+	visibility:hidden;
+}
+/* Todo elements included below for font customization */
+
+#todo-list li {
+	font-size: 130%;
+}
+
+#todo-list li.completed label {
+
+	font-size:90%;
+}
+}

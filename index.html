@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Todo App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+</head>
+<body>
+<div class="mainContent" id="todoApp">
+<header id="to-do">
+	<input id="new-todo" type="text" placeholder="What do you need to get done?" autofocus />
+	<button type="button" class="large add-todo" action="submit">Add To-Do</button>
+	<button type="button" class="small add-todo" action="submit">+</button>
+</header>
+<section id="main" style="display: none">
+<ul id="todo-list"></ul>
+</section>
+
+</div>
+<script type="text/template" id = "item-template">
+			<div class="view">
+				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+				<label><%- title %></label>
+			</div>
+			<input class="edit" value="<%- title %>">
+</script>
+		
+<script type="text/javascript" src="scripts/base.js"></script>
+<script type="text/javascript" src="scripts/exoskeleton.min.js"></script>
+<script type="text/javascript" src="scripts/localstorage.js"></script>
+<script type="text/javascript" src="scripts/microtemplates.js"></script>
+<script type="text/javascript" src="scripts/models/todo.js"></script>
+<script type="text/javascript" src="scripts/collections/todos.js"></script>
+<script type="text/javascript" src="scripts/views/todo-view.js"></script>
+<script type="text/javascript" src="scripts/views/app-view.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>
