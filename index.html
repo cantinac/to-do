@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <title>Todo</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
   <script src="main.js"></script>
 </head>
-<body>
+<body ng-controller="TodoController"> 
+<!-- anything within the body belongs to the angular app -->
 <section id="main">
   <h1>Toddo</h1>
+  <input ng-model="greeting.text">
+  <p>{{greeting.text}}</p>
   <button id="newTodo">Add Todo</button>
   <div id="results"></div>
 </section>
