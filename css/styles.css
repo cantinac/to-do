@@ -50,13 +50,13 @@ div.atodo.li {
 /*section#main {
 
 }*/
-input {
+input#new-todo {
 	width:75%;
 	height:42px;
 	float:left;
 	font-size:120%;
 }
-button.add-todo {
+button#add-todo {
 	width:22.5%;
 	height:50px;
 	font-size: 120%;

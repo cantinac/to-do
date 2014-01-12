@@ -13,7 +13,6 @@ var app = app || {};
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {
 			title: '',
-			//may add order
 			completed: false
 		},
 
