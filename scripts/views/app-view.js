@@ -21,7 +21,7 @@ var app = app || {};
 		// Delegated events for creating new items.
 		events: {
 			'keypress #new-todo': 'createOnEnter',
-			'click #add-todo': 'createOnButtonClick'
+			'click .add-todo': 'createOnButtonClick'
 			//'click #clear-completed': 'clearCompleted',
 			//'click #toggle-all': 'toggleAllComplete'
 		},
