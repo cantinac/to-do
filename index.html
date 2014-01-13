@@ -6,7 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
   <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
   <script src="main.js"></script>
-  <link rel="stylesheet" href="style.css"></link>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body> 
   <section id="main" ng-controller="TodoCtrl">
@@ -15,7 +15,6 @@
       <button id="search-button" ng-click="addTodo()">+</button>
       <button id="search-button-landscape" ng-click="addTodo()">Add To-Do</button>
     </form>
-    <!-- <h2>Total todos: {{getTotalTodos()}}</h2> -->
     <ul>
     <li class="single-todo" ng-repeat="todo in todos">
     <input type="checkbox" ng-model="todo.done">
