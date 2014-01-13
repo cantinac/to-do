@@ -17,7 +17,7 @@ li {
   margin: auto;
   margin-top: 80px;
   width: 650px;
-  box-shadow: 1px 1px 1px 1px #DCE0E1;
+  box-shadow: 0px 0px 8px #DCE0E1;
 }
 
 #search-container {
@@ -41,9 +41,8 @@ li {
 }
 
 #search-input {
- width: 495px;
+ width: 505px;
  border: 1px solid #d8d8d8;
- margin: 0 0 0 5px;
  border-radius: 5px 0 0 5px;
  box-shadow: inset 1px 1px 3px #eee;
  font-family: 'Helvetica Neue', 'Helvetica', Sans-Serif;
@@ -61,7 +60,7 @@ li {
   background: linear-gradient(  #19B796, #19A58A);
   border-radius: 0 5px 5px 0;
   color: white;
-  margin: 0 5px 0 0;
+
   border: none;
 }
 
