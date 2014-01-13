@@ -105,6 +105,7 @@ li {
 
   #main {
     margin: auto;
+    width: 479px;
   }
   #search-container {
   padding: 5px;
@@ -131,6 +132,12 @@ li {
 
 #search-button-landscape{
   display: none;
+}
+
+#clear-button {
+
+  width: 479px;
+  
 }
 
 }
