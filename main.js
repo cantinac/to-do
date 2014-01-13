@@ -1,7 +1,6 @@
-function TodoController($scope) {
-  $scope.todos = [
-    {text: 'Take out trash'},
-    {text: 'Eat a trout'}
-  ];
+function TodoCtrl($scope) {
+  $scope.totalTodos = 4;
 
+  $scope.todos = [{text: 'Learn angular', done:false},{text: 'Build an app', done:false}
+  ];
 }
