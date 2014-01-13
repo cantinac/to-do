@@ -1,4 +1,29 @@
+ul {
+    padding: 0px;
+}
+li {
+  list-style: none;
+}
+
+#search-container {
+  background-color: #222;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(#FDFDFF, #F2F2F2);
+  background: linear-gradient(#FDFDFF, #F2F2F2);
+  padding: 10px;
+}
+
+#search-button {
+   background: -webkit-linear-gradient(45deg, #19B796, #19A58A);
+   color: white;
+}
+
 .done-true {
   text-decoration: line-through;
   color: #ddd;
+}
+
+.single-todo {
+  padding:5px;
+  border: 1px solid #F2F2F2;
 }

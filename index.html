@@ -4,23 +4,24 @@
   <title>Todo</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+  <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
   <script src="main.js"></script>
   <link rel="stylesheet" href="style.css"></link>
 </head>
 <body> 
   <div ng-controller="TodoCtrl">
-   <h2>Total todos: {{getTotalTodos()}}</h2>
-   <ul>
-     <li ng-repeat="todo in todos">
-     <input type="checkbox" ng-model="todo.done">
-     <span class="done-{{todo.done}}">{{todo.text}}</span>
-     </li>
-   </ul>
-   <form>
-     <input type="text" ng-model="formTodoText" ng-model-instant>
-     <button ng-click="addTodo()">Add</button>
-   </form>
-   <button ng-click="clearCompleted()">Remove Completed Items</button>
+    <form id="search-container">
+      <input type="text" ng-model="formTodoText" placeholder="What do you need to get done?" ng-model-instant>
+      <button id="search-button" ng-click="addTodo()">+</button>
+    </form>
+    <h2>Total todos: {{getTotalTodos()}}</h2>
+    <ul>
+    <li class="single-todo" ng-repeat="todo in todos">
+    <input type="checkbox" ng-model="todo.done">
+    <span class="done-{{todo.done}}">{{todo.text}}</span>
+    </li>
+    </ul>
+    <button ng-click="clearCompleted()">Remove Completed Items</button>
   </div>
 </body>
 </html>
