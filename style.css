@@ -42,7 +42,7 @@ li {
 
 #search-input {
  width: 495px;
- border: 1px solid #d8d8d8;;
+ border: 1px solid #d8d8d8;
  margin: 0 0 0 5px;
  border-radius: 5px 0 0 5px;
  box-shadow: inset 2px 2px 3px #ddd;
@@ -55,7 +55,7 @@ li {
   font-family: 'Helvetica Neue', 'Helvetica', Sans-Serif;
   font-weight: 300;
   font-size: 16px;
-  text-shadow: 1px 1px 1px #333;
+  text-shadow: 1px 1px 1px #127A66;
   width: 120px;
   background: -webkit-linear-gradient(#19B796, #19A58A);
   background: linear-gradient(  #19B796, #19A58A);
