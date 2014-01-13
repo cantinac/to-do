@@ -9,19 +9,20 @@
   <link rel="stylesheet" href="style.css"></link>
 </head>
 <body> 
-  <div ng-controller="TodoCtrl">
+  <section id="main" ng-controller="TodoCtrl">
     <form id="search-container">
-      <input type="text" ng-model="formTodoText" placeholder="What do you need to get done?" ng-model-instant>
+      <input id="search-input" type="text" ng-model="formTodoText" placeholder="What do you need to get done?" ng-model-instant>
       <button id="search-button" ng-click="addTodo()">+</button>
+      <button id="search-button-landscape" ng-click="addTodo()">Add To-Do</button>
     </form>
-    <h2>Total todos: {{getTotalTodos()}}</h2>
+    <!-- <h2>Total todos: {{getTotalTodos()}}</h2> -->
     <ul>
     <li class="single-todo" ng-repeat="todo in todos">
     <input type="checkbox" ng-model="todo.done">
     <span class="done-{{todo.done}}">{{todo.text}}</span>
     </li>
     </ul>
-    <button ng-click="clearCompleted()">Remove Completed Items</button>
-  </div>
+    <button id="clear-button" ng-click="clearCompleted()">Remove Completed Items</button>
+  </section>
 </body>
 </html>
