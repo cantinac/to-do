@@ -120,6 +120,8 @@ li {
 #search-button {
   display: inline;
   width: 40px;
+  font-size: 20px;
+
 }
 
 #search-button-landscape{
