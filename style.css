@@ -1,7 +1,7 @@
 body {
   font-family: 'Helvetica Neue', 'Helvetica', Sans-Serif;
   font-weight: 300;
-  background-color: #ddd;
+  background-color: #ECF0F1;
 }
 
 ul {
@@ -15,6 +15,7 @@ li {
 
 #main {
   margin: auto;
+  margin-top: 80px;
   width: 650px;
 }
 
@@ -38,11 +39,11 @@ li {
 }
 
 #search-input {
- width: 520px;
-
+ width: 500px;
+ border: none;
  margin: 0 0 0 10px;
  border-radius: 5px 0 0 5px;
- box-shadow: inset;
+ box-shadow: inset 2px 2px 3px #ddd;
    font-family: 'Helvetica Neue', 'Helvetica', Sans-Serif;
   font-weight: 300;
 }
@@ -50,10 +51,10 @@ li {
 #search-button, #search-button-landscape {
   font-family: 'Helvetica Neue', 'Helvetica', Sans-Serif;
   font-weight: 300;
-  width: 90px;
-  background: -webkit-linear-gradient(-45deg, #19B796, #19A58A);
-  background: linear-gradient(-45deg, #19B796, #19A58A);
-  border: none;
+  width: 110px;
+  background: -webkit-linear-gradient(#19B796, #19A58A);
+  background: linear-gradient(  #19B796, #19A58A);
+  border: 1px solid #d8d8d8;
   border-radius: 0 5px 5px 0;
   color: white;
   margin: 0 10px 0 0;
