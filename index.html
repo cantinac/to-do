@@ -8,8 +8,8 @@
   <script src="main.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-  <section id="main" ng-controller="TodoCtrl">
+<body ng-controller="TodoCtrl"> 
+  <section id="main" >
     <form id="search-container">
       <input id="search-input" type="text" ng-model="formTodoText" placeholder="What do you need to get done?" ng-model-instant>
       <button id="search-button" ng-click="addTodo()">+</button>
@@ -21,7 +21,8 @@
     <span class="done-{{todo.done}}">{{todo.text}}</span>
     </li>
     </ul>
-    <button id="clear-button" ng-click="clearCompleted()">Remove Completed Items</button>
+      <button id="clear-button" ng-click="clearCompleted()">Remove Completed Items</button>
   </section>
+
 </body>
 </html>
