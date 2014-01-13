@@ -79,7 +79,7 @@ li {
   
 }
 
-  #search-input:focus, #search-button:focus, #clear-button:focus {
+  #search-input:focus, #search-button:focus, #search-button-landscape:focus, #clear-button:focus {
     outline: none;
   }
 
