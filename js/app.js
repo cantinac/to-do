@@ -16,13 +16,15 @@ App.ApplicationRoute = Ember.Route.extend({
 // Controllers
 App.ApplicationController = Ember.Controller.extend({
 
-  addTodo: function() {
-    this.store.createRecord('todo', {
-      title: this.get('newTitle'),
-      isDone: false
-    });
+  actions: {
+    addTodo: function() {
+      this.store.createRecord('todo', {
+        title: this.get('newTitle'),
+        isDone: false
+      });
 
-    this.set('newTitle', '');
+      this.set('newTitle', '');
+    }
   }
 
 });

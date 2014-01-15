@@ -13,10 +13,8 @@
     <ul>
       {{#each model}}
         <li {{bind-attr class="isDone"}}>
-          <label>
-            {{input type="checkbox" checked=isDone}}
-            {{title}}
-          </label>
+          {{input type="checkbox" checked=isDone}}
+          <label>{{title}}</label>
         </li>
       {{/each}}
     </ul>
@@ -28,6 +26,7 @@
   <script src="js/libs/ember-data-1.0.0-beta5.js"></script>
   <script src="js/libs/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
+
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>
