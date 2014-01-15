@@ -4,7 +4,7 @@ App = Ember.Application.create();
 App.Todo = Ember.Object.extend({});
 
 // Routes
-App.IndexRoute = Ember.Route.extend({
+App.ApplicationRoute = Ember.Route.extend({
   model: function() {
     return [App.Todo.create({title: "My first todo", isDone: false})];
   }
