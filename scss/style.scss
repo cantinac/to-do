@@ -1,6 +1,23 @@
 @import "compass/css3/images";
+@import "compass/css3/text-shadow";
 
+// Variables
 $button-color: #17B495;
+$default-text-shadow-color: #333;
+$default-text-shadow-v-offset: 1px;
+
+body {
+  background-color: #E6EBEA;
+}
+
+.todo-app {
+  background-color: white;
+  border: 1px solid #ddd;
+  @media (min-width: 768px) {
+    max-width: 700px;
+    margin: 40px auto 0;
+  }
+}
 
 .new-todo {
   @include background-image(linear-gradient(white, #eee));
@@ -16,40 +33,50 @@ $button-color: #17B495;
     color: white;
     padding-top: 8px;
     padding-bottom: 4px;
+    font-weight: 200;
+    @include single-text-shadow;
+
     &:hover {
       background-image: none;
       background-color: $button-color;
       color: white;
     }
+
     &:visited {
       color: white;
     }
+
   }
 
   .plus {
     font-size: 28px;
     line-height: 10px;
   }
+
 }
 
-.todo-item {
-  color: #333;
-  cursor: pointer;
-  display: block;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  &:hover {
-    text-decoration: none;
-    background-color: whitesmoke;
-  }
+.todo-list {
+  margin-bottom: 0;
 
-  label {
-    font-weight: normal;
-    margin-left: 5px;
-  }
+  .todo-item {
+    color: #333;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    &:hover {
+      text-decoration: none;
+      background-color: whitesmoke;
+    }
 
-  &.is-done label {
-    opacity: 0.3;
-  }
+    label {
+      font-weight: normal;
+      margin-left: 5px;
+    }
 
+    &.is-done label {
+      opacity: 0.3;
+    }
+
+  }
 }

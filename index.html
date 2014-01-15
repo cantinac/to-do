@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To do app</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -17,7 +18,10 @@
           {{input value=newTitle class="form-control" placeholder="What do you need to get done?" 
                 action="addTodo"}}
           <span class="input-group-btn">
-            <button class="btn" {{action "addTodo"}} type="button"><span class="plus">+</span></button>
+            <button class="btn" {{action "addTodo"}} type="button">
+             <div class="visible-xs"><span class="plus">+</span></div>
+             <div class="hidden-xs"><span>Add To-do</span></div>
+            </button>
           </span>
         </div>
       </div>
