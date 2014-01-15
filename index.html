@@ -8,7 +8,7 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <input {{bind-attr value=newTitle}} placeholder="What do you need to get done?"></input> 
+    {{input value=newTitle placeholder="What do you need to get done?"}}
     <button {{action "addTodo"}}>Add</button>
     <ul>
       {{#each model}}
