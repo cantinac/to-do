@@ -1,4 +1,4 @@
-/* line 3, ../scss/style.scss */
+/* line 5, ../scss/style.scss */
 .new-todo {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
   background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
@@ -7,11 +7,11 @@
   background-image: linear-gradient(#ffffff, #eeeeee);
   border-bottom: 1px solid #ddd;
 }
-/* line 7, ../scss/style.scss */
+/* line 9, ../scss/style.scss */
 .new-todo .input-group {
   padding: 10px;
 }
-/* line 11, ../scss/style.scss */
+/* line 13, ../scss/style.scss */
 .new-todo .btn {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1de1ba), color-stop(100%, #17b495));
   background-image: -webkit-linear-gradient(#1de1ba, #17b495);
@@ -23,26 +23,23 @@
   padding-top: 8px;
   padding-bottom: 4px;
 }
-/* line 17, ../scss/style.scss */
+/* line 19, ../scss/style.scss */
 .new-todo .btn:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1acba8), color-stop(100%, #17b495));
-  background-image: -webkit-linear-gradient(#1acba8, #17b495);
-  background-image: -moz-linear-gradient(#1acba8, #17b495);
-  background-image: -o-linear-gradient(#1acba8, #17b495);
-  background-image: linear-gradient(#1acba8, #17b495);
+  background-image: none;
+  background-color: #17b495;
   color: white;
 }
-/* line 21, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
 .new-todo .btn:visited {
   color: white;
 }
-/* line 26, ../scss/style.scss */
+/* line 29, ../scss/style.scss */
 .new-todo .plus {
   font-size: 28px;
   line-height: 10px;
 }
 
-/* line 32, ../scss/style.scss */
+/* line 35, ../scss/style.scss */
 .todo-item {
   color: #333;
   cursor: pointer;
@@ -50,17 +47,17 @@
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
-/* line 38, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 .todo-item:hover {
   text-decoration: none;
   background-color: whitesmoke;
 }
-/* line 43, ../scss/style.scss */
+/* line 46, ../scss/style.scss */
 .todo-item label {
   font-weight: normal;
   margin-left: 5px;
 }
-/* line 48, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 .todo-item.is-done label {
   opacity: 0.3;
 }
