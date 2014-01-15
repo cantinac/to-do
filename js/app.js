@@ -31,3 +31,10 @@ App.ApplicationController = Ember.Controller.extend({
     }
   }
 });
+
+// Other
+Ember.Checkbox.reopen({
+  click: function(e) {
+    e.stopPropagation();
+  }
+});
