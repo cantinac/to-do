@@ -1,0 +1,87 @@
+/* line 9, ../scss/style.scss */
+body {
+  background-color: #E6EBEA;
+}
+
+/* line 13, ../scss/style.scss */
+.todo-app {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  /* line 13, ../scss/style.scss */
+  .todo-app {
+    max-width: 700px;
+    margin: 40px auto 0;
+  }
+}
+
+/* line 22, ../scss/style.scss */
+.new-todo {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
+  background-image: -moz-linear-gradient(#ffffff, #eeeeee);
+  background-image: -o-linear-gradient(#ffffff, #eeeeee);
+  background-image: linear-gradient(#ffffff, #eeeeee);
+  border-bottom: 1px solid #ddd;
+}
+/* line 26, ../scss/style.scss */
+.new-todo .input-group {
+  padding: 10px;
+}
+/* line 30, ../scss/style.scss */
+.new-todo .btn {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1de1ba), color-stop(100%, #17b495));
+  background-image: -webkit-linear-gradient(#1de1ba, #17b495);
+  background-image: -moz-linear-gradient(#1de1ba, #17b495);
+  background-image: -o-linear-gradient(#1de1ba, #17b495);
+  background-image: linear-gradient(#1de1ba, #17b495);
+  border: 1px solid #ddd;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  font-weight: 200;
+  text-shadow: 0px 1px 1px #333333;
+}
+/* line 39, ../scss/style.scss */
+.new-todo .btn:hover {
+  background-image: none;
+  background-color: #17b495;
+  color: white;
+}
+/* line 45, ../scss/style.scss */
+.new-todo .btn:visited {
+  color: white;
+}
+/* line 51, ../scss/style.scss */
+.new-todo .plus {
+  font-size: 28px;
+  line-height: 10px;
+}
+
+/* line 58, ../scss/style.scss */
+.todo-list {
+  margin-bottom: 0;
+}
+/* line 61, ../scss/style.scss */
+.todo-list .todo-item {
+  color: #333;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+/* line 67, ../scss/style.scss */
+.todo-list .todo-item:hover {
+  text-decoration: none;
+  background-color: whitesmoke;
+}
+/* line 72, ../scss/style.scss */
+.todo-list .todo-item label {
+  font-weight: normal;
+  margin-left: 5px;
+}
+/* line 77, ../scss/style.scss */
+.todo-list .todo-item.is-done label {
+  opacity: 0.3;
+}
