@@ -8,13 +8,14 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    {{input value=newTitle placeholder="What do you need to get done?"}}
+    {{input value=newTitle placeholder="What do you need to get done?" 
+            action="addTodo"}}
     <button {{action "addTodo"}}>Add</button>
     <ul>
       {{#each model}}
-        <li>
+        <li {{bind-attr class="isDone"}}>
           <label>
-            <input type="checkbox">
+            {{input type="checkbox" checked=isDone}}
             {{title}}
           </label>
         </li>

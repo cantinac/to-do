@@ -21,6 +21,8 @@ App.ApplicationController = Ember.Controller.extend({
       title: this.get('newTitle'),
       isDone: false
     });
+
+    this.set('newTitle', '');
   }
 
 });
