@@ -1,11 +1,11 @@
 App = Ember.Application.create();
 
-App.Router.map(function() {
-  // put your routes here
-});
+// Models
+App.Todo = Ember.Object.extend({});
 
+// Routes
 App.IndexRoute = Ember.Route.extend({
   model: function() {
-    return ['red', 'yellow', 'blue'];
+    return [App.Todo.create({title: "My first todo", isDone: false})];
   }
 });
