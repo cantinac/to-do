@@ -1,0 +1,52 @@
+@import "compass/css3/images";
+
+.new-todo {
+  @include background-image(linear-gradient(white, #eee));
+  border-bottom: 1px solid #ddd;
+
+  .input-group {
+    padding: 10px;
+  }
+
+  .btn {
+    @include background-image(linear-gradient(lighten(#17B495, 10%), #17B495));
+    border: 1px solid #ddd;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    &:hover {
+      @include background-image(linear-gradient(lighten(#17B495, 5%), #17B495));
+      color: white;
+    }
+    &:visited {
+      color: white;
+    }
+  }
+
+  .plus {
+    font-size: 28px;
+    line-height: 10px;
+  }
+}
+
+.todo-item {
+  color: #333;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  &:hover {
+    text-decoration: none;
+    background-color: whitesmoke;
+  }
+
+  label {
+    font-weight: normal;
+    margin-left: 5px;
+  }
+
+  &.is-done label {
+    opacity: 0.3;
+  }
+
+}

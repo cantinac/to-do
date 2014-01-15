@@ -24,7 +24,10 @@ App.ApplicationController = Ember.Controller.extend({
       });
 
       this.set('newTitle', '');
+    },
+
+    toggleIsDone: function(todo) {
+      todo.set('isDone', !todo.get('isDone'));
     }
   }
-
 });

@@ -4,20 +4,35 @@
   <meta charset="utf-8">
   <title>To do app</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
   <script type="text/x-handlebars">
-    {{input value=newTitle placeholder="What do you need to get done?" 
-            action="addTodo"}}
-    <button {{action "addTodo"}}>Add</button>
-    <ul>
-      {{#each model}}
-        <li {{bind-attr class="isDone"}}>
-          {{input type="checkbox" checked=isDone}}
-          <label>{{title}}</label>
-        </li>
-      {{/each}}
-    </ul>
+
+    <div class="todo-app">
+
+      <div class="new-todo">
+        <div class="input-group">
+          {{input value=newTitle class="form-control" placeholder="What do you need to get done?" 
+                action="addTodo"}}
+          <span class="input-group-btn">
+            <button class="btn" {{action "addTodo"}} type="button"><span class="plus">+</span></button>
+          </span>
+        </div>
+      </div>
+
+      <ul class="todo-list list-unstyled">
+        {{#each model}}
+          <li>
+            <a {{bind-attr class="isDone :todo-item"}} {{action 'toggleIsDone' this}}>
+              {{input type="checkbox" checked=isDone}}
+              <label>{{title}}</label>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
