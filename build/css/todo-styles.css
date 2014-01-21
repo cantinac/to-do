@@ -1,6 +1,11 @@
 /*
   Foundation Overrides
 */
+
+body {
+  background-color: #ecf0f1;
+}
+
 input[type="text"] {
   margin-bottom: 0;
   border-top-left-radius: 5px;
@@ -16,16 +21,35 @@ input[type="checkbox"] {
   width: 14px;
 }
 
-body {
-  background-color: #ecf0f1;
-}
-
 
 
 /*
   To-Do App Styles
 */
 
+#todo-app-container {
+  border: 1px solid #dbdbdb;
+  padding: 0px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+#todo-input-form {
+  background-color: #efefef; /* fallback */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#efefef));
+  background-image: -webkit-linear-gradient(top, #ffffff, #efefef); 
+  background-image: -moz-linear-gradient(top, #ffffff, #efefef); 
+  background-image: -ms-linear-gradient(top, #ffffff, #efefef); 
+  background-image: -o-linear-gradient(top, #ffffff, #efefef); 
+  padding: 12px 12px 8px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+#todo-input-form > form {
+  margin: 0px;
+}
 
 /* TODO - placeholder text appears slighty chopped at the bottom, need to fix that */
 input::-webkit-input-placeholder {
@@ -49,20 +73,6 @@ input:-ms-input-placeholder {
   color: #c9c9c9;
 }
 
-a.button {
-  margin-bottom: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-a.button > label {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
-  font-weight: 300 !important;
-  font-style: normal;
-  font-size: 16px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
 
 .button {
   background-color: #32c1a4; /* fallback */ 
@@ -72,7 +82,19 @@ a.button > label {
   background-image: -ms-linear-gradient(top, #32c1a4, #18a187); 
   background-image: -o-linear-gradient(top, #32c1a4, #18a187); 
 }
-
+a.button {
+  margin-bottom: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+a.button > label {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 300 !important;
+  font-style: normal;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
 .postfix.button {
   /*
   TODO: can't seem to apply a gradient border as it conflicts with rounded corners (argh!)
@@ -85,40 +107,17 @@ a.button > label {
   border: 1px solid #1c937d; /* solid color for now */
 }
 
-#todo-app-container {
-  border: 1px solid #dbdbdb;
-  padding: 0px;
-  margin-top: 30px;
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-}
-
-#todo-input-form {
-  background-color: #efefef; /* fallback */
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#efefef));
-  background-image: -webkit-linear-gradient(top, #ffffff, #efefef); 
-  background-image: -moz-linear-gradient(top, #ffffff, #efefef); 
-  background-image: -ms-linear-gradient(top, #ffffff, #efefef); 
-  background-image: -o-linear-gradient(top, #ffffff, #efefef); 
-  padding: 12px 12px 8px;
-  border-bottom: 1px solid #dbdbdb;
-}
-
-form {
-  margin: 0px;
-}
 
 #todo-list-view {
   background-color: #fff;
   /*padding-left: 10px;*/
 }
 
-ul {
+#todo-list-view ul {
   margin-bottom: 0;
 }
 
-li.todo-item {
+#todo-list-view ul li.todo-item {
   border-bottom: 1px solid #e8e8e8;
   padding: 15px 0px;
 }
