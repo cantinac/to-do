@@ -1,17 +1,11 @@
-# Colophon - Tools & Technologies
+# Tools & Technologies used
 
-## Responsive framework
+## Responsive Framework
 Foundation
-  Specific Foundation components
-    - Grid (for responsive)
+  Specific Foundation components in use
+    - Grid 
     - Forms
     - Type
 
 ## Javascript MVC Framework 
 AngularJS
-
-## Editor
-Sublime
-
-## Version Control
-git
