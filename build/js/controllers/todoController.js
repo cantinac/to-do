@@ -2,8 +2,8 @@ function TodoController ( $scope ) {
 
   // array storing a list of todo objects
   $scope.todos = [
-                              { description: 'This is my first task', completed: false },
-                              { description: 'This is my second task', completed: true },
+                              { description: 'An in-complete to-do list item will look like this', completed: false },
+                              { description: 'A complete to-do list item will look like this', completed: true },
                               { description: 'This is my third task', completed: false }
                            ];
 

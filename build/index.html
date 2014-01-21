@@ -16,32 +16,29 @@
   </head>
   
   <body>
-      <div ng-controller="TodoController">
-
-        <div class="row">
+    <div class="row">
+      <div id="todo-app-container" class="small-9 large-centered columns" ng-controller="TodoController">
+        <div id="todo-input-form">
           <form>
-            <div class="row">
-              <div class="row collapse">
-                <div class="small-10 columns">
-                  <input type="text" placeholder="What do you need to get done?" ng-model="inputTodoDescription" ng-model-instant>
-                </div>
-                <div class="small-2 columns">
-                  <a href="#" class="button postfix" ng-click="addTodo()">Add To-do</a>
-                </div>    
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text" placeholder="What do you need to get done?" ng-model="inputTodoDescription" ng-model-instant>
               </div>
+              <div class="small-2 columns">
+                <a href="#" class="button postfix" ng-click="addTodo()">Add To-do</a>
+              </div>    
             </div>
           </form>
         </div>
-
-        <div class="row">
+        <div id="todo-list-view">
           <ul class="no-bullet">
-            <li ng-repeat="todo in todos">
+            <li class="todo-item" ng-repeat="todo in todos">
               <input type="checkbox" ng-model="todo.completed"><span class="todo-{{ getStatus(todo) }}"> {{ todo.description }}</span>
             </li>
           </ul>
         </div>
-
       </div>
+    </div>
   </body>
 
 </html>
