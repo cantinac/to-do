@@ -104,22 +104,32 @@ form {
 }
 
 ul {
-  line-height: 3.5;
   margin-bottom: 0;
 }
 
-.todo-item {
+li.todo-item {
   border-bottom: 1px solid #e8e8e8;
+  padding: 15px 0px;
 }
 
-.todo-item > span {
+li.todo-item > input {
+  position: absolute;
+  margin: 5px 0px 5px 10px;
+}
+
+li.todo-item > label {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 300;
   font-style: normal;
   text-rendering: optimizeLegibility;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin-left: 40px;
 }
 
-.todo-item:last-child {
+li.todo-item:last-child {
   border-bottom: none;
 }
 
@@ -132,7 +142,6 @@ ul {
 }
 
 /*
-
 button gradient
   top - #32c1a4
   bottom - #18a187
