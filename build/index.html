@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/todo-styles.css" />
     <!-- scripts -->
     <script src="js/modernizr.js"></script>
+    <!-- scripts -->
     <script src="js/angular.js"></script> 
-    <script src="js/controllers/todoController.js"></script> 
-
+    <script src="js/controllers/todoController.js"></script>
   </head>
   
   <body>
@@ -25,7 +25,10 @@
                 <input type="text" placeholder="What do you need to get done?" ng-model="inputTodoDescription" ng-model-instant>
               </div>
               <div class="small-2 columns">
-                <a href="#" class="button postfix" ng-click="addTodo()">Add To-do</a>
+                <a href="#" class="button postfix" ng-click="addTodo()">
+                  <img class="icon-plus show-for-small-only" src="img/icon-plus.png" alt="Add" />
+                  <label class="show-for-medium-up">Add To-do</label>
+                </a>
               </div>    
             </div>
           </form>
