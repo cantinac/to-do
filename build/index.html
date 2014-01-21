@@ -1,16 +1,47 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app>
   
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO  - App</title>
+    <!-- stylesheets -->
     <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/todo-styles.css" />
+    <!-- scripts -->
     <script src="js/modernizr.js"></script>
+    <script src="js/angular.js"></script> 
+    <script src="js/controllers/todoController.js"></script> 
+
   </head>
   
   <body>
-    
+      <div ng-controller="TodoController">
+
+        <div class="row">
+          <form>
+            <div class="row">
+              <div class="row collapse">
+                <div class="small-10 columns">
+                  <input type="text" placeholder="What do you need to get done?" ng-model="inputTodoDescription" ng-model-instant>
+                </div>
+                <div class="small-2 columns">
+                  <a href="#" class="button postfix" ng-click="addTodo()">Add To-do</a>
+                </div>    
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <ul class="no-bullet">
+            <li ng-repeat="todo in todos">
+              <input type="checkbox" ng-model="todo.completed"><span class="todo-{{ getStatus(todo) }}"> {{ todo.description }}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
   </body>
-  
+
 </html>
