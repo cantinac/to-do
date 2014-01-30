@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Todo List App</title>
+  <!-- Viewport meta tag to prevent iPhone from scaling our page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="style.css">
+      <!-- Normalize hide address bar for iOS and Android -->
+    <script src="./js/hideaddressbar.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+  <div id="page-wrapper">
+
+    <!-- Form for new Todo Items -->
+    <form id="new-todo-form" method="POST" action="#">
+      <input type="text" name="new-todo" id="new-todo" placeholder="What do you need to get done?" required>
+      <div class="mainbutton">
+      <button type="submit"id="addbutton" name="button">+</button>
+    </div>
+    </form>
+  
+    <!-- Todo Item List -->
+    <ul id="todo-items"></ul>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

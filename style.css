@@ -1,0 +1,188 @@
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #545454;
+	background: #F7F7F7;
+}
+
+#page-wrapper {
+  width: 80%;
+  margin: 2.5em auto;
+  background: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+#new-todo-form {
+	background: linear-gradient(to bottom, #FBFBFB 0%, #F1F1F1 50%, #F1F1F1 51%, #F7F6F6 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 0.5em;
+
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.plus {
+    background-image: url("./img/plus.png");
+    height: 12px;
+    margin: -5px;
+    position: absolute;
+    width: 12px;
+
+
+
+}
+
+.mainbutton {
+ display: inline;
+ position: relative;
+   
+
+}
+
+.add{
+  position: relative;
+  padding: 2 0 0;
+  height: 10px;
+}
+
+#new-todo {
+   border: 0 none;
+    border-radius: 3px;
+    font-size: 1em;
+    padding: 0.5em;
+    width: 80%;
+}
+
+#todo-items {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+#todo-items li {
+	font-size: 0.9em;
+	padding: 0.5em;
+	background: #FFF;
+	border-bottom: 1px solid #EEE;
+	margin: 0.5em 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+ 
+    border: medium none;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+    color: #222222;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: .5em;
+    height: 2.25em;
+    padding-left: 30px;
+    position: relative;
+    transition: all 0.2s linear 0s;
+    width: 90%;
+}
+input[type=text]::-webkit-input-placeholder {
+  color: #999999;
+}
+input[type=text]:-moz-placeholder {
+  color: #999999;
+}
+
+#addbutton {
+
+   background: -moz-linear-gradient(center top , #0BB795, #079E81) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 0 3px 3px 0;
+    box-shadow: none;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    height: 2.04em;
+    outline: medium none;
+    padding: 0;
+    position: relative;
+    right: 7px;
+    vertical-align: top;
+    width: 30px;
+}
+
+input[type=text]:focus {
+  box-shadow: 0 1px 0 #2392f3 inset, 0 -1px 0 #2392f3 inset, 1px 0 0 #2392f3 inset, -1px 0 0 #2392f3 inset, 0 0 4px rgba(35, 146, 243, 0.5);
+  outline: none;
+}
+
+.checked {
+    color: grey;
+    text-decoration: line-through;
+}
+
+
+
+#page-wrapper button:hover {
+	background: -moz-linear-gradient(center top , #079E81, #0BB795);
+}
+
+
+
+
+/*media queries*/
+
+/* iphone -----------*/
+@media screen and (max-width: 480px){
+
+  #new-todo-form {
+  background: linear-gradient(to bottom, #FBFBFB 0%, #F1F1F1 50%, #F1F1F1 51%, #F7F6F6 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 0.5em;
+    position:absolute;
+
+
+}
+
+
+
+
+  width: 100%;
+}
+
+
+
+
+
+@media screen and (max-width: 481px) {
+
+
+#addbutton {
+
+  background: -moz-linear-gradient(center top , #0BB795, #079E81) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: medium none;
+    box-shadow: none;
+    height: 3.3em;
+    outline: medium none;
+    padding: 0;
+    width: 30px;
+    border-radius: 0 3px 3px 0;
+    vertical-align: top;
+    position: relative; right: 5px; 
+    color:white;
+
+}
+
+}
+
+
+
