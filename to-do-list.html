@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>A To-Do List</title>
+    <meta name="description" content="A client-side app that allows users to make a to-do list">
+
+    <link rel="stylesheet" href="to-do-list.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="async: true"></script>
+    <script type="text/javascript" src="to-do-list.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header>
+    <table>
+        <tr>
+            <td><input id="entry-box" type="text" value="What do you need to get done?" class="empty" /></td>
+            <td><input id="add-button" type="button" value="" /></td>
+        </tr>
+    </table>
+</header>
+<section>
+    <ul id="the-list">
+        <li id="initial-item"><p>To-do tasks will appear here.</p></li>
+    </ul>
+</section>
+
+</body>
+</html>
