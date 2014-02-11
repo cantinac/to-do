@@ -1,0 +1,196 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: #ecf0f1;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 17px;
+    
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+}
+
+/* Prevent grey outline box from showing on mobile safari */
+input,button{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#todoapp{
+    background: white;
+    
+    -webkit-box-shadow: 0px 0px 4px #afafaf;
+    -moz-box-shadow:    0px 0px 4px #afafaf;
+    box-shadow:         0px 0px 4px #afafaf;
+}
+
+header{
+    background: #fdfdfd;
+    height: 40px;
+    
+    width: 96%;
+    padding: 2%;
+
+    border-bottom: thin solid #dbdbdb;
+
+    /* The subtle gradient of the new todo background  */    
+    background: #fdfdfd; /* Old browsers */
+    background: -moz-linear-gradient(top, #fdfdfd 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fdfdfd 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fdfdfd 0%,#efefef 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fdfdfd 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fdfdfd 0%,#efefef 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+
+#new-todo{
+    width: 74%;
+    height: 40px;
+    line-height: 41px;
+    
+    padding: 0px 0px 0px 2%;
+    float: left;
+    
+    border: none;
+    
+    /* Prevent blue outline while having focus */
+    outline: none;
+    
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+    -webkit-box-shadow: inset 1px 1px 1px 1px #bfbfbf;
+    -moz-box-shadow:    inset 1px 1px 1px 1px #bfbfbf;
+    box-shadow:         inset 1px 1px 1px 1px #bfbfbf;
+}
+
+header button{
+    width: 24%;
+    height: 40px;
+    background: #20B895;
+    color: white;
+    text-shadow: 1px 1px #5f5f5f;
+    float: left;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    
+    /* Prevent blue outline while having focus */
+    outline: none;
+    
+    background: #27bc99; /* Old browsers */
+    background: -moz-linear-gradient(top,  #27bc99 0%, #1ca185 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#27bc99), color-stop(100%,#1ca185)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #27bc99 0%,#1ca185 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #27bc99 0%,#1ca185 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #27bc99 0%,#1ca185 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #27bc99 0%,#1ca185 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#27bc99', endColorstr='#1ca185',GradientType=0 ); /* IE6-9 */
+    
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+header button{
+    
+}
+
+
+header button .small{
+    display: none;
+}
+
+#todo-list{
+    /* Remove default list styling to make items flat */
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+#todo-list li{
+    width: 100%;
+    border-top: thin solid #e8e8e8;
+    height: 54px;    
+}
+#todo-list li:first-child{
+    border-top: none;
+}
+
+#todo-list li input{
+    margin: 0px 10px 0px 15px;
+}
+#todo-list li label{
+    line-height: 54px;
+}
+
+#todo-list li .destroy{
+    /* Make the destroy buttons invisible save for an red X on hove */
+    width: 54px;
+    height: 54px;
+    padding-top: 4px;
+    float: right;
+    border: none;
+    background: white;
+    font-family: Arial;
+    color: white;
+    
+    /* Prevent blue outline while having focus */
+    outline: none;
+}
+
+#todo-list li:hover .destroy{
+    /* Show a red X when the user hovers over the todo item */
+    color: #af0000;
+}
+#todo-list li.completed label{
+    color: #B6BCC3;
+    
+    /* Renable for strike through on text when completed. My preference, but isn't to spec. 
+    text-decoration: line-through;
+    */    
+}
+
+
+/* For anything bigger than an iPhone in portrait mode */
+@media only screen and (min-width: 20.0625em) {
+    #todoapp{
+        max-width: 640px;
+        margin: 80px auto 0px auto;
+    }
+}
+
+/*  Special case for devices between landscape and portrait sized mode. 
+    The margin above the todo wastes too much space on small screens */   
+@media only screen and (min-width: 20.0625em) and (max-width: 30em) {
+    #todoapp{
+        margin: 0px auto 0px auto;
+    }
+}
+
+/* Override a few styles when device screen is as small as iOS portrait mode */
+@media only screen and (max-width: 20em) {
+    /*  Switch to displaying a large plus sign and having a smaller button for 
+        the add todo button when at portrait viewport sizes */
+    #new-todo{
+        width: 86%;
+    }
+    header button{
+        width: 12%;
+    }
+    header button .small{
+        display: inline;
+        text-shadow: none;
+        font-size: 48px;
+        line-height: 30px;
+    }
+    
+    header button .large{
+        display: none;
+    }
+}
