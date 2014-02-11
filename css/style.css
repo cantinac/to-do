@@ -7,6 +7,10 @@ body {
     font-size: 17px;
 }
 
+/* Prevent grey outline box from showing on mobile safari */
+input,button{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 #todoapp{
     background: white;
@@ -147,13 +151,13 @@ header button .small{
 }
 
 
-@media only screen and (min-width: 481px){
+@media only screen and (min-width: 321px){
     #todoapp{
         max-width: 640px;
         margin: 80px auto 0px auto;
     }
 }
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 320px){
     /*  Switch to displaying a large plus sign and having a smaller button for 
         the add todo button when at portrait viewport sizes */
     #new-todo{
