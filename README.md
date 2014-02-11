@@ -1,36 +1,16 @@
-starter-kit
-===========
+# Overview
 
-A starter kit for Ember
+A simple todo app built for the Cantina code test.
 
-Your Ember.js project is almost ready! Here's how to get started:
+## Live demo
 
-- Start writing your app in js/app.js.
+The code has been pushed to the Github Page branch and can be found here: http://francoislaberge.github.io/to-do/
 
-- Describe your application HTML in index.html.
+## Features
 
-- During development, you can link to js/libs/ember-*.js to get the
-  unminified version of Ember.js.
-
-- Add CSS to css/style.css
-
-- Open index.html in your browser
-
-Tests
-=====
-
-This starter kit comes with an integration test sample, written for QUnit runner. 
-
-You can run the tests by opening the `index.html?test` page in your browser.
-
-The test is located in the `tests/tests.js` file. You can see how such an 
-integration test should be written, using QUnit assertions and ember-testing helpers.
-
-For more information about ember-testing package see [ember-testing](http://emberjs.com/guides/testing/integration/)
-
-For more information about the QUnit testing framework, see [QUnit](http://qunitjs.com/)
-
-Contact
-====
-
-www.emberjs.com
+  * Built with Ember.js
+  * Todos are persisted with localStorage
+  * Includes a custom web font (that hopefully matches the mockups as closely as possible. Which font was that?)
+  * Simple responsive design (as per mockup, mobile screens equal and smaller than 320px have a more lean todo adding button and no padding/margins around the list)
+  * You can delete items by tapping on the right of todo items
+  * You can inline edit todo items by double clicking on them
