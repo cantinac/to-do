@@ -1,0 +1,179 @@
+@import "compass/reset";
+
+
+//////////////////////////////////////////////////////////////
+/// variables and good stuff
+//////////////////////////////////////////////////////////////
+
+$button: #1ab898;
+$highlight: #c7c7c7;
+$bg: #ecf0f1;
+
+
+@mixin breakpoint($point) {
+  @if $point == baby-bear {
+    @media (max-width:640px) { @content; }
+  }
+}
+
+//////////////////////////////////////////////////////////////
+/// global settings
+//////////////////////////////////////////////////////////////
+
+body{
+	font-family: verdana, sans-serif;
+	background-color: $bg;
+	line-height: 1.1250em;
+	font-size: 16px;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+////////////helper classes
+
+.complete{
+	text-decoration:line-through;
+	color: #b6bcc2;
+
+}
+
+//////////////////////////////////////////////////////////////
+/// body
+//////////////////////////////////////////////////////////////
+
+.wrapper{
+	//@include span-columns(12,12);
+	max-width: 680px;
+	background-color: #fff;
+	margin: 10% auto;
+  	-moz-box-shadow:    1px 1px 1px 1px #ccc;
+  	-webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  	box-shadow:         1px 1px 1px 1px #ccc;
+  	@include breakpoint(baby-bear){
+  		margin: 0 auto;
+  	}
+
+}
+
+header{
+	width: 100%;
+	background-color: red;
+	height: 60px;
+	background: #fdfdfd; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fdfdfd 0%, #f0f0f0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fdfdfd 0%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fdfdfd 0%,#f0f0f0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fdfdfd 0%,#f0f0f0 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fdfdfd 0%,#f0f0f0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+	form{
+		color: #2f2f2f;
+	    position: relative;
+	    left: 0px;
+	    top: 0px;
+	    display:  block;
+	    margin: 0 auto;
+	    width: 96%;
+	    height: 37px;
+	    display: inline-block;
+	    display: block;
+	}
+
+}
+
+
+
+input[type='text']{
+	font-family: verdana;
+    height: 100%;
+    width: 100%;
+    padding: 11px;
+    padding-right: 113px;
+    float: left;   
+    border: 0;
+    background: #fff;
+    margin-top: 10px;
+    border: 1px solid $highlight;
+    border-radius: 5px 5px 5px 5px;
+    @include breakpoint(baby-bear){
+    	padding-right: 55px;
+    }
+}
+
+button{
+	position: absolute;
+	border-radius: 0px 5px 5px 0px;
+    right: 0px;
+    top: 10px;
+    overflow: visible;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 37px;
+    width: 104px;
+    color: #ffffff;
+    font-size: 16px;
+    text-shadow: 1px 2px #1c937d;
+	background: #1ab999; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1ab999 0%, #18a187 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1ab999), color-stop(100%,#18a187)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #1ab999 0%,#18a187 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #1ab999 0%,#18a187 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #1ab999 0%,#18a187 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #1ab999 0%,#18a187 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab999', endColorstr='#18a187',GradientType=0 ); /* IE6-9 */
+
+	&:hover{
+		background: #18a187; /* Old browsers */
+		background: -moz-linear-gradient(top,  #18a187 0%, #158763 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#18a187), color-stop(100%,#158763)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #18a187 0%,#158763 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #18a187 0%,#158763 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #18a187 0%,#158763 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #18a187 0%,#158763 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18a187', endColorstr='#158763',GradientType=0 ); /* IE6-9 */
+	}
+
+	@include breakpoint(baby-bear){
+		width: 50px;
+	}
+
+	.btnName:before{
+		content: "Add To-Do";
+		@include breakpoint(baby-bear){
+			content: "+";
+			font-size: 30px;
+		}
+	}
+
+
+}
+
+li{
+	color: #2f2f2f;
+	min-height: 50px;
+	border-top: 1px solid $highlight;
+	&:last-of-type{
+		border-bottom: 1px solid $highlight;
+		margin-bottom: 20px;
+	}
+	.item{
+		margin: 15px 0 0 10px;
+		padding-bottom: 15px;
+	}
+	span{
+		display: block;
+		width: 90%;
+		margin-left: 30px;
+	}
+
+}
+
+input[type='checkbox']{
+	float: left;
+} 
+
+

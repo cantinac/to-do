@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:ng="http://angularjs.org" id="ng-app"
+ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kyle Goines ToDo App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/build/main.min.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper" ng-controller="ToDoController">
+            <header>
+                <form>
+                    <input id="addItem" type="text" ng-model="newItem" placeholder="What do you need to get done?">
+                    <button ng-click="addItem()"><span class="btnName"></span></button>
+                </form>
+            </header>
+            <div class="listContent">
+                <ul>
+                    <li ng-repeat="item in itemList">
+                        <div class="item">
+                            <input type="checkbox" ng-model="item.complete">
+                            <span ng-class="{complete: item.complete==true}">{{item.name}}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/build/production.min.js"></script>
+
+    </body>
+</html>
