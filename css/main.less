@@ -128,6 +128,7 @@ body {
                                 vertical-align: middle;
                                 border-width: 0px;
                                 border-radius: 4px 0 0 4px;
+                                -webkit-appearance:none;
                                 -webkit-box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,.5);
                                 box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,.5);
                             }
@@ -155,6 +156,7 @@ body {
                                     display:inline-block;
                                 }
                                 .button-symbol {
+                                    -webkit-appearance:none;
                                     display:none;
                                     font-size:1.8em;
                                     line-height: .8em;
@@ -169,24 +171,28 @@ body {
                     list-style-image: none;
                     padding:0;
                     margin:0;
-                    [role="listitem"] {
-                        min-height: 2.2em;
-                        padding:1em 0 0 .6em;
+                    li {
+                        position:relative;
+                        cursor: pointer;
+                        min-height: 2.4em;
+                        padding:1em .6em 0em 3em;
                         border-top:1px solid #DDD;
-                        .todo-checkbox {
-                            height:2.2em;
-                            display: block;
-                            float:left;
-
+                        color:#333;
+                        input {
+                            position:absolute;
+                            top: 1.3em;
+                            left: 1em;
+                            vertical-align: baseline;
+                        }
+                        &[aria-checked=true] {
+                            color:#BBB;
+                        }
+                        &:last-child {
+                            border-bottom: 1px solid #DDD;
                         }
                         .todo-text {
-                            display:block;
-                            padding-bottom:.8em;
-                            vertical-align: middle;
-                        }
-                        input {
-                            margin:0 10px;
-                            vertical-align: baseline;
+                            display:inline-block;
+                            margin-bottom:.7em;
                         }
                     }
                 }
@@ -256,8 +262,7 @@ body {
         .main-container {
             margin:0 auto;
             .main {
-                margin: 10% 20%;
-
+                margin: 80px 20%;
             }
         }
 
