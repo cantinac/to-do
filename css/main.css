@@ -1,0 +1,427 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+body {
+  font: 16px/26px Helvetica, Helvetica Neue, Arial;
+  font-weight: 300;
+}
+.wrapper {
+  width: 90%;
+  margin: 0 5%;
+}
+/**** ommitted a bunch of layout-specifics from template ... */
+/* ==========================================================================
+   Scott Padgett's custom styles
+   ========================================================================== */
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+body {
+  background: #AAA;
+}
+body .main-container {
+  margin: 0 auto;
+}
+body .main-container .main .list {
+  width: 100%;
+  margin: 0 auto;
+  background: #FFF;
+  -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.3);
+}
+body .main-container .main .list .list-header {
+  width: 100%;
+  height: 3.5em;
+  /* modern and solid fallback */
+
+  background: #f4f4f4 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4NzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRUZFRkUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNFRkVGRUYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c4NzYpIiAvPgo8L3N2Zz4=);
+}
+body .main-container .main .list .list-header > div {
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 3.5em;
+}
+body .main-container .main .list .list-header .list-header-left {
+  width: 70%;
+}
+body .main-container .main .list .list-header .list-header-left input {
+  width: 86%;
+  height: 2.4em;
+  padding: 0 5% 0 5%;
+  margin-left: 5%;
+  line-height: 2.4em;
+  vertical-align: middle;
+  border-width: 0px;
+  border-radius: 4px 0 0 4px;
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+}
+body .main-container .main .list .list-header .list-header-left input:-ms-input-placeholder {
+  color: #AAA;
+}
+body .main-container .main .list .list-header .list-header-left input::-webkit-input-placeholder {
+  color: #BBB;
+}
+body .main-container .main .list .list-header .list-header-left input:-moz-placeholder {
+  color: #AAA;
+}
+body .main-container .main .list .list-header .list-header-left input::-moz-placeholder {
+  color: #AAA;
+}
+body .main-container .main .list .list-header .list-header-right {
+  width: 30%;
+}
+body .main-container .main .list .list-header .list-header-right button {
+  height: 2.4em;
+  width: 88.4%;
+  margin-right: 11.6%;
+  color: #FFF;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  vertical-align: middle;
+  /* modern and solid fallback */
+
+  background: #17a88c url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczNTgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxREJBOUEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxOEExODciIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czNTgpIiAvPgo8L3N2Zz4=);
+  border-width: 0px;
+  border-radius: 0 4px 4px 0;
+}
+body .main-container .main .list .list-header .list-header-right button .button-text {
+  display: inline-block;
+}
+body .main-container .main .list .list-header .list-header-right button .button-symbol {
+  -webkit-appearance: none;
+  display: none;
+  font-size: 1.8em;
+}
+body .main-container .main .list ul {
+  list-style: none;
+  list-style-image: none;
+  padding: 0;
+  margin: 0;
+}
+body .main-container .main .list ul li {
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+  padding: .7em .6em .7em 7%;
+  border-top: 1px solid #DDD;
+  color: #333;
+}
+body .main-container .main .list ul li input {
+  position: absolute;
+  top: 1.1em;
+  left: 3%;
+}
+body .main-container .main .list ul li[aria-checked="true"] {
+  color: #BBB;
+}
+body .main-container .main .list ul li:last-child {
+  border-bottom: 1px solid #DDD;
+}
+body .main-container .main .list ul li .todo-text {
+  display: inline-block;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+/* Media Query Additions */
+@media only screen and (max-width: 768px) {
+  body {
+    background: #FFF;
+  }
+  body .main-container .main {
+    width: 100%;
+    margin: 0;
+  }
+  body .main-container .main .list {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.4em;
+  }
+  body .main-container {
+    margin: 0 auto;
+  }
+  body .main-container .main {
+    margin: 5% 20%;
+  }
+}
+@media only screen and (orientation: portrait) {
+  body {
+    background: #FFF;
+  }
+  body .main-container .main {
+    width: 100%;
+    margin: 0;
+  }
+  body .main-container .main .list .list-header .list-header-left {
+    width: 86%;
+  }
+  body .main-container .main .list .list-header .list-header-right {
+    width: 14%;
+  }
+  body .main-container .main .list .list-header .list-header-right button {
+    width: 69.3%;
+    padding: 0;
+    margin-right: 30.7%;
+  }
+  body .main-container .main .list .list-header .list-header-right button .button-text {
+    display: none;
+  }
+  body .main-container .main .list .list-header .list-header-right button .button-symbol {
+    display: block;
+    margin-top: -6px;
+  }
+  body .main-container .main .list ul li {
+    padding: .7em .6em .7em 7%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body .main-container .main .list ul li {
+    padding-left: 10%;
+  }
+}
+/* ==========================================================================
+    //  end Scott Padgett's styles
+   ========================================================================== */
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen and (min-width: 480px) {
+  /* ====================
+      INTERMEDIATE: Menu
+     ==================== */
+  nav a {
+    float: left;
+    width: 27%;
+    margin: 0 1.7%;
+    padding: 25px 2%;
+    margin-bottom: 0;
+  }
+  nav li:first-child a {
+    margin-left: 0;
+  }
+  nav li:last-child a {
+    margin-right: 0;
+  }
+  /* ========================
+      INTERMEDIATE: IE Fixes
+     ======================== */
+  nav ul li {
+    display: inline;
+  }
+  .oldie nav a {
+    margin: 0 0.7%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* ====================
+      WIDE: CSS3 Effects
+     ==================== */
+  .header-container,
+  .main aside {
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
+  }
+  /* ============
+      WIDE: Menu
+     ============ */
+  .title {
+    float: left;
+  }
+  nav {
+    float: right;
+    width: 38%;
+  }
+  /* ============
+      WIDE: Main
+     ============ */
+  .main article {
+    float: left;
+    width: 57%;
+  }
+  .main aside {
+    float: right;
+    width: 28%;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  /* ===============
+      Maximal Width
+     =============== */
+  .wrapper {
+    width: 1026px;
+    /* 1140px - 10% for margins */
+  
+    margin: 0 auto;
+  }
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.invisible {
+  visibility: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+  
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+       * Don't show links for images, or javascript/internal links
+       */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
