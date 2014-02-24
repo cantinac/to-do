@@ -115,7 +115,6 @@ body .main-container .main .list .list-header .list-header-left input:-ms-input-
 }
 body .main-container .main .list .list-header .list-header-left input::-webkit-input-placeholder {
   color: #BBB;
-  line-height: 1em;
 }
 body .main-container .main .list .list-header .list-header-left input:-moz-placeholder {
   color: #AAA;
