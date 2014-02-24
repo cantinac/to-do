@@ -11,7 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
         <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet/less" href="css/main.less">
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.6.2/less.min.js"></script>
@@ -37,12 +36,12 @@
                             <div class="list-header-left">
                                <!-- <div class="control-container"> -->
                                     <label class="visuallyhidden" for="inputField">Enter to-do text</label>
-                                    <input type="text" name="listText" id="inputField" tabIndex="1" placeholder="What do you need to get done?" />
+                                    <input type="text" name="listText" id="inputField" placeholder="What do you need to get done?" />
                                <!-- </div> -->
                             </div>
                             <div class="list-header-right">
                                <!-- <div class="control-container"> -->
-                                    <button type="submit" id="addTodoButton" tabIndex="2" ><span class="button-text">Add To-do</span><span class="button-symbol">+</span></button>
+                                    <button type="submit" id="addTodoButton" ><span class="button-text">Add To-do</span><span class="button-symbol">+</span></button>
                                <!-- </div> -->
                             </div>
                         </form>
@@ -60,7 +59,7 @@
                 <script type="text/template" id="tpl-todo">       
 
                     <li role="listitem" aria-checked="<%= itemChecked %>">
-                        <input type="checkbox" tabIndex="3" <%=  itemChecked === "true" ? 'checked' : '' %>/>
+                        <input type="checkbox"  <%=  itemChecked === "true" ? 'checked' : '' %>/>
                         <span class="todo-text">
                             <%= todoText %>
                         </span>
@@ -72,8 +71,8 @@
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
-
-        <script src="js/vendor/zepto.js"></script>
+        <script src="js/vendor/placeholders.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.2/zepto.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
         <script src="js/main.js"></script>

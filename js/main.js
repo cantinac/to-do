@@ -1,9 +1,3 @@
-/* IE9: Stub out console */
-if (!window.console) window.console = {};
-if (!window.console.log) window.console.log = function() {};
-if (!window.console.error) window.console.error = function() {};
-
-
 var Todo = (function() {
 
 
@@ -89,19 +83,18 @@ var Todo = (function() {
                     todoText: this.model.attributes.text, 
                     itemChecked: this.model.attributes.completed 
                 };
-                this.$el.find('input[type=checkbox]').off("change", this.toggleCompleted(this));
+                this.$el.find('input[type="checkbox"]').off("change", this.toggleCompleted(this));
                 this.$el.off("click", this.toggleChecked);
                 var replacement = $(this.template(templateArgs));
                 this.$el.replaceWith(replacement);
                 this.$el = replacement;
-                this.$el.find('input[type=checkbox]').on("change", this.toggleCompleted(this));
+                this.$el.find('input[type="checkbox"]').on("change", this.toggleCompleted(this));
                 this.$el.on("click", this.toggleChecked);
                 return this;
         },
 
         toggleCompleted: function(that) {
             return function(e) {
-                e.stopImmediatePropagation();
                 if (that.model.attributes.completed == "true") {
                     that.model.set("completed", "false");
                 } else {
@@ -111,20 +104,13 @@ var Todo = (function() {
         },
 
         toggleChecked: function(e) {
-            e.stopImmediatePropagation();
             var inputEl = e.currentTarget.childNodes[1];
             inputEl.checked ? inputEl.checked = false : inputEl.checked = true;
-            inputEl.dispatchEvent(new Event('change')); 
-            inputEl.focus();
+            $(inputEl).trigger('change');
         }
 
     });
 
-
-
-
-
-// initialization of whole app on page load
 
 
     return {
@@ -138,6 +124,9 @@ var Todo = (function() {
 
 
 
+
+
+// initialization of whole app on page load
 
 $(function() {  
     Todo.init();

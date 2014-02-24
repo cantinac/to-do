@@ -77,16 +77,21 @@ body {
 /**** ommitted a bunch of layout-specifics from template ... */
 
 
-
-
-
 /* ==========================================================================
    Scott Padgett's custom styles
    ========================================================================== */
 
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
 
 body {
-
+    
     background: #AAA;
 
     .main-container {
@@ -116,16 +121,11 @@ body {
                     
                     .list-header-left {
                         width:70%;
-/*                        .control-container {
-                            padding: 0 0 0 1.6em;*/
-                            input[type="text"] {
+                            input {
                                 width:86%;
-/*                                width:100%;*/
                                 height:2.4em;
-                                font-weight:300;
                                 padding: 0 5% 0 5%;
                                 margin-left:5%;
-/*                                margin:0 0 0 -.8em;*/
                                 line-height: 2.4em;
                                 vertical-align: middle;
                                 border-width: 0px;
@@ -133,22 +133,30 @@ body {
                                 -webkit-appearance:none;
                                 -webkit-box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,.5);
                                 box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,.5);
+                                
+                                &:-ms-input-placeholder {
+                                    color:#AAA;
+                                }
+                                &::-webkit-input-placeholder {
+                                    color:#BBB;
+                                    line-height: 1em;
+                                }
+                                &:-moz-placeholder {
+                                    color:#AAA;
+                                }
+                                &::-moz-placeholder {
+                                    color:#AAA;
+                                }
                             }
-/*                        }*/
                     }
 
                     .list-header-right {
                         width:30%;
-/*                        .control-container {
-                            padding-right:1.6em;*/
                             button {
-/*                                width:100%;*/
                                 height:2.4em;
                                 width:88.4%;
                                 margin-right:11.6%;
-/*                                margin:0 -.8em 0 0;*/
                                 color:#FFF;
-                                font-weight:300;
                                 text-shadow: 1px 1px 1px rgba(0,0,0,.5);
                                 vertical-align: middle;                                
                                 /* modern and solid fallback */
@@ -163,10 +171,8 @@ body {
                                     -webkit-appearance:none;
                                     display:none;
                                     font-size:1.8em;
-                                    line-height: .8em;
                                 }
                             }
-/*                        }*/
                     }
                 }
 
@@ -178,17 +184,16 @@ body {
                     li {
                         position:relative;
                         cursor: pointer;
-                        min-height: 2.4em;
-                        padding:1em .6em 0em 3em;
+                        cursor: hand;
+                        padding:.7em .6em .7em 7%;
                         border-top:1px solid #DDD;
                         color:#333;
                         input {
                             position:absolute;
-                            top: 1.3em;
-                            left: 1em;
-                            vertical-align: baseline;
+                            top: 1.1em;
+                            left: 3%;
                         }
-                        &[aria-checked=true] {
+                        &[aria-checked="true"] {
                             color:#BBB;
                         }
                         &:last-child {
@@ -196,43 +201,16 @@ body {
                         }
                         .todo-text {
                             display:inline-block;
-                            margin-bottom:.7em;
+                            word-wrap: break-word;
+                            max-width: 100%;
                         }
                     }
                 }
 
-
-
-
             }
-
 
         }
 
-    input[type=checkbox] {
-      /* Nicely responsive Checkboxes */
-      display:inline-block;
-/*      -ms-transform: scale("1.2"); /* IE */
-/*      -webkit-transform:scale("1.2"); /* Safari and Chrome */
-/*      -o-transform: scale("1.2"); /* Opera */
-/*      transform: scale(1.6);  */
-        padding: 10px;
-    }
-
-
-
-
-    }
-
-    // gradient background overrides for ie8, via Modernizr namespace
-    .lt-ie9 & {
-        .list-header {
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#efefef',GradientType=0 ); /* IE6-8 */
-
-            button {
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1dba9a', endColorstr='#18a187',GradientType=0 ); /* IE6-8 */
-            }
-        }
     }
 
 
@@ -241,11 +219,13 @@ body {
 /* Media Query Additions */
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     body {
         background: #FFF;
         .main-container {
             .main {
+                width:100%;
+                margin:0;
                 .list {
                     -webkit-box-shadow: none;
                     box-shadow: none;
@@ -260,12 +240,12 @@ body {
 @media only screen and (min-width: 768px) {
 
     body {
-        font-size:21px;
+        font-size:1.4em;
 
         .main-container {
             margin:0 auto;
             .main {
-                margin: 80px 20%;
+                margin: 5% 20%;
             }
         }
 
@@ -273,11 +253,13 @@ body {
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (orientation:portrait) {
     body {
         background: #FFF;
         .main-container {
             .main {
+                width:100%;
+                margin:0;
                 .list {
 
                     .list-header {
@@ -286,7 +268,6 @@ body {
                         }
                         .list-header-right {
                             width:14%;
-/*                            .control-container {*/
                             button {
                                 width:69.3%;
                                 padding:0;
@@ -296,9 +277,14 @@ body {
                                 }
                                 .button-symbol {
                                     display:block;
+                                    margin-top:-6px;
                                 }
-/*                                }*/
                             }
+                        }
+                    }
+                    ul {
+                        li {
+                            padding:.7em .6em .7em 7%;
                         }
                     }
                 }
@@ -307,6 +293,22 @@ body {
     }
 }
 
+
+@media only screen and (max-width: 480px) {
+    body {
+        .main-container {
+            .main {
+                .list {
+                    ul {
+                        li {
+                            padding-left: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 /* ==========================================================================
