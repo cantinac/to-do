@@ -8,6 +8,7 @@ body {
 	margin: 0;
 }
 main {
+	display: block; // IE fix
 	max-width: 600px;
 	margin: auto;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -72,47 +73,31 @@ header {
 
 	li {
 
+		@include flexbox-display-flex;
 		position: relative;
 		padding: 10px;
 		border-bottom: 1px solid $borderColor;
 		list-style: none;
+
+		label {
+			@include flexbox-flex(1, 1, auto);
+		}
 		
 		&.checked {
 			color: #C9D3E1;
-		}
-
-		&:hover {
 			.remove {
-				visibility: visible;
+				display: block;
 			}
 		}
 
 		.remove {
-			visibility: hidden;
-			@include flexbox-display-flex;
-			@include flexbox-align-items(center);
-			@include flexbox-justify-content(center);
-			position: absolute;
-			right: 6px;
-			top: 6px;
-			
+			@include flexbox-flex(0, 0, auto);
+			display: none;
 			cursor: pointer;
-			padding: 2px 4px;
-			border-radius: $radius;
-			width: 22px; 
-			height: 22px;
-			color: white;	
-			@include linear-gradient(#DE4949, #CF3434);
-			text-align: center;
-
-			span {
-				display: inline-block;
-				background: url("+.png") no-repeat;
-				@include transform( rotate(45deg) );
-				width: 18px;
-				height: 18px;
-			}
-			
+			padding: 0px 4px;
+			width: 18px; 
+			height: 18px;
+			background: url("x.png") center center no-repeat;
 		}
 
 	}
