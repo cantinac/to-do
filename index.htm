@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Todo</title>
+
+	<link rel="stylesheet" href="dist/index.min.css">
+
+</head>
+<body>
+
+	<main>
+		<header>
+			<div id="todo-add">
+				<input type="text" class='todo-text' placeholder="What do you need to get done?">
+				<button class="submit"><span class='large'>Add To-do</span><span class='small'></span></button>
+			</div>
+		</header>
+	
+		<section>
+			<ul id="todo-list">
+
+			</ul>
+		</section>
+	</main>
+
+	<script type='text/template' id="todo-item-template">
+		<label>
+	        <input type="checkbox" <% if (done) print('checked') %>>
+			<span class="todo-text"><%= text %></span>
+		</label>
+		<div class="remove" alt='remove todo'><span></span></div>
+    </script>
+
+	<script type="text/javascript" src='dist/index.min.js'></script>
+	
+</body>
+</html>
