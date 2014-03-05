@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="todoModule">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="assets/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/mainStyles.css">
+	</head>
+	<body>
+
+		<div ng-controller="todoController" class="container">
+			<div class="listHeader">
+				<div class="input-group">
+					<input type="text" class="form-control toDoText" ng-model="newTask.task" placeholder="What do you need to get done?">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" ng-click="createTask()">Add To-do</button>
+					</span>
+				</div>
+			</div>
+
+			<div class="listItem" ng-repeat="task in tasks">
+				<input type="checkbox"class="chk" onclick="checkStatus(this)"/> {{ task.task }}
+			</div>
+		</div>
+		<script src="assets/js/angular.js"></script>
+		<script src="assets/js/angular-route.js"></script>
+		<script>
+			function checkStatus(el) {
+				var theChk = el;
+				var task = (theChk.checked ? 'done' : 'todo');
+				var theDiv = theChk.parentNode;
+				if(task=='todo') {
+					theDiv.style.color = '#000000';
+				} else {
+					theDiv.style.color = '#999999';
+				}
+			}
+			var todoModule = angular.module('todoModule',[]);
+			todoModule.controller('todoController', function($scope) {
+			$scope.tasks = [
+				{task:'Setup Apache to serve localhost'},
+				{task:'Create initial filesystem structure'},
+				{task:'Download script/css assets'},
+				{task:'Create index page linking in script/css assets'},
+				{task:'Add \"ng-app\" declaration to index'},
+				{task:'Write data handling module'},
+				{task:'Clean up UI'}
+			];
+			$scope.createTask = function() {
+				$scope.tasks.push({task:$scope.newTask.task}) ;
+			}
+			
+		});
+		</script>
+	</body>
+</html>
