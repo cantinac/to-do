@@ -1,0 +1,119 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.btn-default {
+	position: relative;
+	left: -15px;
+	top: -1px;
+	border: none;
+	height: 34px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #333;
+	padding-left: 3px;
+	padding-right: 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #18A188),
+		color-stop(1, #1AB999)
+	);
+	background-image: -o-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: -moz-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: -webkit-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: -ms-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: linear-gradient(to bottom, #18A188 0%, #1AB999 100%);
+	border: solid 1px #999999;
+	border-left: none;
+}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+
+@media only screen and (min-width : 1224px) {
+
+}
+
+
+body {
+	background-color: #ecf0f1;
+}
+.container {
+		width:80%;
+		margin: 0 auto;
+}
+
+div.listHeader {
+	padding:6px;
+	border: solid 1px #cccccc;
+	font-family: Arial, Verdana, Helvetica;
+	font-size:14px;
+	color: #333333;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #FFFFFF),
+		color-stop(1, #EFEFEF)
+	);
+	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #EFEFEF 100%);
+	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #EFEFEF 100%);
+	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #EFEFEF 100%);
+	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #EFEFEF 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #EFEFEF 100%);
+	line-height: 56px;
+}
+.listHeader .input-group {
+	width:80%;
+	margin: 0 auto;
+}
+div.listItem {
+	padding:6px;
+	border: solid 1px #cccccc;
+	border-top: none;
+	font-family: Arial, Verdana, Helvetica;
+	font-size:14px;
+	color: #333333;
+	background-color: #ffffff;
+	line-height: 36px;
+}
+.toDoText {
+	width:85%;
+	height: 30px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.btn-default {
+	position: relative;
+	left: -15px;
+	top: -1px;
+	border: none;
+	height: 34px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #333;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #18A188),
+		color-stop(1, #1AB999)
+	);
+	background-image: -o-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: -moz-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: -webkit-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: -ms-linear-gradient(bottom, #18A188 0%, #1AB999 100%);
+	background-image: linear-gradient(to bottom, #18A188 0%, #1AB999 100%);
+	border: solid 1px #999999;
+	border-left: none;
+}
