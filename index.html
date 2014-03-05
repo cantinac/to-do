@@ -2,16 +2,16 @@
 <html ng-app="todoModule">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="bootstrap.min.js"></script>
-		<link rel="stylesheet" href="bootstrap.min.css">
-		<link rel="stylesheet" href="mainStyles.css">
+		<script src="assets/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/mainStyles.css">
 	</head>
 	<body>
 
 		<div ng-controller="todoController" class="container">
 			<div class="listHeader">
 				<div class="input-group">
-					<input type="text" class="form-control toDoText" ng-model="newTask.task">
+					<input type="text" class="form-control toDoText" ng-model="newTask.task" placeholder="What do you need to get done?">
 					<span class="input-group-btn">
 						<button class="btn btn-default" type="button" ng-click="createTask()">Add To-do</button>
 					</span>
@@ -22,8 +22,8 @@
 				<input type="checkbox"class="chk" onclick="checkStatus(this)"/> {{ task.task }}
 			</div>
 		</div>
-		<script src="angular.js"></script>
-		<script src="angular-route.js"></script>
+		<script src="assets/js/angular.js"></script>
+		<script src="assets/js/angular-route.js"></script>
 		<script>
 			function checkStatus(el) {
 				var theChk = el;
