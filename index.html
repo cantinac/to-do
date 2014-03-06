@@ -1,0 +1,39 @@
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="app/app.js"></script>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="app/theme.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="container-fluid border-box" ng-controller="TodoCtrl">
+      <div class="row">
+      <form class="form-inline well">       
+      <div class="input-group">
+	<input class="form-control add-input" placeholder="What do you need to get done?" type="text" ng-model="formTodoText" ng-model-instant />
+	<span class="input-group-btn hidden-xs hidden-sm">
+        <button class="btn btn-success" ng-click="addTodo()">Add Todo</button>
+	</span>
+        <span class="input-group-btn hidden-md hidden-lg">
+        <button class="btn btn-success" ng-click="addTodo()">+</button>
+        </span>
+
+      </form>
+      </div>
+      </div>
+
+      <table class="table table-curved">
+        <tr ng-repeat="todo in todos">
+         <td> <input type="checkbox" ng-model="todo.done"/> </td>
+         <td>  <span class="done-{{todo.done}}">{{todo.text}}</span> </td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+  
+</html>
