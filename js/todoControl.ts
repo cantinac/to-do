@@ -51,6 +51,7 @@ function resizer($window) {
     };
 }
 
+
 var app = angular.module("app", ['ui.bootstrap']);
 app.controller("TodoCtrl", ["$scope", TodoCtrl]);
 app.directive('resize', ["$window", resizer]);
