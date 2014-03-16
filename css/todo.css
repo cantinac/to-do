@@ -1,15 +1,12 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
+
 .done-true {
     color: grey;
 }
 
 html input[type="text"]{
     padding: 10px;
-}
-
-html input[type="checkbox"]{
-    width: 10px;
 }
 
 body {

@@ -51,10 +51,6 @@ function resizer($window) {
     };
 }
 
-function checkWidth(scope) {
-
-}
-
 var app = angular.module("app", ['ui.bootstrap']);
 app.controller("TodoCtrl", ["$scope", TodoCtrl]);
 app.directive('resize', ["$window", resizer]);
