@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="js/todoControl.js"></script>
+    <script src="js/test.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/todo.css">
+</head>
+<body ng-app="app">
+<div ng-controller="TodoCtrl as td" class="main-content" resize>
+    <form ng-submit="td.addTodo()">
+        <fieldset>
+            <input id="input-inline" type="text" ng-model="td.todoText"
+                   placeholder="What do you need to get done?">
+            <input class="btn btn-success btn-lg" id="btn-inline" type="submit" value={{addButtonLabel}}>
+        </fieldset>
+    </form>
+    <div id="todo-list">
+        <ul>
+            <li ng-repeat="item in td.todos">
+                <input type="checkbox" ng-model="item.completed">
+                <span class="done-{{item.completed}}">{{item.title}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

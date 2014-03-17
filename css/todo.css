@@ -1,0 +1,136 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.done-true {
+    color: grey;
+}
+
+html input[type="text"]{
+    padding: 10px;
+}
+
+body {
+    background: #ecf0f1;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-content {
+    margin: 75px auto;
+    max-width: 687px;
+    -webkit-box-shadow:  0px 0px 2px 2px #dbdfdf;
+    -moz-box-shadow:  0px 0px 2px 2px #dbdfdf;
+    box-shadow:  0px 0px 2px 2px #dbdfdf;
+}
+
+.main-content, #todo-list{
+
+    text-align: center;
+}
+
+.main-content form {
+    text-align:left;
+}
+
+.main-content form fieldset {
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    background: -webkit-linear-gradient(#fefefe, #f0f0f0); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fefefe, #f0f0f0); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fefefe, #f0f0f0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fefefe, #f0f0f0); /* Standard syntax */
+}
+
+#input-inline {
+    float: left;
+
+    width: -moz-calc(100% - (93px));
+    /* Mozilla calc function */
+    width: -webkit-calc(100% - (93px));
+    /* Webkit calc function */
+    width: calc(100% - (93px));
+    /* Calc for W3C-compliant browsers */
+
+    border-radius: 5px 0px 0px 5px;
+    background: white;
+    border: 1px solid #dbdbdb;
+    -webkit-box-shadow:  inset 0px 1px 2px 0px #dbdfdf;
+    -moz-box-shadow:  inset 0px 1px 2px 0px #dbdfdf;
+    box-shadow:  inset 0px 1px 2px 0px #dbdfdf;
+}
+
+#btn-inline {
+    float: right;
+    margin-left: -4px;
+    padding: 6px, 10px;
+    font-size: 14px;
+    border-radius: 0px 5px 5px 0px;
+    width: 93px;
+
+    background: -webkit-linear-gradient(#24bc9d, #16a086);
+    background: -o-linear-gradient(#24bc9d, #16a086);
+    background: -moz-linear-gradient(#24bc9d, #16a086);
+    background: linear-gradient(#24bc9d, #16a086);
+
+    text-shadow: 0px 1px 1px #000000;
+    text-decoration-color: #ffffff;
+}
+
+
+
+
+ #todo-list ul {
+    text-align: left;
+    list-style: none outside none;
+    background: #ffffff;
+    padding: 0;
+}
+
+#todo-list li {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px 10px;
+}
+
+#todo-list li span {
+    margin-left: 3px;
+}
+
+/* phone portrait */
+@media (max-width: 480px) {
+
+}
+
+/* phone landscape */
+@media (max-width: 720px) {
+    body { padding: 0px; }
+    .main-content { margin: 0px auto; }
+    #btn-inline {
+        width:45px;
+        text-shadow: none;
+        font-size: 25px;
+        padding: 0;
+        height:40px;
+    }
+    #input-inline {
+
+        width: -moz-calc(100% - (45px));
+        /* Mozilla calc function */
+        width: -webkit-calc(100% - (45px));
+        /* Webkit calc function */
+        width: calc(100% - (45px));
+        /* Calc for W3C-compliant browsers */
+    }
+}
+
+/* tablet portrait */
+@media (orientation: portrait) and (min-width: 720px) {
+    body { padding: 0px; }
+}
+
+/* tablet landscape */
+@media (orientation: landscape) and (max-width: 1024px) {   }
+
+/* desktop */
+@media (min-width: 1024px) {}
+
+
