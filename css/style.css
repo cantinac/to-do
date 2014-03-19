@@ -1,4 +1,4 @@
-body, .checkbox label{
+body, .checkbox label, .btn{
 	font-weight:300;
 }
 .btn-teal{
@@ -20,6 +20,9 @@ body, .checkbox label{
   background-color: #18a187;
   border-color: #23bc9d;
 }
+.btn-teal .hidden-xs{
+	text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
+}
 @media screen and (min-width:768px){
 	.btn-teal{
 		padding: 6px 20px;
@@ -37,11 +40,12 @@ body, .checkbox label{
 	background-repeat: repeat-x;
 	line-height: 40px;
 }
-
 #addTodo {
 	height:40px;
 }
-
+#dupeAlert{
+	border-radius: 0;
+}
 label.completed {
 	color: #ccc;
 }
