@@ -1,0 +1,57 @@
+body, .checkbox label{
+	font-weight:300;
+}
+.btn-teal{
+	height:40px;
+	background-image: -webkit-linear-gradient(top, #23bc9d 0%, #18a187 100%);
+	background-image:         linear-gradient(to bottom, #23bc9d 0%, #18a187 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff23bc9d', endColorstr='#ff18a187', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	border-color: #3e8f3e;
+}
+.btn-teal:hover,
+.btn-teal:focus {
+  background-color: #18a187;
+  background-position: 0 -15px;
+}
+.btn-teal:active,
+.btn-teal.active {
+  background-color: #18a187;
+  border-color: #23bc9d;
+}
+@media screen and (min-width:768px){
+	.btn-teal{
+		padding: 6px 20px;
+	}
+}
+#addForm{
+	margin-right: auto;
+	margin-left: auto;
+	padding: 15px 15px 10px 15px;
+	border-bottom: 1px solid #ccc;
+	background-image: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
+	background-image:         linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff0f0f0', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	line-height: 40px;
+}
+
+#addTodo {
+	height:40px;
+}
+
+label.completed {
+	color: #ccc;
+}
+
+#todoList div.checkbox {
+	margin: 0;
+	padding: 10px 20px;
+	display: block;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+#todoList div.checkbox:last-child{
+	border:0;
