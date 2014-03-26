@@ -27,6 +27,9 @@ body, .checkbox label, .btn{
 	.btn-teal{
 		padding: 6px 20px;
 	}
+	.container {
+		width:auto;
+	}
 }
 #addForm{
 	margin-right: auto;
@@ -34,7 +37,7 @@ body, .checkbox label, .btn{
 	padding: 15px 15px 10px 15px;
 	border-bottom: 1px solid #ccc;
 	background-image: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
-	background-image:         linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+	background-image:         linear-gradient(top bottom, #fff 0%, #f0f0f0 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff0f0f0', GradientType=0);
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	background-repeat: repeat-x;
