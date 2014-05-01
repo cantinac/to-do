@@ -1,0 +1,7 @@
+label {
+    font-weight: inherit;
+}
+
+input[type=checkbox]:checked + label {
+    color: $text-light;
+}
