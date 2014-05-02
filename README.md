@@ -1,5 +1,5 @@
 # To-Do App
-## A code test from a potential employer
+## A Code Test
 
 ### Business Requirements
 1. "Build a client side to-do application based on the mockups in the repo."
