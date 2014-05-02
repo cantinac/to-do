@@ -1,5 +1,5 @@
 {
-  "name": "to-do",
+  "name": "To-Do",
   "private": true,
   "dependencies": {
     "modernizr": "~2.6.2",
