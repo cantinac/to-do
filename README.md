@@ -18,7 +18,7 @@
 5. "You can use any library or framework that is not jQuery."
 
 ### Production Server
-The \`dist\` directory is deployed as a subtree at:  http://mattkohnen.github.io/to-do.
+The \`dist\` directory is deployed as a subtree at:  http://mattkohnen.github.io/to-do.  
 **Please keep in mind that it is still in development.**
 
 ### Documentation
