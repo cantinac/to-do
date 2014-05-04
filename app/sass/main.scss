@@ -6,12 +6,12 @@
 @import "vendor/yeoman";
 
 // Partials
-@import "partials/base";
-@import "partials/colors";
+@import "modules/base";
+@import "modules/colors";
 @import "global/containers";
 @import "partials/header";
 @import "partials/main";
-@import "partials/forms";
-@import "partials/buttons";
-@import "modules/create-item";
-@import "modules/item-list";
+@import "modules/forms";
+@import "modules/buttons";
+@import "partials/create-item";
+@import "partials/item-list";
