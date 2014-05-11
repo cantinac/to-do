@@ -346,6 +346,15 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+
+        casper: {
+            functional: {
+                options : {
+                    test: true,
+                },
+                src: [grunt.option('test') || 'test/spec/functional/{,*/}*.js']
+            }
         }
     });
 
@@ -380,7 +389,8 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'connect:test',
-            'mocha'
+            'mocha',
+            'casper'
         ]);
     });
 

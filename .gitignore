@@ -5,3 +5,7 @@ node_modules
 bower_components
 test/bower_components
 npm-debug.log
+
+# Ignore Vagrant files.
+.vagrant
+Vagrantfile

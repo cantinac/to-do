@@ -36,7 +36,9 @@
     "load-grunt-tasks": "~0.4.0",
     "time-grunt": "~0.3.1",
     "jshint-stylish": "~0.1.5",
-    "grunt-contrib-sass": "^0.7.3"
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-casper": "^0.3.7",
+    "casperjs": "^1.1.0-beta3"
   },
   "license": "MIT",
   "engines": {

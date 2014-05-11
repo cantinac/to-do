@@ -367,46 +367,46 @@ input[type="submit"]:not(:disabled) {
     background-image: linear-gradient(to bottom, #23bc9d 0%, #18a187 100%);
     box-shadow: inherit; }
 
-.create-item {
+.create-item-form {
   background-image: -webkit-linear-gradient( top , white 0%, #efefef 100%);
   background-image: linear-gradient(to bottom, white 0%, #efefef 100%);
   padding: 0.75rem 0.75rem 0.5rem; }
-  .create-item:after {
+  .create-item-form:after {
     content: "";
     display: table;
     clear: both; }
 
-.create-item__field,
-.create-item__button {
+.create-item-form__field,
+.create-item-form__button {
   float: left;
   min-height: 2.5rem; }
 
-.create-item__field {
+.create-item-form__field {
   border: 1px solid #c7c7c7;
   border-radius: 0.3125rem;
   box-shadow: inset 0 0 0.125rem 0 #dbdfdf;
   padding-left: 0.75rem;
   padding-right: 7.875rem;
   width: 100%; }
-  .create-item__field:focus {
+  .create-item-form__field:focus {
     box-shadow: 0 0 0.125rem 0.0625rem lightskyblue;
     outline: 0; }
-  .create-item__field::-webkit-input-placeholder {
+  .create-item-form__field::-webkit-input-placeholder {
     color: #d7d4d7; }
-  .create-item__field::-moz-placeholder {
+  .create-item-form__field::-moz-placeholder {
     color: #d7d4d7; }
-  .create-item__field:-moz-placeholder {
+  .create-item-form__field:-moz-placeholder {
     color: #d7d4d7; }
-  .create-item__field:-ms-input-placeholder {
+  .create-item-form__field:-ms-input-placeholder {
     color: #d7d4d7; }
 
-button.create-item__button {
+button.create-item-form__button {
   border-radius: inherit;
   border-bottom-right-radius: 0.3125rem;
   border-top-right-radius: 0.3125rem;
   margin-left: -7.125rem;
   width: 7.125rem; }
-  button.create-item__button .icon {
+  button.create-item-form__button .icon {
     font-family: serif;
     font-size: 225%;
     font-weight: bold;
@@ -414,18 +414,18 @@ button.create-item__button {
     vertical-align: top; }
 
 @media screen and (min-width: 768px) {
-  .create-item__button .icon {
+  .create-item-form__button .icon {
     display: none; } }
 @media screen and (max-width: 767px) {
-  .create-item__field {
+  .create-item-form__field {
     padding-right: 3.5625rem;
     width: 100%; }
 
-  button.create-item__button {
+  button.create-item-form__button {
     margin-left: -2.8125rem;
     padding: 0;
     width: 2.8125rem; }
-    button.create-item__button .text {
+    button.create-item-form__button .text {
       display: none; } }
 .todo-list__item {
   background-color: white;
