@@ -367,6 +367,9 @@ input[type="submit"]:not(:disabled) {
     background-image: linear-gradient(to bottom, #23bc9d 0%, #18a187 100%);
     box-shadow: inherit; }
 
+button:active:not(:disabled), input[type="submit"]:active:not(:disabled), button:focus:not(:disabled), input[type="submit"]:focus:not(:disabled) {
+  box-shadow: inherit; }
+
 .create-item-form {
   background-image: -webkit-linear-gradient( top , white 0%, #efefef 100%);
   background-image: linear-gradient(to bottom, white 0%, #efefef 100%);

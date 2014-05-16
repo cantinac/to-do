@@ -351,13 +351,12 @@ module.exports = function (grunt) {
         casper: {
             functional: {
                 options : {
-                    test: true,
+                    test: true
                 },
                 src: [grunt.option('test') || 'test/spec/functional/{,*/}*.js']
             }
         }
     });
-
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
