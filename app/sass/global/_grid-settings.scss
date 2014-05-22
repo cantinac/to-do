@@ -1,0 +1,5 @@
+@import "neat-helpers";
+
+// Breakpoints
+$medium-screen-up: new-breakpoint(min-width 768px 8);
+$small-screen: new-breakpoint(max-width 767px 4);

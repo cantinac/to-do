@@ -1,0 +1,19 @@
+.todo-list {
+
+}
+
+.todo-list__item {
+    background-color: $white;
+    border-top: 1px solid $border-light;
+    padding: rem(16) rem(11) rem(13);
+    text-align: left;
+
+    .checkbox,
+    .label {
+        display: inline-block;
+    }
+
+    .label {
+        margin-bottom: inherit;
+    }
+}

@@ -1,0 +1,32 @@
+.header {
+    @include outer-container;
+    height: rem(76);
+    min-height: rem(76);
+}
+
+.header__inner {
+    @include clearfix;
+    @include span-columns(8 of 12);
+    display: table;
+    float: inherit;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    &:last-child {
+        margin-right: inherit;
+    }
+}
+
+.header__headline {
+    display: table-cell;
+    vertical-align: middle;
+    visibility: hidden;
+}
+
+// Breakpoints
+@include media($small-screen) {
+    .header {
+        display: none;
+    }
+}

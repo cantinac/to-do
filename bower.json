@@ -1,0 +1,10 @@
+{
+  "name": "To-Do",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "bourbon": "~4.0.1",
+    "neat": "~1.6.0",
+  },
+  "devDependencies": {}
+}

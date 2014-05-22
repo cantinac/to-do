@@ -1,0 +1,11 @@
+node_modules
+//dist // No longer ignore `dist` because we need to deploy it to GH Pages as a subtree
+.tmp
+.sass-cache
+bower_components
+test/bower_components
+npm-debug.log
+
+# Ignore Vagrant files.
+.vagrant
+Vagrantfile
