@@ -108,10 +108,7 @@ body {
 	border-bottom: 1px solid #e8e8e8;
 
 	&.task_completed{
-		label{
-			color: $placeholderText;
-			text-decoration: line-through;
-		}
+		label{ color: $placeholderText; }
 	}
 }
 

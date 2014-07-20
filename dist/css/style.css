@@ -579,8 +579,7 @@ body {
   padding: 20px 15px;
   border-bottom: 1px solid #e8e8e8; }
   .task.task_completed label {
-    color: #bababa;
-    text-decoration: line-through; }
+    color: #bababa; }
 
 .task_marker {
   margin-right: 10px; }
