@@ -1,0 +1,14 @@
+*{ box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $defaultText;
+}
+
+//Generic wrapper element
+.wrapper{
+  width: 90%;
+  max-width: 80em;
+  margin: 0 auto;
+  padding: 0;
+}
