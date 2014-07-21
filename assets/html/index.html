@@ -2,7 +2,7 @@
 			<div class="container">
 				<div class="task_creator_wrap">
 					<div class="task_creator">
-						<input type="text" class="task_toadd" placeholder="What do you need to get done?" data-bind="value: taskToAdd, valueUpdate: 'afterkeydown', event:{ keyup: addOnEnter }"><button class="task_add" data-bind="enable: taskToAdd().length > 0, click: addTask"><span class="task_add_fulltext">Add To-do</span></button>
+						<input type="text" class="task_toadd" placeholder="What do you need to get done?" data-bind="value: taskToAdd, valueUpdate: 'afterkeydown', event:{ keyup: addOnEnter }"><button class="task_add" data-bind="click: addTask"><span class="task_add_fulltext">Add To-do</span></button>
 					</div>
 				</div>
 				<ul class="task_collection" data-bind="foreach: tasks">
