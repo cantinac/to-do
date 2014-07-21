@@ -30,4 +30,4 @@ Technology Used
 
 About This Application
 ----
-... 
+To edit this application, you should make sure you have [Node](http://nodejs.org/) and [NPM](https://www.npmjs.org/) installed on your machine. You can then run `NPM install` from the terminal to get the dependencies for the project. From there, you can run `gulp watch` from the terminal and any changes you make to the contents of the assets folder will be reflected in the dist folder. Additionally, you can install the [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) plugin for Chrome or Firefox and see your changes update live in the browser.
