@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <title></title>
+	  <meta name="description" content="">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <!-- TODO: Switch to min for production -->
+	  <link rel="stylesheet" href="css/style.min.css">
+	  <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+	</head>
+	<body>
+	  <!--[if lt IE 8]>
+	      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	  <![endif]-->
+
+			<div class="container">
+				<div class="task_creator_wrap">
+					<div class="task_creator">
+						<input type="text" class="task_toadd" placeholder="What do you need to get done?" data-bind="value: taskToAdd, valueUpdate: 'afterkeydown', event:{ keyup: addOnEnter }"><button class="task_add" data-bind="click: addTask"><span class="task_add_fulltext">Add To-do</span></button>
+					</div>
+				</div>
+				<ul class="task_collection" data-bind="foreach: tasks">
+					<li class="task" data-bind="css:{ task_completed:isCompleted() }, toggleClick: isCompleted">
+						<input type="checkbox" id="t1" class="task_marker" data-bind="checked: isCompleted, attr:{ id: 'task' + $index() }" />
+						<label for="t1" class="task_title" data-bind="text: title, attr:{ for: 'task' + $index() }"></label>
+					</li>
+				</ul>
+			</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+	  <script src="js/vendor/knockout-min.js"></script>
+	  <!-- TODO: Switch to min for production -->
+	  <script src="js/scripts.min.js"></script>
+	</body>
+</html>

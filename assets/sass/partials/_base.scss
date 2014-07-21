@@ -1,0 +1,121 @@
+*{ box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $defaultText;
+  font-weight: 200;
+  background: #e8e8e8;
+}
+
+//Styling for placeholder elements
+::-webkit-input-placeholder { color: $placeholderText; }
+:-moz-placeholder { color: $placeholderText; }
+::-moz-placeholder { color: $placeholderText; }
+:-ms-input-placeholder { color: $placeholderText; }
+
+.container{
+	width: 100%;
+	background: #fff;
+	border: 1px solid #e8e8e8;
+}
+
+@media all and (min-width: 1024px){
+	.container{
+		max-width: 690px;
+		margin: 75px auto 0;
+		box-shadow: 0 0 5px #bbb;
+	}
+}
+
+// The wrapper for the task creation elements
+.task_creator_wrap{
+	display: table;
+	width: 100%;
+	padding: 8px;
+	background: #fff;
+	background: linear-gradient(to bottom, #ffffff 0%,#e8e8e8 100%);
+	border-bottom: 1px solid #e8e8e8;
+}
+
+// A centering wrapper for the input/button combo
+.task_creator{
+	display: block;
+	width: 99%;
+	margin: 0 auto;
+}
+
+// The input to enter a new task
+.task_toadd{
+	display: table-cell;
+	vertical-align: middle;
+	width: 98%;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid;
+	background: #fff;
+	border: 1px solid #c7c7c7;
+	border-right: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: 0 0 7px #ededed inset;
+	float: left;
+}
+
+@media all and (min-width: 1024px){
+	.task_toadd{ width: 91% }
+}
+
+// The button to create a new task
+.task_add{
+	display: table-cell;
+	vertical-align: middle;
+	margin-left: -40px;
+	padding: 0 10px 2px;
+	font-size: 2.25em;
+	line-height: 1;
+	color: #fff;
+	background: #18a187;
+	background: linear-gradient(to bottom, #32c1a4 0%,#18a187 100%);
+	border: 1px solid #18a187;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	float: left;
+
+	&:before{
+		content: "+";
+	}
+}
+
+.task_add_fulltext{ display: none; }
+
+@media all and (min-width: 1024px){
+	.task_add:before{ display: none; }
+
+	.task_add_fulltext{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 16px;
+	}
+}
+
+// The wrapper for the collection of tasks
+.task_collection{
+	margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+// The wrapper for an individual task
+.task{
+	padding: 20px 15px;
+	border-bottom: 1px solid #e8e8e8;
+
+	&.task_completed{
+		label{ color: $placeholderText; }
+	}
+}
+
+// The task checkbox
+.task_marker{
+	margin-right: 10px;
+}
