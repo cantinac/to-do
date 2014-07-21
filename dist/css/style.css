@@ -512,7 +512,7 @@ body {
   display: table;
   width: 100%;
   padding: 8px;
-  background: #e8e8e8;
+  background: #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e8e8e8));
   background: -webkit-linear-gradient(top, #ffffff 0%, #e8e8e8 100%);
   background: linear-gradient(to bottom, #ffffff 0%, #e8e8e8 100%);
@@ -526,7 +526,7 @@ body {
 .task_toadd {
   display: table-cell;
   vertical-align: middle;
-  width: 99%;
+  width: 98%;
   margin: 0 auto;
   padding: 10px;
   border: 1px solid;
