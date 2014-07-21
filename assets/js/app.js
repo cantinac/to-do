@@ -35,7 +35,7 @@ var taskModel = function(tasks){
             value(!value());
         });
     }
-};
+	};
 };
 
 ko.applyBindings(taskModel);
