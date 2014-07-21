@@ -498,7 +498,8 @@ body {
 
 .container {
   width: 100%;
-  background: #fff; }
+  background: #fff;
+  border: 1px solid #e8e8e8; }
 
 @media all and (min-width: 1024px) {
   .container {
@@ -535,7 +536,8 @@ body {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   -webkit-box-shadow: 0 0 7px #ededed inset;
-  box-shadow: 0 0 7px #ededed inset; }
+  box-shadow: 0 0 7px #ededed inset;
+  float: left; }
 
 @media all and (min-width: 1024px) {
   .task_toadd {
@@ -555,7 +557,8 @@ body {
   background: linear-gradient(to bottom, #32c1a4 0%, #18a187 100%);
   border: 1px solid #18a187;
   border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
+  border-bottom-right-radius: 5px;
+  float: left; }
   .task_add:before {
     content: "+"; }
 

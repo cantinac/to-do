@@ -16,6 +16,7 @@ body {
 .container{
 	width: 100%;
 	background: #fff;
+	border: 1px solid #e8e8e8;
 }
 
 @media all and (min-width: 1024px){
@@ -31,7 +32,7 @@ body {
 	display: table;
 	width: 100%;
 	padding: 8px;
-	background: #e8e8e8;
+	background: #fff;
 	background: linear-gradient(to bottom, #ffffff 0%,#e8e8e8 100%);
 	border-bottom: 1px solid #e8e8e8;
 }
@@ -57,6 +58,7 @@ body {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	box-shadow: 0 0 7px #ededed inset;
+	float: left;
 }
 
 @media all and (min-width: 1024px){
@@ -77,6 +79,7 @@ body {
 	border: 1px solid #18a187;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+	float: left;
 
 	&:before{
 		content: "+";
