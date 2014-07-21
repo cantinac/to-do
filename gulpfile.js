@@ -44,7 +44,7 @@ gulp.task('html', function(){
 });
 
 gulp.task('scripts', function(){
-	return gulp.src(['assets/js/console.js', 'assets/js/app.js', 'assets/js/scripts.js'])
+	return gulp.src(['assets/js/console.js', 'assets/js/app.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish))
 		.pipe(concat('scripts.js'))
