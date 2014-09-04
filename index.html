@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Todo Cantina</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/ngApp.js"></script>
+	</head>
+	<body ng-app='ngApp' ng-controller='ngAppController'>
+		<div class="container-fluid">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+				    <div class="navbar-header"></div>
+				    <div class="">
+				      <form class="navbar-form" role="search">
+				        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				        	<div class="input-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				          		<input ng-model="todo.title" type="text" class="form-control" placeholder="What do you need to get done?">
+				          		<span class="input-group-btn">
+				          			<button type="button" ng-click="addTodo();" class="btn btn-info btn-block">
+				          				<span class="hidden-xs">Add To-do</span>
+				          				<span class="visible-xs">+</span>
+				          			</button>
+				          		</span>
+				          	</div>
+				        </div>
+				      </form>
+				    </div>
+				</div>
+			</nav>
+			<div class="container-fluid">
+				<ul class="list-unstyled list-group">
+					<li class="list-group-item" ng-repeat="theTodo in todos">
+						<div class="checkbox">
+						  <label>
+						    <input ng-click="toggleComplete(this);" type="checkbox" value="" ng-checked="theTodo.completed">
+						    <span ng-class="{'text-muted':theTodo.completed==1}">{{theTodo.title}}</span>
+						  </label>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
