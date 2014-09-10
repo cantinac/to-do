@@ -1,0 +1,31 @@
+body {
+    background: #fafafa;
+    color: #333;
+}
+
+#l-content {
+    margin: 0px auto;
+    margin-top: 70px;
+    padding: 0px 15px;
+}
+
+.main-body {
+    max-width: 1024px;
+    margin: 0px auto;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.footer {
+    margin-top: 70px;
+}
+
+@media all and (orientation: portrait ) {
+    .orientation {
+        color: red;
+    }
+}
+
