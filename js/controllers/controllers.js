@@ -37,6 +37,6 @@ var todoControllers = angular.module('todoControllers', []);
         console.log(tasks[task].title);
       }
 
-      $scope.newtask = '';
+      $scope.taskInput = '';
   };
 });

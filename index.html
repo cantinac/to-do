@@ -24,7 +24,7 @@
     </div>
     <div class="listbody">
       <div ng-repeat="task in tasks track by $index" class="listitem" ng-class="{'i-completed' : task.completed==true}">
-       <input class="toggle" size=300 type="checkbox" ng-model="task.completed"><span class=taskitem> &nbsp;{{task.title}}</span>
+       <input class="toggle" type="checkbox" ng-model="task.completed"><span class=taskitem> &nbsp;{{task.title}}</label></span>
       </div>
   </div>
 </body>

@@ -12,7 +12,7 @@ html, body, body div, h1, h2, h3, h4, p, pre, em, img, b, i, ul, li, fieldset, f
 
 
 body {
-background: #eceff1;
+background: #fafafa;
  color: #000;
  margin: 0px;
  font-family: roboto, arial, helvetica, sans-serif;
@@ -23,15 +23,16 @@ background: #eceff1;
 .listcontainer{
 	background: #fff;
 	border: 1px solid;
-	border-color: #e0e0e0;
+	border-color: gray;
 	width: 300px;
   margin: auto;
   }
 
 .listitem{
-	border: 1px solid;
+	border-top: 1px solid;
 	border-color: #eee;
 	padding: 3px;
+  vertical-align: top;
 }
 
 .listtop{
@@ -60,8 +61,11 @@ background: #eceff1;
   }
 
 .i-completed{
-  color: #009688;
+  color: #dddddd;
   text-decoration: line-through
 }
 
-
+input{
+  position: relative;
+  top: 2px;
+}
