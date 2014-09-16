@@ -7,12 +7,12 @@ var todoServices = angular.module('todoServices', []);
 
 todoServices.factory('storageService', function(){
     return {
-      get: function () {
-        return JSON.parse(localStorage.getItem('todo') || '[]');
+      get: function (key) {
+        return JSON.parse(localStorage.getItem(key) || '[]');
       },
 
-      put: function (todos) {
-        localStorage.setItem('todo', JSON.stringify(todos));
+      set: function (key, data) {
+        localStorage.setItem(key, JSON.stringify(data));
       }
     };
   });

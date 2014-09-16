@@ -9,15 +9,12 @@ var todoControllers = angular.module('todoControllers', []);
     $scope.taskInput='';
      
     $scope.$watch('tasks', function (newValue, oldValue) {
-      $scope.remainingCount = $filter('filter')(tasks, { completed: false }).length;
-      $scope.completedCount = tasks.length - $scope.remainingCount;
-      $scope.allChecked = !$scope.remainingCount;
-      if (newValue !== oldValue) { // This prevents unneeded calls to the local storage
-        storageService.put(tasks);
+      if (newValue !== oldValue) { 
+        storageService.set('todo', tasks);
       }
     }, true);
 
-      var tasks = $scope.tasks = storageService.get();
+      var tasks = $scope.tasks = storageService.get('todo');
 
 
     $scope.addTask = function () {

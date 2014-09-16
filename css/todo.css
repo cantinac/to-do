@@ -24,7 +24,7 @@ background: #fafafa;
 	background: #fff;
 	border: 1px solid;
 	border-color: gray;
-	width: 300px;
+	width: 350px;
   margin: auto;
   }
 
@@ -43,10 +43,10 @@ background: #fafafa;
 
 
 #todoadd{
-  width: 260px;
+  width: 300px;
   border: 1px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
   height: auto;
 }
 .button-todoadd{
@@ -55,9 +55,10 @@ background: #fafafa;
   size: 12px;
   font-weight: normal;
   border: 3px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   height: auto;
+  width: auto;
   }
 
 .i-completed{
@@ -69,3 +70,7 @@ input{
   position: relative;
   top: 2px;
 }
+
+input[type="checkbox"] {
+    background-color: #fafafa;
+    border: 1px #ccc;
