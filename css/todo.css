@@ -1,0 +1,67 @@
+html, body, body div, h1, h2, h3, h4, p, pre, em, img, b, i, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: roboto, arial, helvetica, sans-serif;
+  font-size: 100%;
+}
+
+
+body {
+background: #eceff1;
+ color: #000;
+ margin: 0px;
+ font-family: roboto, arial, helvetica, sans-serif;
+ font-size: 12px;
+}
+
+
+.listcontainer{
+	background: #fff;
+	border: 1px solid;
+	border-color: #e0e0e0;
+	width: 300px;
+  margin: auto;
+  }
+
+.listitem{
+	border: 1px solid;
+	border-color: #eee;
+	padding: 3px;
+}
+
+.listtop{
+  background: #eceff1;
+  padding: 5px;
+  margin: auto;
+}
+
+
+#todoadd{
+  width: 260px;
+  border: 1px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  height: auto;
+}
+.button-todoadd{
+  background:   #259b24;
+  color: #fff;
+  size: 12px;
+  font-weight: normal;
+  border: 3px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  height: auto;
+  }
+
+.i-completed{
+  color: #009688;
+  text-decoration: line-through
+}
+
+

@@ -1,0 +1,33 @@
+<html>
+<head>
+
+  <script>
+  var storage_id='todolist';
+  console.log(localStorage.getItem(storage_id));
+  function storeTask(){
+ if (typeof window.localStorage != "undefined") {
+ 
+    var task = document.getElementById("addTask").value;
+    console.log("task: " + task)
+    // store
+    localStorage.setItem(storage_id, task);
+ 
+    // retrieve
+    console.log(localStorage.getItem(storage_id));
+ 
+    // delete
+    //localStorage.removeItem("hello");
+}
+};
+
+</script>
+<body>
+
+
+<h1>local storage</h1>
+<form submit="storeTask()">
+<input id="addTask" type=text><button onClick="storeTask();">add task</button>
+</form>
+
+</body>
+</html>

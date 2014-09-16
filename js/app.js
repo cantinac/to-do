@@ -1,1 +1,1 @@
-var todo = angular.module("todo", ['ngRoute', 'todoControllers']);
+var todo = angular.module("todo", ['ngRoute', 'todoControllers', 'todoServices']);
