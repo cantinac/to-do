@@ -124,3 +124,13 @@ background: #fafafa;
 
 
 }
+
+
+/* iPad portrait */
+@media all and (min-width: 768px) and (orientation:portrait) {
+
+  .listcontainer{
+    width: 100%;
+    max-width: 768px;
+    }
+}
