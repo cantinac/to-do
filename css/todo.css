@@ -1,3 +1,4 @@
+
 html, body, body div, h1, h2, h3, h4, p, pre, em, img, b, i, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@ html, body, body div, h1, h2, h3, h4, p, pre, em, img, b, i, ul, li, fieldset, f
   font-weight: normal;
   vertical-align: baseline;
   background: transparent;
-  font-family: roboto, arial, helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   font-size: 100%;
 }
 
@@ -16,61 +17,110 @@ background: #fafafa;
  color: #000;
  margin: 0px;
  font-family: roboto, arial, helvetica, sans-serif;
- font-size: 12px;
+ font-size: 1em;
+
 }
 
-
-.listcontainer{
-	background: #fff;
-	border: 1px solid;
-	border-color: gray;
-	width: 350px;
-  margin: auto;
+  .buttonspanp{
+    display: inline-block;
+    width: 10%;
   }
 
-.listitem{
-	border-top: 1px solid;
-	border-color: #eee;
-	padding: 3px;
-  vertical-align: top;
-}
+  .buttonspanl{
+    display: none;
 
-.listtop{
-  background: #eceff1;
-  padding: 5px;
-  margin: auto;
-}
+  }
 
-
-#todoadd{
-  width: 300px;
-  border: 1px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  height: auto;
-}
-.button-todoadd{
-  background:   #259b24;
+.button-todoaddp{
+  background: #259b24;
   color: #fff;
-  size: 12px;
-  font-weight: normal;
   border: 3px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  height: auto;
-  width: auto;
+  width: 100%;
+  height: 2em;
+  padding: 0px;
+  letter-spacing: 
   }
+
+
+.button-todoaddl{
+  background: #259b24;
+  color: #fff;
+  border: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 100%;
+  height: 2em;
+  white-space: nowrap;
+  padding: 0px;
+  }
+
 
 .i-completed{
   color: #dddddd;
   text-decoration: line-through
 }
 
-input{
-  position: relative;
-  top: 2px;
+.listcontainer{
+	background: #fff;
+	border: 1px;
+	border-color: #000;
+  margin: auto;
+  max-width: 500px;
+  }
+
+.listtop{
+  background: #eceff1;
+  padding: 5px;
 }
 
-input[type="checkbox"] {
-    background-color: #fafafa;
-    border: 1px #ccc;
+.todoadd{
+  border: 0px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  height: 2em;
+  width: 90%;
+}
+
+
+.listitem{
+	border-top: 1px solid;
+	border-color: #eee;
+	padding: 3px;
+}
+
+
+
+.taskitem{
+  position: relative;
+  bottom: 4px;
+ }
+
+
+
+
+
+@media all and (min-width: 350px) and (orientation:landscape) {
+  .listcontainer{
+    width: 70%;
+    }
+
+    .buttonspanp{
+    display: none;
+  }
+
+  .buttonspanl{
+    display: inline-block;
+    width: 27%
+  }
+
+ 
+  .todoadd{
+    width: 73%;
+    display:inline;
+  
+  }
+
+
+}

@@ -16,17 +16,21 @@
     <script src="js/app.js"></script>
 </head>
 <body>
-  <div class="listcontainer" ng-controller="todoController">
-    <div class="listtop">
-      <form name="todoform">
-        <input type="text" id="todoadd" ng-model="taskInput" class="todoadd" placeholder="what do you want to get done?"><button ng-click="addTask();" class="button-todoadd">&nbsp;+&nbsp;</button>
-      </form>
-    </div>
-    <div class="listbody">
-      <div ng-repeat="task in tasks track by $index" class="listitem" ng-class="{'i-completed' : task.completed==true}">
-       <input class="toggle" type="checkbox" ng-model="task.completed"><span class=taskitem> &nbsp;{{task.title}}</label></span>
+    <div class="listcontainer" ng-controller="todoController">
+      <div class="listtop">
+        <div id="addtask">
+          <form name="todoform">
+          <input type="text" class="todoadd" ng-model="taskInput" placeholder="what do you want to do?"><span class='buttonspanp'><button ng-click="addTask();"  class="button-todoaddp">+</button></span><span class="buttonspanl"><button class="button-todoaddl" ng-click="addTask();">Add To-do</button></span>
+        </div>
+        </form>
       </div>
-  </div>
+      <div class="listbody">
+        <div ng-repeat="task in tasks track by $index" class="listitem" ng-class="{'i-completed' : task.completed==true}">
+          <input class="toggle" type="checkbox" ng-model="task.completed"><span class=taskitem> &nbsp;{{task.title}}</span>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>
 
