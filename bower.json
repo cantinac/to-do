@@ -1,0 +1,11 @@
+{
+  "name": "todo",
+  "description": "one page angular todo app",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.2.x",
+    "angular-resource": "~1.2.x"
+  }
+}
