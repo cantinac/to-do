@@ -42,10 +42,29 @@
 	================================================== -->
 
 	<div class="container">
-        <div id="todo-app">
+        <div class="three columns alpha">
 
         </div>
+        <div class="six columns">
+            <div id="todo-app">
+
+            </div>
+        </div>
 	</div><!-- container -->
+
+    <script type="text/x-mustache-template" id="index-template">
+        <div class="todos"></div>
+    </script>
+
+    <script type="text/x-mustache-template" id="form-template">
+        <input type="text" name="todo" id="todo" placeholder="{{ placeholderText }}" />
+        <button type="submit" id="add-todo" class="button">{{ addButtonText }}</button>
+    </script>
+
+    <script type="text/x-mustache-template" id="todo-template">
+        <input type="checkbox" class="toggle" />
+        <span>{{ description }}</span>
+    </script>
 
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/underscore.min.js"></script>
