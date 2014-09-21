@@ -26,13 +26,11 @@ button, .button {
     text-transform: none;
     -webkit-appearance: button;
     cursor: pointer;
-
 }
 
 /* #Page Styles
 ================================================== */
 .todo-app {
-    margin-top: 77px;
     background: #ffffff;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -61,6 +59,7 @@ button, .button {
     background: linear-gradient(to bottom, #33c2a4 0%,#18a187 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33c2a4', endColorstr='#18a187',GradientType=0 ); /* IE6-9 */
     border: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 .todo-app .todos .complete {
     color: #b7bfdc;
@@ -79,6 +78,18 @@ button, .button {
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@media (min-width: 768px) {
+    .todo-app {
+        margin-top: 77px;
+    }
+    .input-group {
+        display: inline-table;
+        vertical-align: middle;
+    }
+    .input-group > .form-control {
+        width: 100%;
+    }
+}
 input {
     margin: 0;
     font: inherit;
@@ -141,6 +152,7 @@ input[type="checkbox"] {
     position: relative;
     display: table;
     border-collapse: separate;
+    width: 100%;
 }
 .input-group .form-control {
     position: relative;
@@ -163,20 +175,20 @@ input[type="checkbox"] {
     vertical-align: middle;
 }
 .input-group .form-control:first-child,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .button,
+.input-group-btn:first-child > .btn-group > .button,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+.input-group-btn:last-child > .button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .button {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 .input-group .form-control:last-child,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .button,
+.input-group-btn:last-child > .btn-group > .button,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+.input-group-btn:first-child > .button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -185,22 +197,22 @@ input[type="checkbox"] {
     font-size: 0;
     white-space: nowrap;
 }
-.input-group-btn > .btn {
+.input-group-btn > .button {
     position: relative;
 }
-.input-group-btn > .btn + .btn {
+.input-group-btn > .button + .button {
     margin-left: -1px;
 }
-.input-group-btn > .btn:hover,
-.input-group-btn > .btn:focus,
-.input-group-btn > .btn:active {
+.input-group-btn > .button:hover,
+.input-group-btn > .button:focus,
+.input-group-btn > .button:active {
     z-index: 2;
 }
-.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .button,
 .input-group-btn:first-child > .btn-group {
     margin-right: -1px;
 }
-.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .button,
 .input-group-btn:last-child > .btn-group {
     margin-left: -1px;
 }
@@ -210,27 +222,18 @@ input[type="checkbox"] {
 /* #Media Queries
 ================================================== */
 
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+    .container .columns {
+        float: none;
+    }
+}
+
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {}
-
-    @media only screen and (min-width: 768px) {
-        .input-group {
-            display: inline-table;
-            vertical-align: middle;
-        }
-        .input-group .input-group-btn,
-        .input-group .form-control {
-            width: auto;
-        }
-        .input-group > .form-control {
-            width: 100%;
-        }
-        .form-control {
-            display: inline-block;
-            width: auto;
-            vertical-align: middle;
-        }
-    }
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
 	@media only screen and (min-width: 768px) and (max-width: 959px) {}
