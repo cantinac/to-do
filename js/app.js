@@ -40,9 +40,6 @@
             this.todos.on("all", this.render, this);
 
             this.todos.fetch();
-
-            // Bind the add event to the collection
-//                this.todos.bind("add", this.appendTodo);
         },
         render: function() {
             // Render the view
@@ -50,14 +47,19 @@
 
             this.todos.each(this.addTodo, this);
 
-
             $(this.el).prepend(new TodoApp.Index.Form({collection: this.todos}).render().el);
 
             // Allow chaining
             return this;
         },
         addTodo: function(todo) {
-            this.$(".todos").append(new TodoApp.Index.Todo({model: todo}).render().el);
+            var todoEl = new TodoApp.Index.Todo({model: todo}).render().el;
+
+            if ( todo.get("completed") === true ) {
+                $(todoEl).find("input[type=\"checkbox\"]").attr("checked", "checked");
+            }
+
+            this.$(".todos").append(todoEl);
         }
     });
 
@@ -71,6 +73,12 @@
         render: function() {
             $(this.el).html(this.template(this));
 
+            var completed = this.model.get("completed");
+
+            if ( completed ) {
+                $(this.el).addClass("complete");
+            }
+
             // Allow chaining
             return this;
         },
@@ -78,14 +86,25 @@
             return this.model.get("description");
         },
         toggleTodo: function() {
-            
+            var completed = this.model.get("completed");
+
+            if ( completed ) {
+                $(this.el).removeClass("complete");
+            }
+            else {
+                $(this.el).addClass("complete");
+            }
+
+            this.model.set("completed", !completed);
+
+            this.model.save();
         }
     });
 
     // Configure the form view
     TodoApp.Index.Form = Backbone.View.extend({
         tagName: "form",
-        className: "",
+        className: "todo-form",
         template: getTemplate("form"),
         events: {
             "submit": "addTodo"
@@ -120,7 +139,7 @@
     // Configure the router
     TodoApp.Router = Backbone.Router.extend({
         initialize: function(options) {
-            this.el = options.el[0];
+            this.el = options.el;
         },
         routes: {
             "": "app"
