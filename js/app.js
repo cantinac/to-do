@@ -39,15 +39,18 @@
 
             this.todos.on("all", this.render, this);
 
+            // Get any existing Todos from local storage
             this.todos.fetch();
         },
         render: function() {
             // Render the view
             $(this.el).html(this.template(this));
 
-            this.todos.each(this.addTodo, this);
-
+            // Add the form
             $(this.el).prepend(new TodoApp.Index.Form({collection: this.todos}).render().el);
+
+            // Add the todos
+            this.todos.each(this.addTodo, this);
 
             // Allow chaining
             return this;
