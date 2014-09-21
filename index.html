@@ -42,11 +42,8 @@
 	================================================== -->
 
 	<div class="container">
-        <div class="three columns alpha">
-
-        </div>
-        <div class="six columns">
-            <div id="todo-app">
+        <div class="sixteen columns">
+            <div id="todo-app" class="todo-app">
 
             </div>
         </div>
@@ -58,8 +55,12 @@
     </script>
 
     <script type="text/x-mustache-template" id="form-template">
-        <input type="text" name="todo" id="todo" placeholder="{{ placeholderText }}" />
-        <button type="submit" id="add-todo" class="button">{{ addButtonText }}</button>
+        <div class="input-group">
+            <input type="text" name="todo" id="todo" class="form-control" placeholder="{{ placeholderText }}" />
+            <span class="input-group-btn">
+                <button type="submit" id="add-todo" class="button">{{ addButtonText }}</button>
+            </span>
+        </div>
     </script>
 
     <script type="text/x-mustache-template" id="todo-template">

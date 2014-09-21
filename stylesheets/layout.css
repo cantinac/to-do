@@ -16,18 +16,221 @@
 
 /* #Site Styles
 ================================================== */
-.todos .complete {
-    color: #b7bfdc;
+body {
+    background: #ecf0f1;
+    font-weight: lighter;
+}
+button, .button {
+    margin: 0;
+    overflow: visible;
+    text-transform: none;
+    -webkit-appearance: button;
+    cursor: pointer;
+
 }
 
 /* #Page Styles
 ================================================== */
+.todo-app {
+    margin-top: 77px;
+    background: #ffffff;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.todo-app .todo-form {
+    padding: 12px;
+    background: #fefefe; /* Old browsers */
+    background: -moz-linear-gradient(top, #fefefe 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fefefe 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fefefe 0%,#efefef 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fefefe 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fefefe 0%,#efefef 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+.todo-app .todo-form button {
+    font-family: "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: lighter;
+    background: #33c2a4; /* Old browsers */
+    background: -moz-linear-gradient(top, #33c2a4 0%, #18a187 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33c2a4), color-stop(100%,#18a187)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #33c2a4 0%,#18a187 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #33c2a4 0%,#18a187 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #33c2a4 0%,#18a187 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #33c2a4 0%,#18a187 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33c2a4', endColorstr='#18a187',GradientType=0 ); /* IE6-9 */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.todo-app .todos .complete {
+    color: #b7bfdc;
+}
+.todo-app .todo {
+    border-top: 1px solid #e8e8e8;
+    padding: 18px 10px;
+}
+.todo-app .todo .toggle {
+    margin-right: 10px;
+    vertical-align: 10%;
+}
+
+/*!
+ * Bootstrap v3.2.0 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+input {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    line-height: normal;
+}
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+input[type="text"] {
+    line-height: 1;
+    font-size: 16px;
+    color: #d7d4d7;
+    padding: 2px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+}
+input[type="checkbox"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-control::-moz-placeholder {
+    color: #d7d4d7;
+    opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+    color: #d7d4d7;
+}
+.form-control::-webkit-input-placeholder {
+    color: #d7d4d7;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.input-group-btn,
+.input-group .form-control {
+    display: table-cell;
+}
+.input-group-btn:not(:first-child):not(:last-child),
+.input-group .form-control:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+.input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.input-group .form-control:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group .form-control:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+.input-group-btn > .btn {
+    position: relative;
+}
+.input-group-btn > .btn + .btn {
+    margin-left: -1px;
+}
+.input-group-btn > .btn:hover,
+.input-group-btn > .btn:focus,
+.input-group-btn > .btn:active {
+    z-index: 2;
+}
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group {
+    margin-right: -1px;
+}
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group {
+    margin-left: -1px;
+}
+
+/* END BOOTSTRAP STYLES */
 
 /* #Media Queries
 ================================================== */
 
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {}
+
+    @media only screen and (min-width: 768px) {
+        .input-group {
+            display: inline-table;
+            vertical-align: middle;
+        }
+        .input-group .input-group-btn,
+        .input-group .form-control {
+            width: auto;
+        }
+        .input-group > .form-control {
+            width: 100%;
+        }
+        .form-control {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+    }
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
 	@media only screen and (min-width: 768px) and (max-width: 959px) {}
