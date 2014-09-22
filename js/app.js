@@ -25,7 +25,7 @@
     // Configure the Todos collection to use the Todo model and local storage for persistence
     TodoApp.Todos = Backbone.Collection.extend({
         model: TodoApp.Todo,
-        localStorage: new Store("todos")
+        localStorage: new Backbone.LocalStorage("todos")
     });
 
     // Configure the index view
@@ -123,13 +123,17 @@
             // Prevent the form from submitting
             event.preventDefault();
 
-            // Create a new todo with the given description
-            this.collection.create({
-                description: this.$("#todo").val(),
-                completed: false
-            });
+            var description = this.$("#todo").val();
 
-            this.render();
+            if ( description.length > 0 ) {
+                // Create a new todo with the given description
+                this.collection.create({
+                    description: description,
+                    completed: false
+                });
+
+//                this.render();
+            }
         },
         placeholderText: function() {
             return "What do you need to get done?";
