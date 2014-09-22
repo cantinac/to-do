@@ -18,14 +18,18 @@
     TodoApp.Todo = Backbone.Model.extend({
         defaults: {
             description: "",
-            completed: false
+            completed: false,
+            modified: new Date().getTime()
         }
     });
 
     // Configure the Todos collection to use the Todo model and local storage for persistence
     TodoApp.Todos = Backbone.Collection.extend({
         model: TodoApp.Todo,
-        localStorage: new Backbone.LocalStorage("todos")
+        localStorage: new Backbone.LocalStorage("todos"),
+        comparator: function(todo) {
+            return [todo.get("completed"), todo.get("modified")];
+        }
     });
 
     // Configure the index view
@@ -99,8 +103,11 @@
             }
 
             this.model.set("completed", !completed);
+            this.model.set("modified", new Date().getTime());
 
             this.model.save();
+
+            this.model.collection.sort();
         }
     });
 
