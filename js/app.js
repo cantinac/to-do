@@ -135,7 +135,13 @@
             return "What do you need to get done?";
         },
         addButtonText: function() {
-            return "Add To-do";
+            if ( $(window).width() > 768 ) {
+                return "Add To-do";
+            }
+            else {
+                return "+";
+            }
+
         }
     });
 
