@@ -5,12 +5,18 @@
  */
 
 (function() {
+    var isLandscape = function() {
+        return $(window).width() > 768;
+    };
+
     // Helper function to get the Mustache template
     var getTemplate = function(name) {
         return Mustache.compile($('#'+name+'-template').html());
     };
 
-    var TodoApp = {};
+    var TodoApp = {
+        form: null
+    };
 
     window.TodoApp = TodoApp;
 
@@ -51,7 +57,8 @@
             $(this.el).html(this.template(this));
 
             // Add the form
-            $(this.el).prepend(new TodoApp.Index.Form({collection: this.todos}).render().el);
+            TodoApp.form = new TodoApp.Index.Form({collection: this.todos});
+            $(this.el).prepend(TodoApp.form.render().el);
 
             // Add the todos
             this.todos.each(this.addTodo, this);
@@ -146,7 +153,7 @@
             return "What do you need to get done?";
         },
         addButtonText: function() {
-            if ( $(window).width() > 768 ) {
+            if ( isLandscape() ) {
                 return "Add To-do";
             }
             else {
@@ -179,9 +186,19 @@
 
         // Begin dispatching routes
         Backbone.history.start();
+
+        $(window).on("resize", function() {
+            if ( isLandscape() ) {
+                TodoApp.form.addbuttonText = "Add To-do";
+            }
+            else {
+                TodoApp.form.addbuttonText = "+";
+            }
+
+            TodoApp.form.render();
+        });
     };
 })();
-
 
 // Initialize the Todo app after the DOM has loaded
 $(function() {
