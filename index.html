@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Cantina TODO</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<div class="container">
+        <div class="sixteen columns">
+            <div id="todo-app" class="todo-app">
+
+            </div>
+        </div>
+	</div><!-- container -->
+
+    <script type="text/x-mustache-template" id="index-template">
+        <div class="todos"></div>
+    </script>
+
+    <script type="text/x-mustache-template" id="form-template">
+        <div class="input-group">
+            <input type="text" name="todo" id="todo" class="form-control" placeholder="{{ placeholderText }}" />
+            <span class="input-group-btn">
+                <button type="submit" id="add-todo" class="button">{{ addButtonText }}</button>
+            </span>
+        </div>
+    </script>
+
+    <script type="text/x-mustache-template" id="todo-template">
+        <label>
+            <input type="checkbox" class="toggle" />{{ description }}
+        </label>
+    </script>
+
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/underscore.min.js"></script>
+    <script type="text/javascript" src="js/backbone.min.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
+    <script type="text/javascript" src="js/backbone-localstorage.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+<!-- End Document
+================================================== -->
+</body>
+</html>
