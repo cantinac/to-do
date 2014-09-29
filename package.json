@@ -1,0 +1,22 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "A demo client-side todo app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0restes/to-do.git"
+  },
+  "author": "Luke Hollis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0restes/to-do/issues"
+  },
+  "homepage": "https://github.com/0restes/to-do",
+  "dependencies": {
+    "angular": "^1.2.23"
+  }
+}
