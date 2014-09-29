@@ -1,0 +1,29 @@
+<html ng-app="CantinaApp">
+<head>
+<title>Cantina App</title>
+<link rel="stylesheet" href="style.css"/> 
+</head>
+<body>
+
+
+<div class="wrap primary" ng-controller="CantinaController as cantina">
+
+	<form ng-submit="cantina.addItem()" name="form">
+		<input class="input-text" type="text" ng-model="item" name="item" placeholder="What do you need to get done?" />
+		<input class="input-submit" type="submit" id="submit" value="Add To-do" />
+	</form>
+
+	<div class="todo-list-wrap">
+		<ul class="todo-list">
+			<li ng-repeat="item in items" class="todo-item {{item.completed}}" ng-click="cantina.toggleCheck($event)">
+				<input class="item-checkbox" type="checkbox" ng-checked={{item.completed}}>
+				<span class="item-text">{{item.text}}</span>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
