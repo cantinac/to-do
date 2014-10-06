@@ -24,6 +24,9 @@ var todoItem = new TodoItem(
 // Backbone.View
 // -------------
 
+// Model
+// -----
+
 var TodoView = Backbone.View.extend({
   initialize: function(){
     this.model.on('change', this.render, this);
@@ -54,24 +57,56 @@ var todoView = new TodoView({
   model: todoItem
 });
 todoView.render();
-console.log(todoView.el);
 
-
+var todoListView = new TodoListView({collection: todoList});
+todoListView.render();
+console.log(todoListView.el)
 //myView.el defaults to div
 // Backbone.Collection
 // -------------
 
 var TodoList = Backbone.Collection.extend({
-
   url: '/todos',
   model: TodoItem
 });
 var todoList = new TodoList();
 
+todoList.forEach(function(todoItem){
 
+  // alert(todoItem.get('description'));
+})
+todoList.filter(function(todoItem){
+  return todoItem.get('status') === 'incomplete';
+})
 
-
-
+// Collection View
+// -----
+var TodoListView = Backbone.View.extend({
+  initialize: function(){
+    this.collection.on('add', this.addOne, this);
+  },
+  addOne: function(todoItem){
+    var todoView = new TodoView({model: todoItem});
+    this.$el.append(todoView.render().el);
+  },
+  render: function(){
+    
+  this.collection.forEach(this.addOne, this);
+  }
+});
+// Seeds
+// --------------
+var todos = [
+  {description: 'eat food', status: 'complete'},
+  {description: 'wake up', status: 'incomplete'},
+  {description: 'groom boris', status: 'incomplete'}
+];
+todoList.reset(todos);
+var newTodoItem = new TodoItem({
+  description: 'take out trash',
+  status: 'incomplete'
+});
+todoList.add(newTodoItem);
 
 
 
