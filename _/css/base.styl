@@ -1,0 +1,111 @@
+body
+  background: rgb(236, 240, 241);
+
+.wrapper
+  width: 96%;
+  max-width: 40em;
+  margin: 3.125em auto 0; 
+
+.todo-input-wrapper
+  overflow: hidden;
+  padding: .5em;
+  border-top: solid .063em rgb(204, 204, 204);
+  border-left: solid .063em rgb(204, 204, 204);
+  border-right: solid .063em rgb(204, 204, 204);
+  background: rgb(254,255,255);
+  background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(250,250,250,1) 25%,rgba(250,250,250,1) 25%,rgba(234,234,238,1) 100%);
+
+ul
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: solid .063em rgb(204, 204, 204);
+  border-left: solid .063em rgb(204, 204, 204);
+  border-right: solid .063em rgb(204, 204, 204);
+
+  li
+    display: none;
+    background: #ffffff;
+    padding: 1.06em .4em;
+    border-bottom: solid .063em rgb(204, 204, 204);
+
+button,
+input[type=text]
+  box-sizing:border-box;
+
+button:focus,
+input[type=text]:focus
+  outline: none;
+  box-shadow: none;
+
+.btn
+  float: left;
+  background: rgb(25,181,151);
+  background: linear-gradient(to bottom, rgba(25,181,151,1) 0%,rgba(20,157,130,1) 100%);
+  width: 15%;
+  padding: .5em 0 .5em 0;
+  text-align: center;
+  border: solid .063em #149D82;
+  border-radius: 0 .5em .5em 0;
+
+  &:before
+    content: '+';
+    color: #ffffff;
+    text-shadow: 0 .063em 0 rgba(34, 34, 34, .8);
+
+@media (min-width: 40em)
+  .btn
+    width: 15%;
+
+    &:before
+      content: 'Add To-Do'; 
+
+@media (min-width: 50em)
+  .btn
+    width: 15%;
+
+@media (orientation : landscape)
+  .btn
+    width: 25%;
+
+    &:before
+      content: 'Add To-Do';
+   
+@media (min-width: 40em) and (orientation : portrait)
+  .btn
+    width: 10%;
+
+    &:before
+      content: '+';
+
+.todo-input
+  float: left;
+  width: 85%;
+  border-right: 0;
+  margin-bottom: 0;
+  padding: .5em 0 .5em 1.8%;
+  border: solid .063em rgb(204, 204, 204);
+  border-right: none;
+  border-radius: .5em 0 0 .5em;
+
+@media (min-width: 40em)
+  .todo-input
+    width: 85%;
+
+@media (min-width: 50em)
+  .todo-input
+    width: 85%;
+
+@media (orientation : landscape) 
+  .todo-input
+    width: 75%;
+
+@media (min-width: 40em) and (orientation : portrait)
+  .todo-input
+    width: 90%;
+    
+.done
+  color: rgb(204, 204, 204);
+
+.ng-scope
+  display: block;
