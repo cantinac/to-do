@@ -29,7 +29,7 @@
 		
 		<div ng-repeat="todo in todos" class="list-row" ng-class="{hovered: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click="toggleTodo(todo)">
 		  <input type="checkbox" ng-model="todo.checked" /> <span class="isdone-{{todo.done}}">{{todo.text}}</span><span ng-click="removeTodo(todo)" class="glyphicon glyph-{{todo.done}} glyphicon-remove-circle"></span>
-		</div>
+		</div><!-- /.list-row -->
 		
 		</form>
     </div><!-- /.list -->
