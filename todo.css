@@ -1,0 +1,55 @@
+body { background:#ecf0f1; font-family:Verdana, Geneva, sans-serif; text-shadow: rgba(0,0,0,.1) 0 0 2px;}
+
+/* checklist */
+.list { width:80%; background:#ffffff; margin-top:10%; margin-left:auto; margin-right:auto; border:1px solid #d8dfdf; box-shadow: 0 0 2px #cccccc;}
+.list input[type='checkbox'] { float:left; margin-right:10px; }
+.list-head { background:#f9f9f9; background-image: linear-gradient( #ffffff, #efefef); border-bottom:1px solid #d8dfdf; }
+.list-head, .list-row { padding:12px 12px 8px 12px; }
+.list-row { border-bottom: 1px solid #d8dfdf; }
+.list-row.hovered { background-color:#f3f3f3; }
+.list-row .isdone-true { color:#bbb; }
+.list-row .isdone-false { color:#333; }
+
+/* glyphicons */
+.glyphicon-remove-circle { float:right; font-size:1.2em;}
+.glyph-true { display:inline; }
+.glyph-true:hover { color:red; cursor:pointer;}
+.glyph-false { display:none; }
+.input-group-btn .glyphicon { padding:0; margin:0; }
+
+/* input box placeholder */
+.form-control::-webkit-input-placeholder { color:#bbb; }
+.form-control:-moz-placeholder { color:#bbb; } /* Firefox 18- */
+.form-control::-moz-placeholder { color:#bbb; } /* Firefox 19+ */
+.form-control:-ms-input-placeholder { color:#bbb; }
+
+/* screen orientation resize */
+@media screen and (orientation:landscape) {
+	button.add-todo#portrait { display:none; }
+	button.add-todo#landscape { display:inline; border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
+    }
+@media screen and (orientation:portrait) {
+	.list { width:90%; margin-top:10px;}
+	button.add-todo#portrait { display:inline; }
+	button.add-todo#landscape { display:none; }
+	}
+
+/* glossy submit button */
+.btn-custom {
+  background-color: hsl(175, 100%, 31%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00bcac", endColorstr="#009e90");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#00bcac), to(#009e90));
+  background-image: -moz-linear-gradient(top, #00bcac, #009e90);
+  background-image: -ms-linear-gradient(top, #00bcac, #009e90);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00bcac), color-stop(100%, #009e90));
+  background-image: -webkit-linear-gradient(top, #00bcac, #009e90);
+  background-image: -o-linear-gradient(top, #00bcac, #009e90);
+  background-image: linear-gradient(#00bcac, #009e90);
+  border-color: #009e90 #009e90 hsl(175, 100%, 29.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0 5px 5px 0;
+  text-shadow: 1px 1px 1px #666;
+}

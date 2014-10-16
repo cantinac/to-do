@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="To-do List">
+	<meta name="author" content="Jeff Matson">
+	<title>My First To-do List</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- bootstrap css -->
+	<link href="todo.css" rel="stylesheet"> <!-- custom css -->
+	<script type="text/javascript" src="angular/angular.min.js"></script> <!-- angular core -->
+	<script type="text/javascript" src="todo.js"></script> <!-- angular app -->
+  </head>
+  
+  <body>
+    <div ng-controller="TodoCtrl" class="list">
+		<form ng-submit="addTodo(listForm.$valid)" name="listForm" novalidate>
+		
+		<div class="list-head">
+		  <div class="row-top input-group">
+			<input required type="text" ng-model="formTodoText" ng-model-instant class="form-control" placeholder="What do you need to get done?" autofocus />
+			<span class="input-group-btn">
+			<button class="btn btn-custom add-todo" id="landscape" ng-click="addTodo()" type="submit">Add To-do</button>
+			<button class="btn btn-custom add-todo" id="portrait" ng-click="addTodo()" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+			</span>
+		  </div><!-- /.input-group -->
+		</div><!-- /.list-head -->
+		
+		<div ng-repeat="todo in todos" class="list-row" ng-class="{hovered: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click="toggleTodo(todo)">
+		  <input type="checkbox" ng-model="todo.checked" /> <span class="isdone-{{todo.done}}">{{todo.text}}</span><span ng-click="removeTodo(todo)" class="glyphicon glyph-{{todo.done}} glyphicon-remove-circle"></span>
+		</div><!-- /.list-row -->
+		
+		</form>
+    </div><!-- /.list -->
+  </body>
+  
+</html>
