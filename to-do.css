@@ -1,0 +1,52 @@
+body { background:#ECF0F1; font-family:Verdana, Geneva, sans-serif; text-shadow: rgba(0,0,0,.1) 0 0 2px;}
+
+input[type='checkbox'] { float:left; margin-right:10px; }
+.list-row, .list-head { padding:12px 12px 8px 12px; }
+.list-row { border-bottom: 1px solid #d8dfdf; }
+.list { width:80%; background:#FFFFFF; margin-top:100px; margin-left:auto; margin-right:auto; border:1px solid #d8dfdf; box-shadow: 0 0 2px #cccccc;}
+.list-head { background:#f9f9f9; background-image: linear-gradient( #ffffff, #efefef); border-bottom:1px solid #d8dfdf; }
+.isdone-true { color:#dddddd; }
+.isdone-false { color:#333333; }
+.glyphicon { float:right; font-size:1.2em;}
+.glyph-true { display:inline; }
+.glyph-true:hover { color:red; }
+.glyph-false { display:none; }
+.input-group-btn .glyphicon { padding:0; margin:0; }
+
+
+/* input box placeholder */
+::-webkit-input-placeholder { opacity:0.2; }
+:-moz-placeholder { opacity:0.2; } /* Firefox 18- */
+::-moz-placeholder { opacity:0.2; } /* Firefox 19+ */
+:-ms-input-placeholder { filter: alpha(opacity=50); }
+
+/* screen orientation  */
+@media screen and (orientation:portrait) {
+	.list { width:95%; margin-top:10px;}
+	button.add-todo.portrait { display:inline; }
+	button.add-todo.landscape { display:none; }
+	}
+@media screen and (orientation:landscape) {
+	button.add-todo.portrait { display:none; }
+	button.add-todo.landscape { display:inline; }
+    }
+
+/* glossy submit button */
+.btn-custom {
+  background-color: hsl(175, 100%, 31%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00bcac", endColorstr="#009e90");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#00bcac), to(#009e90));
+  background-image: -moz-linear-gradient(top, #00bcac, #009e90);
+  background-image: -ms-linear-gradient(top, #00bcac, #009e90);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00bcac), color-stop(100%, #009e90));
+  background-image: -webkit-linear-gradient(top, #00bcac, #009e90);
+  background-image: -o-linear-gradient(top, #00bcac, #009e90);
+  background-image: linear-gradient(#00bcac, #009e90);
+  border-color: #009e90 #009e90 hsl(175, 100%, 29.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0 5px 5px 0;
+  text-shadow: 1px 1px 1px #666;
+}
