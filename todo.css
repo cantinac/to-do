@@ -1,35 +1,38 @@
-body { background:#ECF0F1; font-family:Verdana, Geneva, sans-serif; text-shadow: rgba(0,0,0,.1) 0 0 2px;}
+body { background:#ecf0f1; font-family:Verdana, Geneva, sans-serif; text-shadow: rgba(0,0,0,.1) 0 0 2px;}
 
-input[type='checkbox'] { float:left; margin-right:10px; }
-.list-row, .list-head { padding:12px 12px 8px 12px; }
-.list-row { border-bottom: 1px solid #d8dfdf; }
-.list { width:80%; background:#FFFFFF; margin-top:100px; margin-left:auto; margin-right:auto; border:1px solid #d8dfdf; box-shadow: 0 0 2px #cccccc;}
+/* checklist */
+.list { width:80%; background:#ffffff; margin-top:10%; margin-left:auto; margin-right:auto; border:1px solid #d8dfdf; box-shadow: 0 0 2px #cccccc;}
+.list input[type='checkbox'] { float:left; margin-right:10px; }
 .list-head { background:#f9f9f9; background-image: linear-gradient( #ffffff, #efefef); border-bottom:1px solid #d8dfdf; }
-.isdone-true { color:#dddddd; }
-.isdone-false { color:#333333; }
-.glyphicon { float:right; font-size:1.2em;}
+.list-head, .list-row { padding:12px 12px 8px 12px; }
+.list-row { border-bottom: 1px solid #d8dfdf; }
+.list-row.hovered { background-color:#f3f3f3; }
+.list-row .isdone-true { color:#bbb; }
+.list-row .isdone-false { color:#333; }
+
+/* glyphicons */
+.glyphicon-remove-circle { float:right; font-size:1.2em;}
 .glyph-true { display:inline; }
-.glyph-true:hover { color:red; }
+.glyph-true:hover { color:red; cursor:pointer;}
 .glyph-false { display:none; }
 .input-group-btn .glyphicon { padding:0; margin:0; }
 
-
 /* input box placeholder */
-::-webkit-input-placeholder { opacity:0.2; }
-:-moz-placeholder { opacity:0.2; } /* Firefox 18- */
-::-moz-placeholder { opacity:0.2; } /* Firefox 19+ */
-:-ms-input-placeholder { filter: alpha(opacity=50); }
+.form-control::-webkit-input-placeholder { color:#bbb; }
+.form-control:-moz-placeholder { color:#bbb; } /* Firefox 18- */
+.form-control::-moz-placeholder { color:#bbb; } /* Firefox 19+ */
+.form-control:-ms-input-placeholder { color:#bbb; }
 
-/* screen orientation  */
-@media screen and (orientation:portrait) {
-	.list { width:95%; margin-top:10px;}
-	button.add-todo.portrait { display:inline; }
-	button.add-todo.landscape { display:none; }
-	}
+/* screen orientation resize */
 @media screen and (orientation:landscape) {
-	button.add-todo.portrait { display:none; }
-	button.add-todo.landscape { display:inline; }
+	button.add-todo#portrait { display:none; }
+	button.add-todo#landscape { display:inline; border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
     }
+@media screen and (orientation:portrait) {
+	.list { width:90%; margin-top:10px;}
+	button.add-todo#portrait { display:inline; }
+	button.add-todo#landscape { display:none; }
+	}
 
 /* glossy submit button */
 .btn-custom {

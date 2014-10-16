@@ -8,7 +8,7 @@
 	<meta name="author" content="Jeff Matson">
 	<title>My First To-do List</title>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- bootstrap css -->
-	<link href="to-do.css" rel="stylesheet"> <!-- custom css -->
+	<link href="todo.css" rel="stylesheet"> <!-- custom css -->
 	<script type="text/javascript" src="angular/angular.min.js"></script> <!-- angular core -->
 	<script type="text/javascript" src="todo.js"></script> <!-- angular app -->
   </head>
@@ -19,20 +19,19 @@
 		
 		<div class="list-head">
 		  <div class="row-top input-group">
-			<input required type="text" ng-model="formTodoText" ng-model-instant class="form-control" placeholder="What do you need to get done?">
+			<input required type="text" ng-model="formTodoText" ng-model-instant class="form-control" placeholder="What do you need to get done?" autofocus />
 			<span class="input-group-btn">
-			<button class="btn btn-custom add-todo landscape" ng-click="addTodo()" type="submit">Add To-do</button>
-			<button class="btn btn-custom add-todo portrait" ng-click="addTodo()" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+			<button class="btn btn-custom add-todo" id="landscape" ng-click="addTodo()" type="submit">Add To-do</button>
+			<button class="btn btn-custom add-todo" id="portrait" ng-click="addTodo()" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
 			</span>
 		  </div><!-- /.input-group -->
 		</div><!-- /.list-head -->
 		
-		<div ng-repeat="todo in todos" class="list-row">
-		  <input type="checkbox" ng-model="todo.done" /> <span class="isdone-{{todo.done}}">{{todo.text}}</span><span ng-click="removeTodo(todo)" class="glyphicon glyph-{{todo.done}} glyphicon-remove-circle"></span>
+		<div ng-repeat="todo in todos" class="list-row" ng-class="{hovered: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click="toggleTodo(todo)">
+		  <input type="checkbox" ng-model="todo.checked" /> <span class="isdone-{{todo.done}}">{{todo.text}}</span><span ng-click="removeTodo(todo)" class="glyphicon glyph-{{todo.done}} glyphicon-remove-circle"></span>
 		</div>
 		
 		</form>
-		
     </div><!-- /.list -->
   </body>
   
