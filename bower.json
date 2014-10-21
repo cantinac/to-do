@@ -1,0 +1,26 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gvinter/to-do",
+  "authors": [
+    "Galen Vinter <galen.vinter@gmail.com>"
+  ],
+  "description": "Galen Vinter's Cantina jQuery-less ToDo app",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "backbone": "~1.1.2",
+    "zepto": "~1.1.4"
+  },
+  "resolutions": {
+    "backbone": "~1.1.2"
+  }
+}
