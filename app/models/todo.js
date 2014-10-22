@@ -1,7 +1,10 @@
-var app = app || {};
+var App = App || {};
 
 // Todo Model
   
-App.Todo = Backbone.Model.extend({
-
+App.TodoModel = Backbone.Model.extend({
+  defaults: {
+    title: '',
+    completed: false
+  }
 });

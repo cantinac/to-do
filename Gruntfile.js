@@ -33,9 +33,9 @@ module.exports = function(grunt) {
           bower+'backbone/backbone.js',
           bower+'backbone.localStorage/backbone.localStorage-min.js',
           // App
-          app+'model/todo.js',
+          app+'models/todo.js',
           app+'collections/todosCollection.js',
-          app+'views/todosView.js',
+          app+'views/todos.js',
           app+'views/app.js',
           app+'init.js',
         ],
@@ -45,6 +45,9 @@ module.exports = function(grunt) {
 
     // Watch
     watch: {
+      options: {
+        livereload: true,
+      },
       sass: {
         files: 'css/**/*.sass',
         tasks: ['sass']
