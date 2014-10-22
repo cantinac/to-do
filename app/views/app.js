@@ -15,7 +15,8 @@ App.AppView = Backbone.View.extend({
     this.addPreviousTasks();
   },
 
-  addTask: function() {
+  addTask: function(e) {
+    e.preventDefault();
     task_title = $('#new-task').val();
     todo_view = new App.TodoView({model:{'title': task_title}});
     
