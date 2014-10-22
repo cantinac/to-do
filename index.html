@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery-less ToDo App</title>
+
+  <!-- <meta name="viewport" content="width=device-width" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true" />
+  
+  <link rel="stylesheet" type="text/css" href="public/css/main.min.css">
+  <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="wrap">
+      <div id="task-header" class="task-header">
+        <form class="form-group" action="/">
+          <input type="text" id="new-task" name="task-title" placeholder="What do you need to get done?" />
+          <button id="addTask">
+            <span class="text">Add To-do</span>
+            <span class="plus">+</span>
+          </button>
+        </form>
+      </div>
+      <ul id="task-list" class="task-list"></ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="public/js/main.min.js"></script>
+  <!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+
+</body>
+</html>

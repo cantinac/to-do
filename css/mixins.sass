@@ -1,0 +1,43 @@
+@mixin border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+@mixin linear-gradient($fromColor, $toColor)
+  background-color: $toColor
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor))
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor)
+  background-image: -moz-linear-gradient(top, $fromColor, $toColor)
+  background-image: -ms-linear-gradient(top, $fromColor, $toColor)
+  background-image: -o-linear-gradient(top, $fromColor, $toColor)
+  background-image: linear-gradient(top, $fromColor, $toColor)
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#$fromColor', EndColorStr='#$toColor')
+
+
+@mixin button
+  +linear-gradient(rgb(59, 192, 164), rgb(36, 160, 135))
+  color: $white
+  outline: 0
+  font-weight: 400
+  text-shadow: 1px 1px 1px #555
+  border: 1px solid rgb(0, 154, 127)
+
+@mixin border-radius($radius) 
+  -webkit-border-radius: $radius
+  border-radius: $radius
+  background-clip: padding-box  /* stops bg color from leaking outside the border: */
+
+// Single side border-radius
+@mixin border-right-radius($radius) 
+  -webkit-border-bottom-right-radius: $radius
+  border-bottom-right-radius: $radius
+  -webkit-border-top-right-radius: $radius
+  border-top-right-radius: $radius
+  background-clip: padding-box
+
+@mixin border-left-radius($radius) 
+  -webkit-border-bottom-left-radius: $radius
+  border-bottom-left-radius: $radius
+  -webkit-border-top-left-radius: $radius
+  border-top-left-radius: $radius
+  background-clip: padding-box

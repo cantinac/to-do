@@ -1,0 +1,85 @@
+@import mixins
+
+$white: #fff
+$mobile: 640px // mobile breakpoint
+
+// General
+*
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-weight: 300
+
+body
+  background: rgb(236, 240, 241)
+
+.wrap
+  width: 100%
+  max-width: 700px
+  margin: auto
+  box-shadow: 0 0 1px 1px #bbb
+  background: $white
+
+// Add-Task Header
+.task-header
+  +linear-gradient($white, rgb(239, 239, 239))
+  padding: 10px
+  border-bottom: 1px solid #ccc
+  
+  .form-group
+    position: relative
+  
+  input, button
+    height: 36px
+    font-size: 16px
+    outline: 0
+    &:focus
+      outline: 0 !important
+    &::-moz-focus-inner
+      border: 0
+      padding: 0
+      outline: 0
+  input
+    width: 100%
+    padding: 0 34px 0 10px
+    border: 1px solid #ccc
+    +border-box
+    +border-radius(5px)
+    @media all and (min-width: $mobile)
+      padding: 0 100px 0 10px
+  button
+    right: -2px
+    top: 0
+    position: absolute
+    padding: 0 10px
+    +button
+    +border-right-radius(5px)
+    .text
+      display: none
+    .plus
+      display: inline
+      font-size: 30px
+      line-height: 14px
+      text-shadow: none
+  @media all and (min-width: $mobile)
+    button
+      padding: 0 15px
+      .text
+        display: inline
+      .plus
+        display: none
+
+// Task List
+.task-list
+  list-style: none
+  padding: 0
+  margin: 0
+  width: 100%
+  li
+    border-bottom: 1px solid #e8e8e8
+    font-size: 16px
+    padding: 15px 10px
+    label.completed
+      color: #bbb
+    &:last-child
+      border-bottom: none
+    input[type="checkbox"]
+      margin-right: 10px
