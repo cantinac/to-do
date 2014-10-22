@@ -23,16 +23,22 @@ body
   +linear-gradient($white, rgb(239, 239, 239))
   padding: 10px
   border-bottom: 1px solid #ccc
+  
   .form-group
     position: relative
+  
   input, button
     height: 36px
     font-size: 16px
+    outline: 0
+    &:focus
+      outline: 0 !important
     &::-moz-focus-inner
       border: 0
       padding: 0
+      outline: 0
   input
-    width: 99% 
+    width: 100%
     padding: 0 34px 0 10px
     border: 1px solid #ccc
     +border-box
