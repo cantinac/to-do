@@ -2,9 +2,11 @@ Peter Gaivoronski - Todo List App
 
 Instructions: 
 
-Install bower if you do not have it (npm -g install bower)
-Run "bower install" to get dependencies.
-Run index.html in browser to test app.
+* Install bower if you do not have it (npm -g install bower)
+
+* Run "bower install" to get dependencies.
+
+* Run index.html in browser to test app.
 
 Notes: 
 
