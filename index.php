@@ -34,7 +34,6 @@
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.1.min.js"><\/script>')</script>
 
 <!-- plugins -->
-<script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/libs/underscore-min.js"></script>
 <script type="text/javascript" src="js/libs/backbone-min.js"></script>
 
