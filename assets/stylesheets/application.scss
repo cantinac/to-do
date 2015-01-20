@@ -2,4 +2,51 @@
 @import 'base';
 
 //App styles here...
+#todo-intro {
+  @extend .jumbotron;
+}
 
+
+
+.todo {
+  margin-bottom: $grid-gutter-half;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.todo-completed {
+  input.form-control {
+    cursor: $cursor-disabled;
+    background-color: $input-bg-disabled;
+    opacity: 1;
+  }
+}
+
+
+#todos {
+  @extend .panel;
+  @extend .panel-default;
+}
+
+
+#new-todo {
+  @extend .panel-heading;
+  padding: $grid-gutter-half;
+  button.btn {
+    padding-top: 7px;
+  }
+}
+
+
+#todo-list {
+  @extend .panel-body;
+}
+
+
+#todo-controls {
+  @extend .panel-footer;
+  text-align: right;
+}
