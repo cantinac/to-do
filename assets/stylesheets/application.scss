@@ -30,7 +30,7 @@
     margin-bottom: 0;
   }
 
-  .input-group-btn a.btn {
+  .input-group-btn button.btn {
     padding-top: 7px;
   }
 }
@@ -77,4 +77,9 @@
 #todo-controls {
   @extend .panel-footer;
   text-align: right;
+
+  .todo-control-label {
+    padding-top: 1px;
+    float: left;
+  }
 }

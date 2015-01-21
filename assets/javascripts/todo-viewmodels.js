@@ -11,6 +11,8 @@ var cantinaVM = function(){
     todos: new Todos()
   };
 
+  self.collections.todos.fetch();
+
   self.filterOptions = ko.observableArray(['all', 'complete', 'inProg'])
   self.filter = ko.observable('all')
 
@@ -50,14 +52,17 @@ var todoVM = function(model){
   self.title = kb.observable(model, 'title');
   self.completed = kb.observable(model, 'completed');
 
-  self.isChecked = ko.observable(false);
+  self.isChecked = ko.observable(
+    (model.get('completed') != null)
+  );
 
   self.isChecked.subscribe(function(newvalue){
     return (newvalue === true) ? model.complete() : model.uncomplete();
   })
 
   self.remove = function(){
-    return model.trigger('destroy', model, model.collection, {})
+    return model.destroy();
+    // return model.trigger('destroy', model, model.collection, {})
   }
 }
 

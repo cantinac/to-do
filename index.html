@@ -47,7 +47,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" data-bind='value: newTodoTitle' placeholder='Enter a Todo here&hellip;'>
                 <span class="input-group-btn">
-                  <button class="btn btn-primary" type="submit">Create!</button>
+                  <button class="btn btn-primary" type="submit" title='Create Todo'><i class='fa fa-plus'></i></button>
                 </span>
               </div>
             </form>
@@ -64,7 +64,7 @@
             </div>
 
             <div id='todo-controls'>
-              <form>
+              <span class='todo-control-label'>Filter:</span>
               <label class="radio-inline">
                 <input type="radio" value="inProg" data-bind='checked: filter'> In-Progress
               </label>
@@ -74,8 +74,6 @@
               <label class="radio-inline">
                 <input type="radio" value="all"  data-bind='checked: filter'> All
               </label>
-              </form>
-
             </div>
           </div>
         </div>
@@ -87,6 +85,7 @@
     <!-- <script src="assets/javascripts/bootstrap.js"></script> -->
     <script src="assets/javascripts/lodash.underscore.js"></script>
     <script src="assets/javascripts/backbone.js"></script>
+    <script src="assets/javascripts/backbone.localstorage.js"></script>
     <script src="assets/javascripts/knockout-3.2.0.js"></script>
     <script src="assets/javascripts/knockback.js"></script>
 

@@ -10104,7 +10104,7 @@ button.close {
   margin-bottom: 0;
 }
 /* line 33, ../stylesheets/application.scss */
-.todo .input-group-btn a.btn {
+.todo .input-group-btn button.btn {
   padding-top: 7px;
 }
 
@@ -10137,4 +10137,9 @@ button.close {
 /* line 77, ../stylesheets/application.scss */
 #todo-controls {
   text-align: right;
+}
+/* line 81, ../stylesheets/application.scss */
+#todo-controls .todo-control-label {
+  padding-top: 1px;
+  float: left;
 }

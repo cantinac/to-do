@@ -10,20 +10,17 @@ var Todo = Backbone.Model.extend({
   initialize: function(attrs, options){
     this.set('created', new Date());
     this.set(attrs);
+    this.save();
 
     this.on('destroy', this.onDestroy, this)
   },
 
-  toggle: function(){
-    return (this.get('completed') === null) ? this.set('completed', new Date()) : this.set('completed', null)
-  },
-
   complete: function(){
-    return this.set('completed', new Date());
+    return this.save({'completed': new Date()});
   },
 
   uncomplete: function(){
-    return this.set('completed', null)
+    return this.save({'completed': null});
   },
 
   onDestroy: function(){
@@ -38,6 +35,8 @@ var Todo = Backbone.Model.extend({
 
 var Todos = Backbone.Collection.extend({
   model: Todo,
+
+  localStorage: new Backbone.LocalStorage("cantinaTodos"),
 
   // sort based on created date first, then completed date. separates completed from in-progress
   comparator: function(a,b){
