@@ -5665,16 +5665,16 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 16, ../stylesheets/bootstrap/_panels.scss */
-.panel-body, #todo-list {
+.panel-body, #todo-empty, #todo-list {
   padding: 15px;
 }
 /* line 15, ../stylesheets/bootstrap/mixins/_clearfix.scss */
-.panel-body:before, #todo-list:before, .panel-body:after, #todo-list:after {
+.panel-body:before, #todo-empty:before, #todo-list:before, .panel-body:after, #todo-empty:after, #todo-list:after {
   content: " ";
   display: table;
 }
 /* line 19, ../stylesheets/bootstrap/mixins/_clearfix.scss */
-.panel-body:after, #todo-list:after {
+.panel-body:after, #todo-empty:after, #todo-list:after {
   clear: both;
 }
 
@@ -5881,17 +5881,23 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-bottom-right-radius: 3px;
 }
 /* line 161, ../stylesheets/bootstrap/_panels.scss */
-.panel > .panel-body + .table, #todos > .panel-body + .table, .panel > #todo-list + .table, #todos > #todo-list + .table,
+.panel > .panel-body + .table, #todos > .panel-body + .table, .panel > #todo-empty + .table, #todos > #todo-empty + .table, .panel > #todo-list + .table, #todos > #todo-list + .table,
 .panel > .panel-body + .table-responsive,
 #todos > .panel-body + .table-responsive,
+.panel > #todo-empty + .table-responsive,
+#todos > #todo-empty + .table-responsive,
 .panel > #todo-list + .table-responsive,
 #todos > #todo-list + .table-responsive,
 .panel > .table + .panel-body,
 #todos > .table + .panel-body,
+.panel > .table + #todo-empty,
+#todos > .table + #todo-empty,
 .panel > .table + #todo-list,
 #todos > .table + #todo-list,
 .panel > .table-responsive + .panel-body,
 #todos > .table-responsive + .panel-body,
+.panel > .table-responsive + #todo-empty,
+#todos > .table-responsive + #todo-empty,
 .panel > .table-responsive + #todo-list,
 #todos > .table-responsive + #todo-list {
   border-top: 1px solid #dddddd;
@@ -6020,7 +6026,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-bottom: 0;
 }
 /* line 233, ../stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group #new-todo + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > #todo-list, .panel-group #new-todo + .panel-collapse > #todo-list,
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group #new-todo + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > #todo-empty, .panel-group #new-todo + .panel-collapse > #todo-empty, .panel-group .panel-heading + .panel-collapse > #todo-list, .panel-group #new-todo + .panel-collapse > #todo-list,
 .panel-group .panel-heading + .panel-collapse > .list-group,
 .panel-group #new-todo + .panel-collapse > .list-group {
   border-top: 1px solid #dddddd;
@@ -6030,7 +6036,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-top: 0;
 }
 /* line 240, ../stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-footer + .panel-collapse .panel-body, .panel-group #todo-controls + .panel-collapse .panel-body, .panel-group .panel-footer + .panel-collapse #todo-list, .panel-group #todo-controls + .panel-collapse #todo-list {
+.panel-group .panel-footer + .panel-collapse .panel-body, .panel-group #todo-controls + .panel-collapse .panel-body, .panel-group .panel-footer + .panel-collapse #todo-empty, .panel-group #todo-controls + .panel-collapse #todo-empty, .panel-group .panel-footer + .panel-collapse #todo-list, .panel-group #todo-controls + .panel-collapse #todo-list {
   border-bottom: 1px solid #dddddd;
 }
 
@@ -6045,7 +6051,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #dddddd;
 }
 /* line 11, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading + .panel-collapse > .panel-body, #todos > .panel-heading + .panel-collapse > .panel-body, .panel-default > #new-todo + .panel-collapse > .panel-body, #todos > #new-todo + .panel-collapse > .panel-body, .panel-default > .panel-heading + .panel-collapse > #todo-list, #todos > .panel-heading + .panel-collapse > #todo-list, .panel-default > #new-todo + .panel-collapse > #todo-list, #todos > #new-todo + .panel-collapse > #todo-list {
+.panel-default > .panel-heading + .panel-collapse > .panel-body, #todos > .panel-heading + .panel-collapse > .panel-body, .panel-default > #new-todo + .panel-collapse > .panel-body, #todos > #new-todo + .panel-collapse > .panel-body, .panel-default > .panel-heading + .panel-collapse > #todo-empty, #todos > .panel-heading + .panel-collapse > #todo-empty, .panel-default > #new-todo + .panel-collapse > #todo-empty, #todos > #new-todo + .panel-collapse > #todo-empty, .panel-default > .panel-heading + .panel-collapse > #todo-list, #todos > .panel-heading + .panel-collapse > #todo-list, .panel-default > #new-todo + .panel-collapse > #todo-list, #todos > #new-todo + .panel-collapse > #todo-list {
   border-top-color: #dddddd;
 }
 /* line 14, ../stylesheets/bootstrap/mixins/_panels.scss */
@@ -6054,7 +6060,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   background-color: #333333;
 }
 /* line 20, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-footer + .panel-collapse > .panel-body, #todos > .panel-footer + .panel-collapse > .panel-body, .panel-default > #todo-controls + .panel-collapse > .panel-body, #todos > #todo-controls + .panel-collapse > .panel-body, .panel-default > .panel-footer + .panel-collapse > #todo-list, #todos > .panel-footer + .panel-collapse > #todo-list, .panel-default > #todo-controls + .panel-collapse > #todo-list, #todos > #todo-controls + .panel-collapse > #todo-list {
+.panel-default > .panel-footer + .panel-collapse > .panel-body, #todos > .panel-footer + .panel-collapse > .panel-body, .panel-default > #todo-controls + .panel-collapse > .panel-body, #todos > #todo-controls + .panel-collapse > .panel-body, .panel-default > .panel-footer + .panel-collapse > #todo-empty, #todos > .panel-footer + .panel-collapse > #todo-empty, .panel-default > #todo-controls + .panel-collapse > #todo-empty, #todos > #todo-controls + .panel-collapse > #todo-empty, .panel-default > .panel-footer + .panel-collapse > #todo-list, #todos > .panel-footer + .panel-collapse > #todo-list, .panel-default > #todo-controls + .panel-collapse > #todo-list, #todos > #todo-controls + .panel-collapse > #todo-list {
   border-bottom-color: #dddddd;
 }
 
@@ -6069,7 +6075,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #337ab7;
 }
 /* line 11, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading + .panel-collapse > .panel-body, .panel-primary > #new-todo + .panel-collapse > .panel-body, .panel-primary > .panel-heading + .panel-collapse > #todo-list, .panel-primary > #new-todo + .panel-collapse > #todo-list {
+.panel-primary > .panel-heading + .panel-collapse > .panel-body, .panel-primary > #new-todo + .panel-collapse > .panel-body, .panel-primary > .panel-heading + .panel-collapse > #todo-empty, .panel-primary > #new-todo + .panel-collapse > #todo-empty, .panel-primary > .panel-heading + .panel-collapse > #todo-list, .panel-primary > #new-todo + .panel-collapse > #todo-list {
   border-top-color: #337ab7;
 }
 /* line 14, ../stylesheets/bootstrap/mixins/_panels.scss */
@@ -6078,7 +6084,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   background-color: white;
 }
 /* line 20, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-footer + .panel-collapse > .panel-body, .panel-primary > #todo-controls + .panel-collapse > .panel-body, .panel-primary > .panel-footer + .panel-collapse > #todo-list, .panel-primary > #todo-controls + .panel-collapse > #todo-list {
+.panel-primary > .panel-footer + .panel-collapse > .panel-body, .panel-primary > #todo-controls + .panel-collapse > .panel-body, .panel-primary > .panel-footer + .panel-collapse > #todo-empty, .panel-primary > #todo-controls + .panel-collapse > #todo-empty, .panel-primary > .panel-footer + .panel-collapse > #todo-list, .panel-primary > #todo-controls + .panel-collapse > #todo-list {
   border-bottom-color: #337ab7;
 }
 
@@ -6093,7 +6099,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #d6e9c6;
 }
 /* line 11, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading + .panel-collapse > .panel-body, .panel-success > #new-todo + .panel-collapse > .panel-body, .panel-success > .panel-heading + .panel-collapse > #todo-list, .panel-success > #new-todo + .panel-collapse > #todo-list {
+.panel-success > .panel-heading + .panel-collapse > .panel-body, .panel-success > #new-todo + .panel-collapse > .panel-body, .panel-success > .panel-heading + .panel-collapse > #todo-empty, .panel-success > #new-todo + .panel-collapse > #todo-empty, .panel-success > .panel-heading + .panel-collapse > #todo-list, .panel-success > #new-todo + .panel-collapse > #todo-list {
   border-top-color: #d6e9c6;
 }
 /* line 14, ../stylesheets/bootstrap/mixins/_panels.scss */
@@ -6102,7 +6108,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   background-color: #3c763d;
 }
 /* line 20, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-footer + .panel-collapse > .panel-body, .panel-success > #todo-controls + .panel-collapse > .panel-body, .panel-success > .panel-footer + .panel-collapse > #todo-list, .panel-success > #todo-controls + .panel-collapse > #todo-list {
+.panel-success > .panel-footer + .panel-collapse > .panel-body, .panel-success > #todo-controls + .panel-collapse > .panel-body, .panel-success > .panel-footer + .panel-collapse > #todo-empty, .panel-success > #todo-controls + .panel-collapse > #todo-empty, .panel-success > .panel-footer + .panel-collapse > #todo-list, .panel-success > #todo-controls + .panel-collapse > #todo-list {
   border-bottom-color: #d6e9c6;
 }
 
@@ -6117,7 +6123,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #bce8f1;
 }
 /* line 11, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading + .panel-collapse > .panel-body, .panel-info > #new-todo + .panel-collapse > .panel-body, .panel-info > .panel-heading + .panel-collapse > #todo-list, .panel-info > #new-todo + .panel-collapse > #todo-list {
+.panel-info > .panel-heading + .panel-collapse > .panel-body, .panel-info > #new-todo + .panel-collapse > .panel-body, .panel-info > .panel-heading + .panel-collapse > #todo-empty, .panel-info > #new-todo + .panel-collapse > #todo-empty, .panel-info > .panel-heading + .panel-collapse > #todo-list, .panel-info > #new-todo + .panel-collapse > #todo-list {
   border-top-color: #bce8f1;
 }
 /* line 14, ../stylesheets/bootstrap/mixins/_panels.scss */
@@ -6126,7 +6132,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   background-color: #31708f;
 }
 /* line 20, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-footer + .panel-collapse > .panel-body, .panel-info > #todo-controls + .panel-collapse > .panel-body, .panel-info > .panel-footer + .panel-collapse > #todo-list, .panel-info > #todo-controls + .panel-collapse > #todo-list {
+.panel-info > .panel-footer + .panel-collapse > .panel-body, .panel-info > #todo-controls + .panel-collapse > .panel-body, .panel-info > .panel-footer + .panel-collapse > #todo-empty, .panel-info > #todo-controls + .panel-collapse > #todo-empty, .panel-info > .panel-footer + .panel-collapse > #todo-list, .panel-info > #todo-controls + .panel-collapse > #todo-list {
   border-bottom-color: #bce8f1;
 }
 
@@ -6141,7 +6147,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #faebcc;
 }
 /* line 11, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading + .panel-collapse > .panel-body, .panel-warning > #new-todo + .panel-collapse > .panel-body, .panel-warning > .panel-heading + .panel-collapse > #todo-list, .panel-warning > #new-todo + .panel-collapse > #todo-list {
+.panel-warning > .panel-heading + .panel-collapse > .panel-body, .panel-warning > #new-todo + .panel-collapse > .panel-body, .panel-warning > .panel-heading + .panel-collapse > #todo-empty, .panel-warning > #new-todo + .panel-collapse > #todo-empty, .panel-warning > .panel-heading + .panel-collapse > #todo-list, .panel-warning > #new-todo + .panel-collapse > #todo-list {
   border-top-color: #faebcc;
 }
 /* line 14, ../stylesheets/bootstrap/mixins/_panels.scss */
@@ -6150,7 +6156,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   background-color: #8a6d3b;
 }
 /* line 20, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-footer + .panel-collapse > .panel-body, .panel-warning > #todo-controls + .panel-collapse > .panel-body, .panel-warning > .panel-footer + .panel-collapse > #todo-list, .panel-warning > #todo-controls + .panel-collapse > #todo-list {
+.panel-warning > .panel-footer + .panel-collapse > .panel-body, .panel-warning > #todo-controls + .panel-collapse > .panel-body, .panel-warning > .panel-footer + .panel-collapse > #todo-empty, .panel-warning > #todo-controls + .panel-collapse > #todo-empty, .panel-warning > .panel-footer + .panel-collapse > #todo-list, .panel-warning > #todo-controls + .panel-collapse > #todo-list {
   border-bottom-color: #faebcc;
 }
 
@@ -6165,7 +6171,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #ebccd1;
 }
 /* line 11, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading + .panel-collapse > .panel-body, .panel-danger > #new-todo + .panel-collapse > .panel-body, .panel-danger > .panel-heading + .panel-collapse > #todo-list, .panel-danger > #new-todo + .panel-collapse > #todo-list {
+.panel-danger > .panel-heading + .panel-collapse > .panel-body, .panel-danger > #new-todo + .panel-collapse > .panel-body, .panel-danger > .panel-heading + .panel-collapse > #todo-empty, .panel-danger > #new-todo + .panel-collapse > #todo-empty, .panel-danger > .panel-heading + .panel-collapse > #todo-list, .panel-danger > #new-todo + .panel-collapse > #todo-list {
   border-top-color: #ebccd1;
 }
 /* line 14, ../stylesheets/bootstrap/mixins/_panels.scss */
@@ -6174,7 +6180,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   background-color: #a94442;
 }
 /* line 20, ../stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-footer + .panel-collapse > .panel-body, .panel-danger > #todo-controls + .panel-collapse > .panel-body, .panel-danger > .panel-footer + .panel-collapse > #todo-list, .panel-danger > #todo-controls + .panel-collapse > #todo-list {
+.panel-danger > .panel-footer + .panel-collapse > .panel-body, .panel-danger > #todo-controls + .panel-collapse > .panel-body, .panel-danger > .panel-footer + .panel-collapse > #todo-empty, .panel-danger > #todo-controls + .panel-collapse > #todo-empty, .panel-danger > .panel-footer + .panel-collapse > #todo-list, .panel-danger > #todo-controls + .panel-collapse > #todo-list {
   border-bottom-color: #ebccd1;
 }
 
@@ -10023,32 +10029,112 @@ button.close {
   content: "\f20c";
 }
 
-/* line 11, ../stylesheets/application.scss */
+/* line 6, ../stylesheets/application.scss */
+#cantina-root {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  /* line 6, ../stylesheets/application.scss */
+  #cantina-root {
+    float: left;
+    width: 83.33333%;
+  }
+}
+@media (min-width: 768px) {
+  /* line 6, ../stylesheets/application.scss */
+  #cantina-root {
+    margin-left: 8.33333%;
+  }
+}
+@media (min-width: 992px) {
+  /* line 6, ../stylesheets/application.scss */
+  #cantina-root {
+    float: left;
+    width: 66.66667%;
+  }
+}
+@media (min-width: 992px) {
+  /* line 6, ../stylesheets/application.scss */
+  #cantina-root {
+    margin-left: 16.66667%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 6, ../stylesheets/application.scss */
+  #cantina-root {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 6, ../stylesheets/application.scss */
+  #cantina-root {
+    margin-left: 25%;
+  }
+}
+
+/* line 19, ../stylesheets/application.scss */
+#todo-intro {
+  text-align: center;
+}
+
+/* line 26, ../stylesheets/application.scss */
 .todo {
   margin-bottom: 15px;
 }
-/* line 14, ../stylesheets/application.scss */
+/* line 29, ../stylesheets/application.scss */
 .todo:last-child {
   margin-bottom: 0;
 }
+/* line 33, ../stylesheets/application.scss */
+.todo .input-group-btn a.btn {
+  padding-top: 7px;
+}
 
-/* line 21, ../stylesheets/application.scss */
+/* line 40, ../stylesheets/application.scss */
 .todo-completed input.form-control {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
 }
 
-/* line 35, ../stylesheets/application.scss */
+/* line 54, ../stylesheets/application.scss */
 #new-todo {
   padding: 15px;
 }
-/* line 38, ../stylesheets/application.scss */
+/* line 57, ../stylesheets/application.scss */
 #new-todo button.btn {
   padding-top: 7px;
 }
 
-/* line 49, ../stylesheets/application.scss */
+/* line 62, ../stylesheets/application.scss */
+#todo-empty {
+  text-align: center;
+}
+/* line 65, ../stylesheets/application.scss */
+#todo-empty h4 {
+  margin: 15px;
+  color: #777777;
+}
+
+/* line 77, ../stylesheets/application.scss */
 #todo-controls {
   text-align: right;
 }

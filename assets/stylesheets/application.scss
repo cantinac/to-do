@@ -2,8 +2,23 @@
 @import 'base';
 
 //App styles here...
+
+#cantina-root {
+  @include make-xs-column(12);
+  @include make-sm-column(10);
+  @include make-sm-column-offset(1);
+  @include make-md-column(8);
+  @include make-md-column-offset(2);
+  @include make-lg-column(6);
+  @include make-lg-column-offset(3);
+}
+
+
+
+
 #todo-intro {
   @extend .jumbotron;
+  text-align: center;
 }
 
 
@@ -13,6 +28,10 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  .input-group-btn a.btn {
+    padding-top: 7px;
   }
 }
 
@@ -37,6 +56,15 @@
   padding: $grid-gutter-half;
   button.btn {
     padding-top: 7px;
+  }
+}
+
+#todo-empty {
+  @extend .panel-body;
+  text-align: center;
+  h4 {
+    margin: 15px;
+    color: $gray-light;
   }
 }
 
