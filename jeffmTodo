@@ -1,0 +1,37 @@
+<script>
+function todoadd() {
+  todoNew = new objectTask();
+}
+
+function objectTodo() {
+  var todo = document.getElementById('textinput').value;
+  var listItem = document.createElement("li");
+  var checkbox = document.createElement("input") 
+  checkbox.type = "checkbox";
+  listItem.appendChild(checkbox);
+  var itemText = document.createTextNode(todo);
+  listItem.appendChild(itemText);
+  document.getElementById('place').appendChild(listItem);
+}
+
+function removeTodo() {
+  var ul = document.getElementById('place');
+  var li = ul.children;
+  for (var i=0, i < li.length; i++) {
+    while(li[i] && li[i].children[0].checked) {
+      ul.removeChild(li[i]);
+      }
+    }
+  }
+</script>
+<html>
+<title>Cantina Concierge</title>
+<body>
+  <div id="todoList">
+    <input type='text' id='textinput' />
+    <input type='button' onclick='todoadd()' value='Add to list' />
+    <input type='button' onclick="removeTodo()" value='Delete' />
+    <ul id="place"></ul>
+  </div>
+</body>
+</html>
