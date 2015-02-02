@@ -1,0 +1,22 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="todo.css">
+	<link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" type="text/css" href="todolarge.css">
+	<link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" type="text/css" href="todomedium.css">
+	<link rel="stylesheet" media="screen and (max-width: 350px)" type="text/css" href="todosmall.css">
+	<script type="text/javascript" src="todo.js"></script>
+</head>
+
+<title>Cantina ToDo</title>
+
+<body>
+	<div id="container">
+		<div id="todoList">
+		   <div id="textboxBackground">
+				<input type='text' id='textinput' placeholder='What do you need to do today?' />
+				<input type='button' id="myButton" class='button' onclick='todoadd()' value='Add To-Do' />
+			</div>
+			<ul id="place"></ul>
+		</div>
+	</div>
+</body>
