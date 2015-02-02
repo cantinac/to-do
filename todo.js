@@ -65,4 +65,10 @@ function resizeStuff()
 		txtBG.style.width = (bgElemWidth) + "px";
 		txtinput.style.width = (bgElemWidth - 55) + "px";
 	}
+	if (docWidth > 600) {
+		document.getElementById("myButton").value = "Add To-Do";
+		txtBG.style.width = (bgElemWidth) + "px";
+		txtinput.style.width = (bgElemWidth - 85) + "px";
+	}
 }
+
