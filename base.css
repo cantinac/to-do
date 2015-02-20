@@ -3,6 +3,10 @@ body {
   padding-top: 60px;
 }
 
+button:after {
+  content: 'Add To-do';
+}
+
 form {
   padding: 10px;
   background-color: #eee;
@@ -23,5 +27,9 @@ li {
 @media (max-width: 768px) {
   body {
     padding-top: 0px;
+  }
+
+  button:after {
+    content: '+';
   }
 }
