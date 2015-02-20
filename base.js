@@ -4,7 +4,9 @@ todo.controller('TodoController', ['$scope', function($scope) {
   $scope.items = []
 
   $scope.createTodo = function() {
-    $scope.items.unshift({title: $scope.title, complete: false});
+    if ($scope.title) {
+      $scope.items.unshift({title: $scope.title, complete: false});
+    }
     $scope.title = '';
   };
 }]);
