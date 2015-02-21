@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dave Foresman - Cantina To-Do</title>
+    <link href="assets/css/application.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <script type='text/html' id='cantina-todo'>
+      <div class='todo' data-bind='css: {"todo-completed": isChecked}'>
+        <div class="input-group">
+
+          <span class="input-group-addon">
+            <input type="checkbox" data-bind='checked: isChecked'>
+          </span>
+
+          <input type="text" class="form-control" data-bind='value: title, disable: isChecked'>
+
+          <span class='input-group-btn' data-bind='visible: isChecked'>
+            <button class="btn btn-default" type="button" title='Delete Todo' data-bind='click: remove'>
+              <i class='fa fa-fw fa-remove'></i>
+            </button>
+          </span>
+
+        </div>
+      </div>
+    </script>
+
+
+    <div class='container'>
+      <div class='row'>
+
+
+        <div id='cantina-root'>
+
+          <div id="todo-intro">
+            <h1>Cantina To-Do</h1>
+            <p class="lead">A demo app by <em>Dave Foresman</em></p>
+          </div>
+
+
+          <div id='todos'>
+            <form id='new-todo' data-bind='submit: createTodo'>
+              <div class="input-group">
+                <input type="text" class="form-control" data-bind='value: newTodoTitle' placeholder='Enter a Todo here&hellip;'>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit" title='Create Todo'><i class='fa fa-plus'></i></button>
+                </span>
+              </div>
+            </form>
+
+            <div id='todo-empty' data-bind='visible: todos().length === 0'>
+              <h4 data-bind='visible: filter() === "all"'>No Todos! Add some and get to work!</h4>
+              <h4 data-bind='visible: filter() === "complete"'>No Completed Todos! Better get cracking!</h4>
+              <h4 data-bind='visible: filter() === "inProg"'>No Incomplete Todos! Aren&rsquo;t you productive?</h4>
+            </div>
+
+            <div id='todo-list' data-bind='foreach: todos, visible: todos().length > 0'>
+              <!-- ko template: templateName -->
+              <!-- /ko -->
+            </div>
+
+            <div id='todo-controls'>
+              <span class='todo-control-label'>Filter:</span>
+              <label class="radio-inline">
+                <input type="radio" value="inProg" data-bind='checked: filter'> In-Progress
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="complete" data-bind='checked: filter'> Completed
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="all"  data-bind='checked: filter'> All
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPTS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- <script src="assets/javascripts/bootstrap.js"></script> -->
+    <script src="assets/javascripts/lodash.underscore.js"></script>
+    <script src="assets/javascripts/backbone.js"></script>
+    <script src="assets/javascripts/backbone.localstorage.js"></script>
+    <script src="assets/javascripts/knockout-3.2.0.js"></script>
+    <script src="assets/javascripts/knockback.js"></script>
+
+    <script src="assets/javascripts/todo-models.js"></script>
+    <script src="assets/javascripts/todo-viewmodels.js"></script>
+
+  </body>
+</html>
