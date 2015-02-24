@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
+<link href='css/styles.css' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="functions.js"></script>
+<title>Code test</title>
+</head>
+<body>
+<main class="main">
+
+<div class="todo-wrapper" ng-controller="MakeList">
+    <div class="topper">
+      	<div class="form-container">
+			<form>
+			<input class="text-input" type="text" placeholder="What do you need to get done?"  ng-model="formItemText" ng-model-instant>		
+			<button class="btn" ng-click="addItem()"><span class="hide-mobile">Add To-do</span></button>
+			</form>
+	</div>
+</div>
+
+<ul class="list-items">
+	<li ng-repeat="todo in list">
+		<input type="checkbox" class="to-do-checkbox" ng-model="todo.done"/>
+		<span class="done-{{todo.done}}">{{todo.text}}</span>
+	</li>   
+</ul>      
+
+</div> 
+
+</main>
+</body>
+</html>
