@@ -1,0 +1,71 @@
+body { 
+	background-color: #f7f7f7; 
+}
+
+.todo-container { 
+	border: 1px solid #ccc;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+
+.add-block {
+	background-image: linear-gradient(#fefefe,#efefef);
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.btn-default {
+	background-image: linear-gradient(#33c1a4,#18a187);
+	color: #fff;
+	border-color: rgba(0,0,0,.05);
+	text-shadow: 1px 2px rgba(0,0,0,.1);
+}
+
+.btn-default:hover {
+	color: #fff;
+}
+
+.btn-default:active {
+	background-image: linear-gradient(#18a187,#33c1a4);
+	color: #fff;
+}
+
+.btn-default:focus {
+	outline: none;
+	color: #fff;
+}
+
+.todo-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.list-item {
+	background-color: #fff;
+	padding: 15px 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.list-item > input[type=checkbox] {
+	margin-right: 5px;
+}
+
+.list-item:last-child {
+	border-bottom: none;
+}
+
+.complete-false {
+	color: #666;
+}
+
+.complete-true {
+	color: #ccc;
+}
+
+/* RWD Component */
+@media (orientation: landscape) {
+	.todo-container {
+		width: 80%;
+		margin: 50px auto;
+	}
+}
