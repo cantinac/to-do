@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cantina Todo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Just using for resets, and some predefined form styling -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="assets/css/todo.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="todo-container" ng-controller="TodoCtrl">
+	    <div class="add-block">
+		    <form>
+		    <div class="input-group">
+			    <input type="text" class="form-control" placeholder="What do you need to get done?" ng-model="inputTodoText" ng-model-instant/>
+			    <span class="input-group-btn">
+					<button class="btn btn-default" ng-click="addTodo()"><span class="text-landscape">Add To-do</span><span class="text-portrait">+</span></button>
+				</span>
+		    </div>
+		    </form>
+	    </div>
+	    <div class="content-block">
+		    <ul id="todoList" class="todo-list">
+				<li class="list-item" ng-repeat="todo in todos">
+					<input type="checkbox" ng-model="todo.complete" /> <span class="complete-{{todo.complete}}">{{todo.text}}</span>
+				</li>
+		    </ul>
+	    </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
