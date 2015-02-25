@@ -68,4 +68,20 @@ body {
 		width: 80%;
 		margin: 50px auto;
 	}
+	.text-landscape {
+		display: block;
+	}
+	.text-portrait {
+		display: none;
+	}
+}
+
+@media (orientation: portrait) {
+	.text-portrait {
+		display: block;
+	}
+	.text-landscape {
+		display: none;
+	}
+	
 }
