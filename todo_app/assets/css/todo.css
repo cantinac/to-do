@@ -1,0 +1,83 @@
+
+.todo-box {
+	height:100%;
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	margin-top: 40px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top right, #FFFFFF 0%, #A8A8A8 200%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top right, #FFFFFF 0%, #A8A8A8 200%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top right, #FFFFFF 0%, #A8A8A8 200%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #FFFFFF), color-stop(2, #A8A8A8));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #A8A8A8 200%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom left, #FFFFFF 0%, #A8A8A8 200%);
+}
+
+.todo-box .btn-default {
+	color: #FFFFFF;
+	background-color: #18b292;
+}
+.todo-box .btn-default:hover {
+	background-color: #24c9ab;
+	color:black;
+}
+
+
+.todo-item .checkbox {
+	margin-left: 20px;
+}
+.description {
+	margin-left: 15px;
+}
+
+.todo-item {
+	background-color: #FFFFFF;
+	padding: 1px 20px 1px 20px;
+	border: 1px solid #DDDDDD;
+}
+
+.container {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	height:100%;
+	background-color: #ECF0F1;
+	padding-top: 50px;
+
+	-webkit-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.todo-container {
+	height:100%;
+	background-color: #ECF0F1;
+
+}
+
+.input-container {
+	background-color: #ECF0F1;
+	padding: 10px;	
+}
+
+html,body { 
+	height: 100%;
+	background-color: #DDDDDD; 
+}
+
+
+.inactive { 
+	color:#D9D2D2;
+}
+
+/*disable default browser validation behavior*/
+.ng-pristine .ng-invalid-required, .ng-dirty .ng-invalid-required {
+    box-shadow: none;
+}

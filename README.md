@@ -1,3 +1,13 @@
+
+For my to-do app, I used Angular.js and Twitter Bootstrap.  Apologies for the delayed submission- This was my first application built with Angular, and it took a while for me to get a hang of (that being said, it is extraordinarily useful).
+
+Also, for some reason, my git user was set as a former coworker of mine.  Just a heads up in case you see any commits by Ian Gustafsson and get confused.
+
+-Mike
+
+________________________________________________________________________________________________
+
+
 Thank you for taking the time to complete this code test.
 
 When you are ready to get started:
