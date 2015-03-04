@@ -1,0 +1,73 @@
+* {
+  font-family: 'Oxygen', Arial;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #fff auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.checkbox {
+   margin-top: 5px;
+}
+
+.btn {
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.words {
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  margin: 4px 0;
+  border: 1px solid #9dc9a8;
+  width: 90%;
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
+}
+
+.addTodo .words {
+  padding: 10px;
+}
+
+.todoList, .addTodo {
+  list-style-type: none;
+  text-align: left;
+}
+
+.todoList li {
+  padding: 10px 80px 10px 10px;
+  margin: 4px 0;
+  border: 1px solid #15a188;
+  width: 90%;
+  position: relative;
+  min-height: 100%;
+}
+
+.todoList li .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  transition: 0.4s ease-in-out;
+}
+
+.todoList li .btn:hover {
+  background: #15a188;
+  transition: 0.4s ease-in-out;
+}
