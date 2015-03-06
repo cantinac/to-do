@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Todo List</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h1>ToDo List</h1>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.js"></script>
+		<script>
+		    var GhostText = "#CCC";
+		    var NormalText = "#000";
+
+			function getWinSize() {
+				res = 'unknown';
+				if ($(window).width() < 768) {
+					// do something for small screens
+					res = 'small';
+				} else if ($(window).width() >= 768 && $(window).width() <= 992) {
+					// do something for medium screens
+					res = 'med';
+				} else if ($(window).width() > 992 && $(window).width() <= 1200) {
+					// do something for big screens
+					res = 'big';
+				} else {
+					// do something for huge screens
+					res = 'huge';
+				}
+				return res;
+			}
+
+			function getBtnTxt() {
+				if (getWinSize() == 'small') {
+					res = '+';
+				} else {
+					res = 'Add to list';
+				}
+				return res;
+			}
+
+			var todoItems = [{
+				name : "plant flowers",
+				done : true
+			}, {
+				name : "build boat",
+				done : false,
+			}, {
+				name : "build shed",
+				done : false,
+			}, {
+				name : "call uncle",
+				done : true,
+			}, {
+				name : "buy laptop",
+				done : false,
+			}, {
+				name : "wash dishes",
+				done : true
+			}, {
+				name : "build tree house",
+				done : false
+			}];
+			
+			
+
+        	var myApp = angular.module('myApp', []);
+        	
+			myApp.controller("ToDoCtrl", function($scope, $window) {
+				for (i = 0; i < todoItems.length; i++) 
+				{
+					if (todoItems[i].done)
+					{
+						todoItems[i].color = GhostText;
+					}
+					else
+					{
+						todoItems[i].color = NormalText;
+					}
+				}
+				$scope.items = todoItems;
+				$scope.button_txt = getBtnTxt();
+
+				$scope.change = function() {
+					for ( i = 0; i < $scope.items.length; i++) {
+						if ($scope.items[i].done) {
+							$scope.items[i].color = GhostText;
+						} else {
+							$scope.items[i].color = NormalText;
+						}
+					}
+				};
+
+				$scope.addItem = function(el) {
+					if (el)
+					{
+					var el = {
+						name : el,
+						done : false,
+						color : NormalText
+					};
+					$scope.items.push(el);
+					$scope.newTask = "";
+					}
+					else
+					{
+						if (getWinSize() != 'small')
+						{
+						  alert('Nothing to add');
+						}
+					}
+				};
+
+			});
+
+			myApp.directive('todoAddBtn', function($window) {
+				var directive = {};
+
+				directive.restrict = 'E';
+				/* restrict this directive to elements */
+				directive.replace = 'true';
+				directive.template = 
+				  "<span class='input-group-btn'>" + 
+				    "<button class='btn btn-success' type='button' ng-click='addItem(newTask)'>{{button_txt}}</button>" + 
+				  "</span>";
+
+				directive.link = function(scope, elem, attrs) {
+					win = angular.element($window);
+					win.bind('resize', function() {
+						scope.$apply(function() {
+							scope.button_txt = getBtnTxt();
+						})
+					})
+				};
+
+				return directive;
+			});
+
+			myApp.directive('todoInpText', function() {
+				var directive = {};
+
+				directive.restrict = 'E';
+				/* restrict this directive to elements */
+				directive.replace = 'true';
+				directive.link = function(scope, elem, attrs) {
+					attrs.$observe('ngStyle', function() {
+						elem[0].style.color = GhostText;
+					});
+
+				};
+				directive.template = 
+				"<input type='text' class='form-control'" + 
+  				"value={{item.name}} ng-style=" +
+  				'"' + "{'color': '{{item.color}}'}" + '"' + ">";
+
+				return directive;
+			});
+			
+			myApp.directive('todoCheckbox', function($window) {
+				var directive = {};
+
+				directive.restrict = 'E';
+				directive.replace = 'true';
+				directive.template = 
+					 "<input type='checkbox' aria-label='...'" +
+					 "ng-checked={{item.done}} ng-model='item.done' ng-change='change()'>";
+				directive.link = function(scope, elem, attrs) {
+				  attrs.$observe('ngChecked', function() {
+				  	if (elem.attr('ng-checked') == 'true')
+				  	{
+				  		elem.attr('disabled',true);
+				  	}
+				  }); 
+				};  
+				return directive;
+			});
+
+		</script>
+
+		<div ng-app="myApp" class='container'>
+
+			<div ng-controller="ToDoCtrl">
+				<div class="col-sm-12">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="What do you need to get done ?"
+						aria-describedby="basic-addon1" ng-model="newTask">
+						<todo-add-btn>
+					</div>
+				</div>
+				<br>
+				<div class="clearfix"></div>
+				<div class="col-sm-12 row"></div>
+				<div class="col-sm-12" ng-repeat="item in items">
+					<div class="input-group">
+					  <span class='input-group-addon'>
+						<todo-checkbox>
+					  </span>
+						<todo-inp-text>
+					</div><!-- /input-group -->
+				</div><!-- /.col-lg-6 -->
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
