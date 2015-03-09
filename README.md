@@ -12,3 +12,18 @@ Some guidelines
 * The users of the app should be able to add new todos and mark them as complete.
 * You can use any library or framework that is not jQuery.
 * We'll be looking at the quality of the finished app as well as the amount of time that it took to you to build it.
+
+
+
+
+Comments from Bob Frieden
+
+Added clear button - wasn't in spec
+Didn't create bower.json or npm install file
+Used local storage to save list
+Didn't test in IE
+Did test Chrome, Safari and Firefox
+
+More time: would have added tests etc.
+
+
