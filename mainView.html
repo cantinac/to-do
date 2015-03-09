@@ -1,0 +1,36 @@
+<div class="container">
+<div ng-controller="MainCtrl">
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="row">
+
+            <!--<input class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="todo-input" placeholder="What do you need to get done?" ng-model="newTodo"  autofocus>-->
+            <input class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="todo-input" ng-placeholder="placeholder" ng-model="newTodo"  autofocus>
+
+            <!--<div class="col-lg-3 col-md-3 col-sm-2 col-xs-1">-->
+                <div class="">
+                <button class="btn btn-success hidden-md hidden-lg" ng-click="AddNew(false,newTodo)">+</button>
+                <button class="btn btn-success hidden-xs hidden-sm" ng-click="AddNew(false,newTodo)">Add To-Do</button>
+
+                <!--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+    <div class="row"></div>
+        <div ng-repeat="n in lstToDo track by $index">
+            <li class="list-group-item">
+                <input class="toggle" type="checkbox" ng-model="n.completed" ng-change="toggleCompleted(n)">
+                <label ng-class="{'disableLabel': n.completed}">{{n.description}}</label>
+
+            </li>
+        </div>
+    </div>
+        <div class="panel-footer">
+            <button class="btn btn-success" ng-click="CLearAll()">Clear</button>
+        </div>
+</div>
+
+</div>
+</div>
