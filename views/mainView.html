@@ -1,0 +1,40 @@
+<div class="container">
+<div ng-controller="MainCtrl">
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="row">
+
+            <!--<input class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="todo-input" placeholder="What do you need to get done?" ng-model="newTodo"  autofocus>-->
+            <input class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="line-height: 30px" id="todo-input" ng-placeholder="placeholder" ng-model="newTodo"  autofocus>
+
+            <!--<div class="col-lg-3 col-md-3 col-sm-2 col-xs-1">-->
+                <div class="">
+                <button class="btn  hidden-md hidden-lg" style="color: white; background: #1CAD91" ng-click="AddNew(false,newTodo)">+</button>
+                <button class="btn hidden-xs hidden-sm"  style="color: white; background: #1CAD91"  ng-click="AddNew(false,newTodo)">Add To-Do</button>
+
+                <!--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+    <div class="row"></div>
+        <div ng-repeat="n in lstToDo track by $index">
+            <!--<li class="list-group-item">-->
+
+                <li class="list-group-item"   ng-class="$even ? 'even-row' : 'odd-row'">
+                <input ng-class="toggle" type="checkbox" ng-model="n.completed" style="transform: scale(1.5)" ng-change="toggleCompleted(n)">
+                <!--<label  ng-class="{'disableLabel': n.completed}">{{n.description}}</label>-->
+                <label  ng-class="n.completed?  'disableLabel': 'regLabel'">{{n.description}}</label>
+
+            </li>
+        </div>
+    </div>
+        <div class="panel-footer">
+            <button class="btn btn-success" ng-click="CLearAll()" style="color: white; background: #1CAD91">Clear</button>
+            <button class="btn btn-success" ng-click="clearCompleted()" style="color: white; background: #1CAD91">Clear Completed</button>
+        </div>
+</div>
+
+</div>
+</div>
