@@ -1,6 +1,6 @@
 .panel {
 	margin: 20px;
-	border: 1px dashed #c5c5c5;
+	border: 1px solid #c5c5c5;
 
 }
 #todo-input{
@@ -13,10 +13,36 @@
 .disableLabel{
     font-style: italic;
     font-weight: lighter;
+    font-size: larger;
+    margin-left: 10px;
+}
+.regLabel{
+    font-style: normal;
+    font-weight: normal;
+    font-size: larger;
+    margin-left: 10px;
 }
 #AddNew{
-    background-color: green;
+    background-color: #1CAD91;
     font-size: 28px;
     color: white;
     /*width: 30px;*/
+}
+.toggle .ng-pristine
+{
+    background-color: #1CAD91;
+    font-size: 28px;
+    color: black;
+}
+.even-row{
+    /*background-color: #ebebff;*/
+    border: 1px solid #f5f5f5;
+    /*border-bottom: 1px solid white;*/
+    line-height: 50%;
+}
+
+.odd-row{
+    /*background-color: #e2ffce;*/
+    border: 1px solid #f5f5f5;
+    line-height: 50%;
 }

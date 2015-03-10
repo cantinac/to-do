@@ -57,6 +57,19 @@ angular.module('app')
             SaveList();
         }
 
+        $scope.clearCompleted=function(){
+
+            var l=$scope.lstToDo;
+            if (l.length<1) return;
+            for (var i= l.length-1;i>=0;i--)
+            {
+                if(l[i].completed)
+                {
+                    l.splice(i,1);
+                }
+            }
+            SaveList();
+        }
         $scope.toggleCompleted=function(changedToDo)
         {
             var i=$scope.lstToDo.indexOf(changedToDo);
