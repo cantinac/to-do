@@ -1,29 +1,27 @@
-Thank you for taking the time to complete this code test.
-
-When you are ready to get started:
-* Fork this git repository (https://github.com/cantinac/to-do) into your own GitHub account.
-* Build a client side to-do application based on the mockups in the repo.
-* Submit a pull request back to the main repository with the finished app.
-
-
-Some guidelines
-* The app should be fully responsive. It should support Desktop, Tablet (landscape and portrait), and Phone (landscape and portrait).
-* The app should be built using only client side technologies.
-* The users of the app should be able to add new todos and mark them as complete.
-* You can use any library or framework that is not jQuery.
-* We'll be looking at the quality of the finished app as well as the amount of time that it took to you to build it.
-
-
-
 
 Comments from Bob Frieden
 
-Added clear button - wasn't in spec
-Didn't create bower.json or npm install file
-Used local storage to save list
+Just recvd an email with "new" instructions that provide additional detail.
+Since I had already spent 3 hours on the project I didn't feel I should spend much additional time.
+
+I did clone the button color but did not make any other ui changes bringing total to 3.5 hours
+
+I added a few things that weren't in the spec (clear buttons)
+If I had the new specs I would not have done so.
+
+Used local storage to make this a true clientside app.
+
+Showed use of custom directive (placeholder) to show how I would use angular
+to promote separation of concerns esp with regard to UI.  Placeholder refreshes properly.
+
+Used bootstrap ui to show responsive design approach
+
+Didn't create install files (bower, package..)
+
 Didn't test in IE
 Did test Chrome, Safari and Firefox
 
-More time: would have added tests etc.
+More time: would have written sample tests and would have improved fidelity with png
+
 
 
