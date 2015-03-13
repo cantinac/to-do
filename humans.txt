@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+Developer:Dee Blake
+	Contact: dee [at] deeblake.com
+	Twitter: @DeeBlake1969
+	From:Boston, MA USA
+
+# THANKS
+
+    
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    AngularJS, Modernizr
