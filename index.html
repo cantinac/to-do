@@ -64,8 +64,10 @@
             ];
 
             $scope.addTodo = function () {
-                $scope.todos.push({text:$scope.formTodoText, done:false});
-                $scope.formTodoText = '';
+                if ($scope.formTodoText) {
+                    $scope.todos.push({text:$scope.formTodoText, done:false});
+                    $scope.formTodoText = '';
+                }
             };
           
         }
