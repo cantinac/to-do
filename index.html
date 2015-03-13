@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS To-do</title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+
+        
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <div class="todo-wrapper" ng-controller="TodoCtrl">
+                        <form>
+                            <input class="add-input" placeholder="What do you need to get done?" type="text" ng-model="formTodoText" ng-model-instant />
+                            <button class="add-btn" ng-click="addTodo()"><span>Add To-do</span></button>
+                        </form>
+                        <div class="todolist">
+                            <ul>
+                                <li ng-repeat="todo in todos">
+                                  <input type="checkbox" ng-model="todo.done"/>
+                                  <span class="done-{{todo.done}}">{{todo.text}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+        function TodoCtrl($scope) {
+  
+            $scope.todos = [
+                {text:'An incomplete to-do item will look like this', done:false},         
+                {text:'An incomplete to-do item will look like this', done:false}
+            ];
+
+            $scope.addTodo = function () {
+                if ($scope.formTodoText) {
+                    $scope.todos.push({text:$scope.formTodoText, done:false});
+                    $scope.formTodoText = '';
+                }
+            };
+          
+        }
+        </script>
+    </body>
+</html>
