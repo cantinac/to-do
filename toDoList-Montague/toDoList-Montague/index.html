@@ -1,0 +1,43 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div data-ng-app="">
+        <div id="todoapp" data-ng-controller="TodoCtrl">
+            <header>
+                <input id="new-todo" type="text" data-ng-model="todoText" size="30"
+                       placeholder="What do you need to get done?" data-ng-keyup="addTodo()"/>
+                <button data-ng-click="addTodoButton()" class="green-button">Add To-do</button>
+            </header>
+
+            <section id="main" style="display: block;">
+                <!--<div data-ng-show="isTodo()">
+                    <button id="toggle-all" data-ng-click="toggleMarkAll()">{{ toggleText }}</button>
+                </div>-->
+
+                <ul id="todo-list">
+                    <li data-ng-repeat="todo in todos" data-ng-dblclick="toggleEditMode()">
+                        <div class="view" data-ng-keyup="editTodo()">
+                            <input type="checkbox" data-ng-model="todo.done" />
+                            <span class="done-{{todo.done}}">{{todo.text}}</span>
+                        </div>
+                        <input class="edit" type="text" data-ng-model="todo.text" data-ng-keyup="editOnEnter(todo)" />
+                    </li>
+                </ul>
+            </section>
+
+            <footer style="display: block;">
+                <div class="todo-count">{{remaining()}} of {{todos.length}} remaining</div>
+                <a id="clear-completed" data-ng-click="clear()" data-ng-show="hasDone()">
+                    Clear <span>{{(todos.length - remaining())}} {{itemText()}}</span>.
+                </a>
+            </footer>
+        </div>
+    </div>
+    <script src="functions.js"></script>
+</body>
+</html>
