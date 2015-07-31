@@ -1,0 +1,101 @@
+@import "_bootstrap.less";
+//@icon-font-path: "../fonts/glyphicons/";
+
+@import "../bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "../fonts/font-awesome";
+
+
+
+
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body{
+  margin-bottom: 80px;
+}
+
+
+header{
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+
+
+.todo-list{
+  .list-group;
+
+  li{
+
+    &:first-child{
+      #gradient .vertical(@start-color: #fff; @end-color: #efefef; @start-percent: 0%; @end-percent: 100%);
+    }
+    // -- completed tasks
+    .muted{
+      color: #bcbcbc;
+    }
+    
+    input[type="checkbox"]{
+      margin-right: 6px;
+    }
+  }
+
+
+
+  .btn{
+    .btn-default;
+    text-shadow: 1px 1px 2px #2B2B2B;
+    color: #fff;
+    #gradient .vertical(@start-color: #1cba9a; @end-color: #18a187; @start-percent: 0%; @end-percent: 100%);
+    
+    .txt{
+      display: inline-block;
+      text-indent: -9999px;
+    }
+
+    @media(min-width: @screen-sm){
+      .icon{
+        .hidden;
+      }
+      .txt{
+        text-indent: 0;
+      }
+    }
+  } // .btn
+
+
+}
+
+
+
+
+
+
+footer{
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  background-color: #f7f7f7;
+
+  p{
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
+.browsehappy {
+  margin: 0.2em 0; 
+  background: #ccc; 
+  color: #000; 
+  padding: 0.2em 0; 
+}
+
