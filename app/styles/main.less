@@ -19,8 +19,18 @@ body{
 
 
 header{
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   border-bottom: 1px solid #e2e2e2;
+
+  h1{
+    font-size: 25px;
+  }
+
+  @media(min-width: @screen-xs){
+    h1{
+      font-size: 34px;
+    }
+  }
 }
 
 
@@ -29,10 +39,36 @@ header{
   .list-group;
 
   li{
+    position: relative;
 
     &:first-child{
       #gradient .vertical(@start-color: #fff; @end-color: #efefef; @start-percent: 0%; @end-percent: 100%);
     }
+    .error{
+      padding: 4px 8px;
+      position: absolute;
+      top: -31px;
+      display: block;
+      opacity: 1;
+      font-size: 12px;
+      color: #fff;
+      background-color: #e30f0f;
+      border-radius: 3px;
+
+      // -- fade in/out
+      &.ng-hide-add,
+      &.ng-hide-remove {
+        opacity:1;
+        -webkit-transition:0.5s linear all;
+                transition:0.5s linear all;
+      }
+      &.ng-hide {
+        opacity:0;
+      }
+    }
+
+
+
     // -- completed tasks
     .muted{
       color: #bcbcbc;
@@ -49,8 +85,16 @@ header{
     .btn-default;
     text-shadow: 1px 1px 2px #2B2B2B;
     color: #fff;
-    #gradient .vertical(@start-color: #1cba9a; @end-color: #18a187; @start-percent: 0%; @end-percent: 100%);
+    #gradient .vertical(@start-color: @btn-start-color; @end-color: @btn-end-color; @start-percent: 0%; @end-percent: 100%);
     
+    &:hover{
+      color: #fff;
+      #gradient .vertical(@start-color: lighten(@btn-start-color, 5%); @end-color: lighten(@btn-end-color, 5%); @start-percent: 0%; @end-percent: 100%);
+    }
+    &:focus{
+      color: #fff;
+    }
+
     .txt{
       display: inline-block;
       text-indent: -9999px;
@@ -67,7 +111,37 @@ header{
   } // .btn
 
 
-}
+    // -- Animate added elements --
+    .ng-enter, 
+    .ng-leave, 
+    .ng-move {
+      position:relative;
+      -webkit-transition: 0.5s linear all;
+              transition: 0.5s linear all;
+    }
+    .ng-enter {
+      opacity:0;
+    }
+    .ng-enter.ng-enter-active {
+      opacity:1;
+    }
+    /*
+    .ng-leave {
+      opacity:1;
+    }
+    .ng-leave.ng-leave-active {
+      opacity:0;
+    }
+    .ng-move {
+      opacity:0.5;
+    }
+    .ng-move.ng-move-active {
+      opacity:1;
+    }
+    */
+
+
+} // .todo-list
 
 
 
@@ -98,4 +172,8 @@ footer{
   color: #000; 
   padding: 0.2em 0; 
 }
+
+
+
+
 

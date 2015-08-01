@@ -4764,18 +4764,63 @@ body {
   margin-bottom: 80px;
 }
 header {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   border-bottom: 1px solid #e2e2e2;
+}
+header h1 {
+  font-size: 25px;
+}
+@media (min-width: 480px) {
+  header h1 {
+    font-size: 34px;
+  }
 }
 .todo-list {
   margin-bottom: 20px;
   padding-left: 0;
+  /*
+    .ng-leave {
+      opacity:1;
+    }
+    .ng-leave.ng-leave-active {
+      opacity:0;
+    }
+    .ng-move {
+      opacity:0.5;
+    }
+    .ng-move.ng-move-active {
+      opacity:1;
+    }
+    */
+}
+.todo-list li {
+  position: relative;
 }
 .todo-list li:first-child {
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #efefef 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffefefef', GradientType=0);
+}
+.todo-list li .error {
+  padding: 4px 8px;
+  position: absolute;
+  top: -31px;
+  display: block;
+  opacity: 1;
+  font-size: 12px;
+  color: #fff;
+  background-color: #e30f0f;
+  border-radius: 3px;
+}
+.todo-list li .error.ng-hide-add,
+.todo-list li .error.ng-hide-remove {
+  opacity: 1;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+.todo-list li .error.ng-hide {
+  opacity: 0;
 }
 .todo-list li .muted {
   color: #bcbcbc;
@@ -4830,6 +4875,16 @@ fieldset[disabled] .todo-list .btn.active {
   color: #ffffff;
   background-color: #fff;
 }
+.todo-list .btn:hover {
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #1fd0ac 0%, #1bb79a 100%);
+  background-image: linear-gradient(to bottom, #1fd0ac 0%, #1bb79a 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1fd0ac', endColorstr='#ff1bb79a', GradientType=0);
+}
+.todo-list .btn:focus {
+  color: #fff;
+}
 .todo-list .btn .txt {
   display: inline-block;
   text-indent: -9999px;
@@ -4842,6 +4897,19 @@ fieldset[disabled] .todo-list .btn.active {
   .todo-list .btn .txt {
     text-indent: 0;
   }
+}
+.todo-list .ng-enter,
+.todo-list .ng-leave,
+.todo-list .ng-move {
+  position: relative;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+.todo-list .ng-enter {
+  opacity: 0;
+}
+.todo-list .ng-enter.ng-enter-active {
+  opacity: 1;
 }
 footer {
   width: 100%;

@@ -1,10 +1,80 @@
 (function(){
 
-  var app = angular.module('cantinaTodo', []);
+  var app = angular.module('cantinaTodo', ['ngAnimate']);
 
-  app.controller('todosController', function(){
+  
+  app.controller('TodosController', function($scope, $timeout){
     this.todoList = todos;
+    $scope.inputError = false;
+    $scope.errorMsg = "";
+
+    
+    // == Todo is checked/inchecked ==
+    this.toggleComplete = function(id){
+      for( var i=0; i<this.todoList.length; i++ ){
+        if( this.todoList[i].id===id ){
+          this.todoList[i].isComplete==true?false:true;
+        };
+      }
+    }
+
+    // == Add a new todo ==
+    this.addTodo = function(){
+
+      if( this.newTodo ){
+        // -- Input field has value (could benefit from further sanity checks) --
+        $scope.inputError = false;
+
+        // -- check for doubles, get highest id --
+        var maxId = 0;
+        for( var i=0; i<this.todoList.length; i++ ){
+          if( this.todoList[i].todo === this.newTodo ){
+            this.showError("Error: Todo item already in list");
+            return;
+          }else{
+            maxId = this.todoList[i].id>maxId?this.todoList[i].id:maxId;
+          }
+        }
+
+        // -- add todo to data source --
+        this.todoList.push(
+          {
+            "id": maxId+1, "isComplete": false, "todo": this.newTodo
+          }
+        );
+
+        // -- clear input
+        this.newTodo = null;
+
+      }else{
+        // -- Input field empty --
+        this.showError("Error: Input field is empty");
+
+      }
+
+    } // addTodo
+
+
+    // == Trigger error alert ==
+    this.showError = function(msg){
+
+      $scope.inputError = true;
+      $scope.errorMsg = msg;
+      
+      $timeout(function(){
+        $scope.inputError = false;
+      }, 2000);
+    };
+
+
+
   });
+
+
+
+
+
+  
 
 
 
@@ -23,7 +93,7 @@
   {
     "id": 3,
     "isComplete": false,
-    "todo": "Go food"
+    "todo": "Make food"
   },
   {
     "id": 4,

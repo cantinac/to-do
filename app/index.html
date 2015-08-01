@@ -18,26 +18,31 @@
 
   <header>
     <div class="container">
-      <h1>Cantina To-Do Code Tests</h1>
+      <h1>Cantina To-Do Code Test</h1>
     </div>
   </header>
 
-  <div class="container" ng-controller="todosController as todos">
+  <div class="container" ng-controller="TodosController as todos">
+    
     <form>
       <ul class="todo-list">
-        
+        <!-- Add new Todo -->
         <li class="list-group-item">
-          <div class="input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="What do you need to get done?">
-            <span class="input-group-btn">
-              <button class="btn" type="button"><span class="icon fa fa-plus"></span><span class="txt">Add To-do</span></button>
-            </span>
-          </div>
+          <form>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" placeholder="What do you need to get done?" ng-model="todos.newTodo" required>
+              <span class="input-group-btn">
+                <button class="btn" type="button" ng-click="todos.addTodo()"><span class="icon fa fa-plus"></span><span class="txt">Add To-do</span></button>
+              </span>
+            </div>
+            <div class="error" ng-show="inputError" ng-hide="!inputError">{{errorMsg}}</div>
+          </form>
         </li>
 
-        <li class="list-group-item" ng-repeat="todo in todos.todoList">
+        <!-- Display Todos -->
+        <li class="list-group-item" ng-repeat="todo in todos.todoList | orderBy:'-id'">
           <label ng-class="{muted: todo.isComplete}">
-            <input type="checkbox" name="todo" value="{{todo.id}}" ng-checked="todo.isComplete">
+            <input type="checkbox" name="todo" value="{{todo.id}}" ng-checked="todo.isComplete" ng-model="todo.isComplete" ng-change="todos.toggleComplete(todo.id)">
             {{todo.todo}}
           </label>
         </li>
@@ -46,8 +51,6 @@
     </form>
 
   </div>
-
-
 
   <footer>
     <div class="container hcard">
@@ -64,6 +67,7 @@
 
   <!-- build:js scripts/main.js -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="scripts/angular-animate.js"></script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </body>
