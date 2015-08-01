@@ -13,10 +13,10 @@
     this.toggleComplete = function(id){
       for( var i=0; i<this.todoList.length; i++ ){
         if( this.todoList[i].id===id ){
-          this.todoList[i].isComplete==true?false:true;
-        };
+          this.todoList[i].isComplete===true?false:true;
+        }
       }
-    }
+    };
 
     // == Add a new todo ==
     this.addTodo = function(){
@@ -52,7 +52,7 @@
 
       }
 
-    } // addTodo
+    }; // addTodo
 
 
     // == Trigger error alert ==
