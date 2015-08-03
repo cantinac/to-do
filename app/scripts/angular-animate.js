@@ -3,7 +3,8 @@
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
-(function(window, angular, undefined) {'use strict';
+(function(window, angular, undefined) {
+  'use strict';
 
 /* jshint ignore:start */
 var noop        = angular.noop;

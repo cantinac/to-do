@@ -1,9 +1,10 @@
 (function(){
+  'use strict';
 
   var app = angular.module('cantinaTodo', ['ngAnimate']);
 
-  
-  app.controller('TodosController', function($scope, $timeout){
+
+  function TodosController( $scope, $timeout ) {
     this.todoList = todos;
     $scope.inputError = false;
     $scope.errorMsg = "";
@@ -13,7 +14,7 @@
     this.toggleComplete = function(id){
       for( var i=0; i<this.todoList.length; i++ ){
         if( this.todoList[i].id===id ){
-          this.todoList[i].isComplete===true?false:true;
+          this.complVal = this.todoList[i].isComplete===true?false:true;
         }
       }
     };
@@ -67,18 +68,16 @@
     };
 
 
+  }
 
-  });
-
-
-
-
+  
+  app.controller( "TodosController", [ "$scope", "$timeout", TodosController ] );
 
   
 
 
 
-  // generated with http://www.json-generator.com/
+  // Data source generated with http://www.json-generator.com/
   var todos = [
   {
     "id": 1,
