@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cantina To-Do Code Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body ng-app="cantinaTodo">
+  
+  <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <header>
+    <div class="container">
+      <h1>Cantina To-Do Code Test</h1>
+    </div>
+  </header>
+
+  <div class="container" ng-controller="TodosController as todos">
+    
+    <form>
+      <ul class="todo-list">
+        <!-- Add new Todo -->
+        <li class="list-group-item">
+          <form>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" placeholder="What do you need to get done?" ng-model="todos.newTodo" required>
+              <span class="input-group-btn">
+                <button class="btn" type="button" ng-click="todos.addTodo()"><span class="icon fa fa-plus"></span><span class="txt">Add To-do</span></button>
+              </span>
+            </div>
+            <div class="error" ng-show="inputError" ng-hide="!inputError">{{errorMsg}}</div>
+          </form>
+        </li>
+
+        <!-- Display Todos -->
+        <li class="list-group-item" ng-repeat="todo in todos.todoList | orderBy:'-id'">
+          <label ng-class="{muted: todo.isComplete}">
+            <input type="checkbox" name="todo" value="{{todo.id}}" ng-checked="todo.isComplete" ng-model="todo.isComplete" ng-change="todos.toggleComplete(todo.id)">
+            {{todo.todo}}
+          </label>
+        </li>
+
+      </ul>
+    </form>
+
+  </div>
+
+  <footer>
+    <div class="container hcard">
+      <p><span class="p-name">Boris</span> | <span class="p-tel"><a href="http://supergnu.com">www.supergnu.com</a></span></p>
+    </div>
+  </footer>
+
+
+
+  <!-- build:js scripts/main.js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="scripts/angular-animate.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
