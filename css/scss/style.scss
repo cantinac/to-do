@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Custom Styles
+   ========================================================================== */
+
+/* Color variables */
+$white: #ffffff;
+$disabled-green: #17a68b;
+$active-green: #049a7e; 
+$light-grey: #f8f8f8; 
+$dk-grey: #ccc;
+
+/* General page layout */
+.container {
+	width: 100%;
+	max-width: 1100px;
+	padding: 0;
+}
+
+/* Form area */
+.formBox {
+	padding: 15px;
+	border-bottom: 1px solid $dk-grey;
+	background-color: $light-grey;
+	float: none;
+
+	.btn-default {
+		color: $white;
+		background-color: $disabled-green;
+
+		&[disabled] {
+			background-color: $disabled-green;
+
+			&:hover {
+				background-color: $disabled-green;
+				color: $white;
+			}
+		}
+
+		&:hover {
+			background-color: $active-green;
+			color: $white;
+		}
+	}
+
+	.add-btn:before {
+		content: "+";
+		font-weight: 800;
+
+		@media screen and (min-width: 475px) {
+			content: "Add To-do";	
+			font-weight: 400;
+		}
+	}
+}
+
+/* To-do list */
+ul {
+	list-style-type: none;
+	background-color: $white;
+	padding-left: 0;
+
+	li {
+		padding: 15px 0;
+		border-bottom: 1px solid $dk-grey;
+
+		input[type=checkbox] {
+			margin: 0 15px;
+		}
+
+		.done-true {
+			color: $dk-grey;
+		}
+	}	
+}
+
+
+
+
+
+

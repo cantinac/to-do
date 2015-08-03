@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angularjs To-do</title>
+    <meta name="description" content="Angularjs To-do">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body>
+
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+        <!-- Start To-Do Application -->
+        <div ng-app="ToDo" ng-controller="TodoCtrl">
+            
+            <!-- Form for creating new to-do item. Includes validation that prevents a new item from being created if input field is empty. -->
+            <div class="col-lg-12 formBox">
+                <form class="input-group" name="addForm" ng-class="{ 'has-error' : addForm.name.$invalid && !addForm.name.$pristine }" novalidate>
+                    <input class="add-input form-control" placeholder="What do you need to get done?" type="text" ng-model="formTodoText" required/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default add-btn" type="button" ng-disabled="addForm.$invalid" ng-click="addTodo()"></button>
+                    </span>
+                </form>
+            </div>
+            
+            <!-- Creates <li> for each item stored in todos list. Also creates a <li> for each new to-do item added.-->
+            <ul>
+                <li ng-repeat="todo in todos">
+                    <input type="checkbox" ng-model="todo.done"/>
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+
+        </div>
+        <!-- End To-Do Application -->
+    </div>
+
+    <script src="js/main.js"></script>
+
+ </body>
+ </html>
