@@ -1,0 +1,20 @@
+.to-do {
+  display: inline-block;
+}
+
+.complete {
+  color: #999;
+}
+
+button.add-to-do,button.add-to-do:active,button.add-to-do:focus {
+  background-color: #15a68b;
+  color: #fff;
+  font-weight: bold;
+  content: "Add";
+}
+
+button.add-to-do:hover {
+  background-color: #05967b;
+  color: #ccc;
+}
+
