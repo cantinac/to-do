@@ -2,8 +2,29 @@ body {
   background-color: #ecf0f1;
 }
 
+.vertical-spacer {
+  height: 50px;
+}
+
 .to-do {
   display: inline-block;
+}
+
+.todo-app {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+}
+
+
+.to-do-container {
+  background-color: #fff;
+  border-bottom: solid 1px #ddd;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+}
+
+.to-do-container input {
+  margin: 1em;
 }
 
 .complete {
@@ -11,6 +32,8 @@ body {
 }
 
 button.add-to-do,button.add-to-do:active,button.add-to-do:focus {
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
   background-color: #15a68b;
   color: #fff;
   font-weight: bold;
@@ -19,15 +42,6 @@ button.add-to-do,button.add-to-do:active,button.add-to-do:focus {
 button.add-to-do:hover {
   background-color: #05967b;
   color: #ccc;
-}
-
-.to-do-container {
-  background-color: #fff;
-  border-bottom: solid 1px #ccc;
-}
-
-.to-do-container input {
-  margin: 1em;
 }
 
 .input-group {

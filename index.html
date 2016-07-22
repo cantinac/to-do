@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
   </head>
   <body>
+      <div class="row"></div>
+      <div class="vertical-spacer hidden-xs hidden-sm"></div>
       <div class="row row-centered">
         <div class="col-lg-3 col-centered hidden-xs hidden-sm"></div>
         <div id="content" class="col-lg-6 col-centered">
@@ -24,14 +26,13 @@
       </div><!-- .row.row-centered -->
 
     <script type="text/babel">
-      // I would normally organize these classes into files and deliver them to the user in
-      // minified form, using Grunt or a similar tool. But for simplicity I've kept them all
-      // here.
+      // I would normally organize these classes into their own files and deliver them in
+      // minified form to the end user using Grunt or a similar tool. But for the sake of
+      // simplicity, I've kept them all here
       var ToDo = React.createClass({
         propTypes: {
           name: React.PropTypes.string
         },
-      index.html~
         getInitialState: function () {
           return {
             completed: false
