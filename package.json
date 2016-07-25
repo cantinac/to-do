@@ -1,0 +1,55 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "Web-based to-do application.",
+  "main": "index.html",
+  "repository": "https://github.com/cantinac/to-do/pull/61",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/http-server/bin/http-server dist/ -p 9000",
+    "compile": "node node_modules/grunt-cli/bin/grunt",
+    "clean": "rm -rf build && rm -rf dist"
+ },
+  "keywords": [
+    "to-do"
+  ],
+  "author": "Arlo Duff",
+  "license": "ISC",
+  "babel": {
+    "presets": ["es2015", "react"]
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "babelify"
+     ]
+  },
+  "browserify-shim": {
+    "./node_modules/jquery/dist/jquery.js": {"exports": "jquery"},
+    "./node_modules/react/dist/react.js": {"exports": "react"},
+    "./node_modules/react-prop-types/dist/react-prop-types.js": {"exports": "react-prop-types"},
+    "./node_modules/react-dom/dist-react-dom.js": {"exports": "react-dom"},
+    "./node_modules/react-select/dist/react-select.js": {"exports": "react-select"}
+  },
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-prop-types": "~0.3.0",
+    "react-select": "1.0.0-beta12",
+    "jquery": "~2.2.3"
+  },
+  "devDependencies": {
+     "grunt": ">=0.4.2",
+     "grunt-cli": "~1.2.0", 
+     "grunt-contrib-copy": "~1.0.0",
+     "grunt-contrib-uglify": "latest",
+     "grunt-contrib-cssmin": "~1.0.1",
+     "grunt-sass": "~1.1.0",
+     "grunt-browserify": "~5.0.0",
+     "browserify-shim": "~3.8.12",
+     "babelify": "~7.2.0",
+     "babel-preset-es2015": "latest",
+     "babel-preset-react": "latest",
+     "http-server": "~0.9.0"
+  }
+}
