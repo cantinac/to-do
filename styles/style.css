@@ -1,0 +1,44 @@
+body{
+  margin-top: 60px;
+  background: #ECF0F1;
+}
+
+.todoapp{
+  background: #fff;
+  padding: 25px 25px;
+}
+
+.form{
+  padding: 25px 25px;
+  background: #f0f0f0;
+  background: -webkit-linear-gradient(#f0f0f0, #fdfdfd);
+  background: -o-linear-gradient(#f0f0f0, #fdfdfd); 
+  background: -moz-linear-gradient(#f0f0f0, #fdfdfd); 
+  background: linear-gradient(#f0f0f0, #fdfdfd);
+}
+
+.form-control{
+  padding: 25px 25px;
+}
+
+.btn.btn-default{
+  padding: 15px 15px;
+  background: #1AB898;
+  color: #fff;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0px;
+  font-size: 1.2em;
+}
+
+.done{
+  text-decoration: line-through; 
+  color: #ccc;
+}
