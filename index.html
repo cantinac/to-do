@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cantina To Do App</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <script src="app.js"></script>
+
+</head>
+<body ng-app="cantina" ng-controller="toDoCtrl" >
+<div class="container" style="width:600px; min-width: 600px">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-8">
+                    <input type="text" ng-model="toDoInput" size="52"  placeholder="Add New" style="height: 39px">
+                </div>
+                <div class="col-xs-2 visible-md visible-lg">
+                    <span class="btn btn-custom" ng-click="addNew(toDoInput)" style="height: 35px; width: 79px">Add New</span>
+                </div>
+                <div class="col-xs-2 visible-xs visible-sm hide-md">
+                    <div class="btn btn-custom" ng-click="addNew(toDoInput)" style="height: 35px; width: 76px; font-size: 1em; ">
+                        <span>+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div ng-repeat="item in toDoList">
+                <div class="row" style="height: 27px; font-size: 16px">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 "></div>
+                    <div class="col-xs-1">
+                        <input type="checkbox" ng-model="item.selected">
+                    </div>
+                    <div class="col-xs-8" ng-class="item.selected ? 'txt-gray' :'txt-black' ">
+                        {{item.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
