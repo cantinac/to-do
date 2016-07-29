@@ -1,0 +1,114 @@
+.todolist {
+    float: left;
+    width: 100%;
+    display: block;
+}
+
+.newvalue {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+    background: #f6f8f9;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9', GradientType=0);
+    /* IE6-9 */
+    width: 98%;
+    padding: 1.5% 1%;
+    float: left;
+    display: block;
+}
+
+.newvalue input {
+    border-radius: 5px 0px 0px 5px;
+    height: 40px;
+    float: left;
+    width: auto;
+    padding: 0% 2%;
+    border-width: 0px;
+    box-shadow: inset 0px 1px 1px #ccc;
+}
+
+.list {
+    float: left;
+    display: block;
+    min-height: 200px;
+    background:#fff;
+    width: 100%;
+}
+
+.todoitem {
+    display: block;
+    float: left;
+    width: 100%;
+    background: #fff;
+    padding: 2% 0%;
+    border-bottom: solid 3px #ddd;
+    color: black;
+}
+
+.todoitem.disable {
+    color: grey;
+}
+
+.addbutton {
+    background-color: #19b193;
+    padding: 10px;
+    height: 40px;
+    border-radius: 0px 5px 5px 0px;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+    border-width: 0px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+/* MEDIA QUERIES*/
+
+@media only screen and (orientation: portrait) {
+    .newvalue {
+        width: 96%;
+        padding: 1.5% 2%;
+    }
+    .list {
+        width: 96%;
+        padding: 0% 2%;
+    }
+    .landscape {
+        display: none;
+    }
+    .portrait {
+        display: block;
+    }
+    .newvalue input {
+        width: 88%;
+    }
+    .addbutton {
+        width: 8%;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .portrait {
+        display: none;
+    }
+    .landscape {
+        display: block;
+    }
+    .newvalue input {
+        width: 74%;
+    }
+    .addbutton {
+        width: 22%;
+    }
+    .todolist {
+        width: 768px;
+        margin: 50px auto;
+        float: initial;
+        border: 1px #ccc;
+    }
+}

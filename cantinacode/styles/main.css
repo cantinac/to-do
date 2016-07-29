@@ -1,0 +1,22 @@
+
+body,*{
+    font-family: arial;
+    font-size:18px;
+
+}
+
+body{
+    background-color: #eee;
+}
+
+.container{
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+
+
+<section class="todolist">
+	<div class="newvalue">
+		<input ng-model="value" placeholder="What do yo need do get done?">
+		<button class="portrait addbutton"  ng-click="addValue(value)" >+</button>
+		<button class="landscape addbutton" ng-click="addValue(value)" >Add To-Do</button>
+	</div>
+
+	<ul class="list">
+		<li class="todoitem" ng-class="{'disable':todoItem.checked}" ng-repeat="todoItem in todoList" >
+			<span> <input type="checkbox" ng-model="todoItem.checked"></span> 
+			<span ng-click="todoItem.checked=!todoItem.checked">{{todoItem.value}}</span>
+		<li>
+	</ul>
+
+
+<section>
